@@ -42,7 +42,7 @@ export default function TopicsNavigation() {
 
     return (
         <div className={`${bodyStyling} text-[${theme.text}] flex`}>
-            <div className="w-full h-fit p-24 flex flex-col gap-2">
+            <div className="w-full h-fit p-6 md:p-24 flex flex-col gap-2">
                 <div className="w-full h-fit flex flex-row justify-between">
                     <span className="text-4xl">Topics</span>
                     <div className="flex flex-row gap-4 text-md">
@@ -50,7 +50,7 @@ export default function TopicsNavigation() {
                         <span className="flex flex-row gap-2 h-full items-center">RccRevision<MdOutlineSchool /></span>
                     </div>
                 </div>
-                <div className="flex flex-row items-center gap-2 text-md font-thin p-2 rounded-md">
+                <div className="flex flex-row flex-wrap items-center gap-2 text-xs md:text-md font-thin p-2 rounded-md">
                     <div className="flex flex-row items-center gap-2 cursor-pointer opacity-50 hover:opacity-100" onClick={() => setPathArray([])}>
                         <IoBookOutline />
                         <span>Subjects</span>
@@ -74,7 +74,7 @@ export default function TopicsNavigation() {
                             {pathValue}
                         </div>
                     ) : (
-                        <div className="p-10 flex flex-wrap gap-5">
+                        <div className="p-2 md:p-10 flex flex-wrap gap-5">
                             {
                                 // @ts-expect-error shush please
                                 Object.keys(pathValue).map((subject, index) => ( // pathValue is an object with subjects as keys
