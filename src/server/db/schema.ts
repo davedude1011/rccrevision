@@ -8,6 +8,7 @@ import {
   serial,
   timestamp,
   varchar,
+  boolean
 } from "drizzle-orm/pg-core";
 
 /**
@@ -16,21 +17,22 @@ import {
  *
  * @see https://orm.drizzle.team/docs/goodies#multi-project-schema
  */
-export const createTable = pgTableCreator((name) => `rccrevision_${name}`);
+export const createTableTopics = pgTableCreator(() => `rccrevision_topics`);
 
-export const posts = createTable(
-  "post",
+export const topics = createTableTopics(
+  "topics",
   {
     id: serial("id").primaryKey(),
-    name: varchar("name", { length: 256 }),
+    topicId: varchar("topic_id", { length: 256 }).notNull(),
+    title: varchar("title", { length: 1024 }),
+    path: varchar("path", { length: 2048 }),
+    authorId: varchar("author_id", { length: 256 }),
+    baseTopic: boolean("base_topic"),
     createdAt: timestamp("created_at", { withTimezone: true })
       .default(sql`CURRENT_TIMESTAMP`)
       .notNull(),
     updatedAt: timestamp("updated_at", { withTimezone: true }).$onUpdate(
       () => new Date()
     ),
-  },
-  (example) => ({
-    nameIndex: index("name_idx").on(example.name),
-  })
+  }
 );
