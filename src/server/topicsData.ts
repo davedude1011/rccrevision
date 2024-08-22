@@ -1,6 +1,6 @@
 "use server"
 
-import { eq, inArray, or } from "drizzle-orm";
+import { eq, inArray, or, sql } from "drizzle-orm";
 import { db } from "./db";
 import { topics, topicsData } from "./db/schema";
 //import pathArray from "python/formatTopicsData/pathArray.json";
@@ -64,7 +64,10 @@ export async function addTopicPath(path: string, pathId: string) {
   }
 }*/
 
-export async function getTopicData(topicId: string) {
+export async function getTopicData(topicId: string, addView = true) {
+  if (addView) {
+    await db.update(topicsData).set({ views: sql`${topicsData.views} + 1` }).where(eq(topicsData.topicId, topicId));
+  }
   return await db.select().from(topicsData).where(eq(topicsData.topicId, topicId));
 }
 

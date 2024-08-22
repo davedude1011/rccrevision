@@ -1,5 +1,3 @@
-import SideNav from "./sideNav/sideNav"
-
 export const scrollBarStyle = "scrollbar-thin scrollbar-thumb-gray-100 scrollbar-track-transparent"
 
 const themeType = "dark"
@@ -9,4 +7,4 @@ export const theme = {
     text: themeType == "dark" ? "#FFFFFF" : "",
 }
 
-export const bodyStyling = `flex-1 h-screen overflow-auto ${scrollBarStyle} bg-[${theme.body}]`
+export const bodyStyling = `flex-1 h-screen overflow-auto ${scrollBarStyle} bg-[${theme.body}] ${window.innerWidth <= 640 ? "pt-8" : ""}`

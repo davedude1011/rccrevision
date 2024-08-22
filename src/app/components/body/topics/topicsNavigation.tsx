@@ -8,6 +8,10 @@ import { RxCaretRight } from "react-icons/rx";
 import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { bodyStyling, theme } from "../../style";
+import { settings } from "../../settings";
+
+import { FaRegHeart, FaHeart, FaRegEye, FaRegComment } from "react-icons/fa";
+
 
 const prebuiltData = [
     {
@@ -144,10 +148,21 @@ export default function TopicsNavigation() {
     useEffect(() => {
         const locationPath = decodeURI(searchParams.get("path")??"").replaceAll("AMPERSAND", "&")
         setPathArray(locationPath ? locationPath.split("/").filter(Boolean) : [])
-    }, [searchParams])
+
+        if (typeof getValueAtPath(topicsArray as never, pathArray) === "string") {
+            getTopicData(getValueAtPath(topicsArray as never, pathArray)??"")
+                .then((tempTopicData) => {
+                    setTopicData(tempTopicData)
+                    console.log(tempTopicData)
+                })
+                .catch((error) => console.error(error))
+        }
+    }, [searchParams, topicsArray])
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
     const [topicData, setTopicData] = useState(null as any)
+    
+    const [videoIndex, setVideoIndex] = useState(0)
 
     return (
         <div className={`${bodyStyling} text-[${theme.text}] flex`}>
@@ -161,7 +176,7 @@ export default function TopicsNavigation() {
                         </Link>
                     </div>
                 </div>
-                <div className="flex flex-row flex-wrap items-center gap-2 text-xs md:text-md font-thin p-2 rounded-md">
+                <div className="flex flex-row flex-wrap items-center gap-2 text-sm md:text-md font-thin p-2 rounded-md">
                     <div className="flex flex-row items-center gap-2 cursor-pointer opacity-50 hover:opacity-100" onClick={() => updatePath("")}>
                         <IoBookOutline />
                             <span>Subjects</span>
@@ -181,16 +196,57 @@ export default function TopicsNavigation() {
                 <Suspense fallback={<PrebuiltTopicsNavigation />}>
                     {
                         typeof pathValue == "string" ? ( // display the content:
-                            <div className="flex flex-col gap-4 w-full h-fit p-10">
+                            <div className="flex flex-col gap-4 w-full h-fit p-2 md:p-10">
+                                <div className="flex flex-row justify-evenly md:justify-normal md:gap-12">
+                                    <div className="flex flex-row gap-2 items-center">
+                                        <FaRegEye />
+                                        {/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */}
+                                        {topicData? topicData[0].views : "-"}
+                                    </div>
+                                    <div className="flex flex-row gap-2 items-center opacity-25 cursor-not-allowed">
+                                        <FaRegComment />
+                                        {/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */}
+                                        {topicData? topicData[0].comments.length : "-"}
+                                    </div>
+                                    <div className="flex flex-row gap-2 items-center opacity-25 cursor-not-allowed">
+                                        <FaRegHeart />
+                                        {/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */}
+                                        {topicData ? topicData[0].likes : "-"}
+                                    </div>
+                                </div>
+                                {
+                                    <div className="w-full h-fit flex flex-col">
+                                        {        
+                                            // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
+                                            (topicData ? topicData[0].data.slice(1, topicData[0].data.length??1) : []).map((link: string, index: number) => (
+                                                <iframe key={index} src={link} className={`${index == videoIndex ? "" : "hidden"} w-full md:w-2/3 aspect-video rounded-md`} />
+                                            ))
+                                        }
+                                        <div className="w-full md:w-2/3 h-10 flex flex-row gap-4 justify-center">
+                                            {        
+                                                // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
+                                                (topicData ? topicData[0].data.slice(1, topicData[0].data.length??1) : []).map((_: string, index: number) => (
+                                                    <button key={index} className="h-full w-12 flex flex-col justify-center" onClick={() => {setVideoIndex(index)}}>
+                                                        <div className={`w-full h-1 bg-white ${index == videoIndex ? "opacity-100" : "opacity-25" } rounded-full`}></div>
+                                                    </button>
+                                                ))
+                                            }
+                                        </div>
+                                    </div>
+                                }
                                 {
                                     // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/dot-notation, @typescript-eslint/no-unsafe-member-access
                                     (topicData ? topicData[0]["data"][0] : []).map(({type, content, src}: {type: string, content: string, src: string}, index: number) => (
                                         type == "img" ? (
                                             <img key={index} src={src} alt={src}
-                                                 className="max-w-[66.66%] rounded-md shadow-md" />
+                                                 className="max-w-full md:max-w-[66.66%] rounded-md shadow-md" />
+                                        ) : type == "text-list" ? (
+                                            <li className="font-thin w-full md:w-2/3">
+                                                {content}
+                                            </li>
                                         ) : (
                                             <div key={index} className={`${
-                                                type == "header" ? "text-2xl font-bold mt-4" : type == "text" ? "font-thin w-2/3" : ""
+                                                type == "header" ? "text-2xl font-bold mt-4" : type == "text" ? "font-thin w-full md:w-2/3" : ""
                                             }`}>
                                                 {content}
                                             </div>
@@ -211,7 +267,8 @@ export default function TopicsNavigation() {
                                         //<Link className="flex flex-grow" key={index} to={`/topics/${pathArray.join("/")}${pathArray.join("/").endsWith("/") ? "" : "/"}${subject}`}>
                                             <div key={index} className={`border border-[${theme.sideNav}] shadow-md rounded-md
                                                         p-5 flex flex-col items-center gap-4 cursor-pointer hover:-translate-y-1
-                                                        hover:shadow-lg flex-grow`}
+                                                        hover:shadow-lg flex-grow
+                                                        ${typeof getNextPathValue(subject) == "string" && settings.ui.topicsLeafRoundedFull && "rounded-full"}`}
                                                 onClick={async() => {
                                                     if (typeof getNextPathValue(subject) == "string") {
                                                         getTopicData(getNextPathValue(subject)??"")

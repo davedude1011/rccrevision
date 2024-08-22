@@ -11,6 +11,10 @@ export default {
     'border-[#242424]',
     'hover:bg-[#242424]',
     'border-[#1F1F1F]',
+    'pt-8',
+    'flex-1',
+    'h-screen',
+    'overflow-auto'
   ],
   theme: {
     extend: {
