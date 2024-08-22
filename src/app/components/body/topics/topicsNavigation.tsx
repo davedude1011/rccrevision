@@ -242,12 +242,12 @@ export default function TopicsNavigation() {
                                             <img key={index} src={src} alt={src}
                                                  className="max-w-full md:max-w-[66.66%] rounded-md shadow-md" />
                                         ) : type == "text-list" ? (
-                                            <li className="font-thin w-full md:w-2/3">
+                                            <li className="font-thin opacity-50 w-full md:w-2/3">
                                                 {content}
                                             </li>
                                         ) : (
                                             <div key={index} className={`${
-                                                type == "header" ? "text-2xl font-bold mt-4" : type == "text" ? "font-thin w-full md:w-2/3" : ""
+                                                type == "header" ? "text-2xl font-bold mt-4" : type == "text" ? "font-thin opacity-50 w-full md:w-2/3" : ""
                                             }`}>
                                                 {content}
                                             </div>
