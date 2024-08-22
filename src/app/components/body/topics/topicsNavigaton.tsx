@@ -5,6 +5,7 @@ import { IoBookOutline } from "react-icons/io5";
 import { getFormattedData, getTopics } from "~/server/topicsData";
 import { useEffect, useState } from "react";
 import { RxCaretRight } from "react-icons/rx";
+import { Link, useLocation } from "react-router-dom";
 
 function getValueAtPath(dictionary: never, path: string[]) {
     let currentLevel = dictionary;
@@ -40,6 +41,14 @@ export default function TopicsNavigation() {
         return getValueAtPath(topicsArray, [...pathArray, subject])
     }
 
+    const location = useLocation();
+    useEffect(() => {
+        const locationPath = decodeURIComponent(location.pathname).replaceAll("/topics", "")
+        if (locationPath) {
+            setPathArray(locationPath.split("/").filter(Boolean))
+        }
+    }, [location])
+
     return (
         <div className={`${bodyStyling} text-[${theme.text}] flex`}>
             <div className="w-full h-fit p-6 md:p-24 flex flex-col gap-2">
@@ -47,23 +56,27 @@ export default function TopicsNavigation() {
                     <span className="text-4xl">Topics</span>
                     <div className="flex flex-row gap-4 text-md">
                         {/*<button className={`flex flex-row gap-2 h-full rounded-md items-center px-2 border opacity-80 hover:opacity-100`}><FiSliders /> Toggle Options</button>*/}
-                        <span className="flex flex-row gap-2 h-full items-center">RccRevision<MdOutlineSchool /></span>
+                        <Link to={"/"}>
+                            <span className="flex flex-row gap-2 h-full items-center cursor-pointer">RccRevision<MdOutlineSchool /></span>
+                        </Link>
                     </div>
                 </div>
                 <div className="flex flex-row flex-wrap items-center gap-2 text-xs md:text-md font-thin p-2 rounded-md">
                     <div className="flex flex-row items-center gap-2 cursor-pointer opacity-50 hover:opacity-100" onClick={() => setPathArray([])}>
                         <IoBookOutline />
-                        <span>Subjects</span>
+                        <Link to={"/topics"}>
+                            <span>Subjects</span>
+                        </Link>
                     </div>
                     {
                         pathArray.map((subject, index) => (
                             <>
-                                <RxCaretRight />
-                                <div className="cursor-pointer opacity-50 hover:opacity-100" key={index} onClick={() => {
-                                    setPathArray(pathArray.slice(0, pathArray.indexOf(subject) + 1))
-                                }}>
-                                    {subject}
-                                </div>
+                                <RxCaretRight key={index} />
+                                <Link to={`/topics/${pathArray.slice(0, pathArray.indexOf(subject) + 1).join("/")}`}>
+                                    <div className="cursor-pointer opacity-50 hover:opacity-100">
+                                        {subject}
+                                    </div>
+                                </Link>
                             </>
                         ))
                     }
@@ -76,40 +89,36 @@ export default function TopicsNavigation() {
                     ) : (
                         <div className="p-2 md:p-10 flex flex-wrap gap-5">
                             {
-                                // @ts-expect-error shush please
-                                Object.keys(pathValue).map((subject, index) => ( // pathValue is an object with subjects as keys
-                                    <div key={index} onClick={() => {
-                                        setPathArray([...pathArray, subject])
-                                    }} className={`border border-[${theme.sideNav}] shadow-md rounded-md
-                                                   p-5 flex flex-col items-center gap-4 cursor-pointer hover:-translate-y-1
-                                                   hover:shadow-lg flex-grow`}>
-                                        
-                                        {
-                                            typeof getNextPathValue(subject) == "string" ? (
-                                                <div className="flex flex-col gap-1 w-full items-center justify-center h-full">
-                                                    <span className="text-2xl h-fit">{subject}</span>
-                                                </div>
-                                            ) : (
-                                                <div className="flex flex-col gap-1 w-full">
-                                                    <span className="text-2xl">{subject}</span>
-                                                    <span className="font-thin opacity-50">{Object.keys(getNextPathValue(subject)??{}).length} Subtopics</span>
-                                                </div>
-                                            )
-                                        }
-                                        {
-                                            typeof getNextPathValue(subject) != "string" &&
-                                            <>
-                                                <hr className={`w-[80%] border-[${theme.sideNav}]`} />
-                                                <div className="text-xs font-thin opacity-50 w-full">
-                                                    {
-                                                        Object.keys(getNextPathValue(subject)??{}).slice(0, 3).map((topic, index) => (
-                                                            <div className="flex flex-row gap-2" key={index}><RxCaretRight className="translate-y-[1px] min-w-[12px]" size={12}/>{topic}</div>
-                                                        ))
-                                                    }
-                                                </div>
-                                            </>
-                                        }
-                                    </div>
+                                Object.keys(pathValue??{}).map((subject, index) => ( // pathValue is an object with subjects as keys
+                                    <Link className="flex flex-grow" key={index} to={`/topics/${pathArray.join("/")}${pathArray.join("/").endsWith("/") ? "" : "/"}${subject}`}>
+                                        <div className={`border border-[${theme.sideNav}] shadow-md rounded-md
+                                                    p-5 flex flex-col items-center gap-4 cursor-pointer hover:-translate-y-1
+                                                    hover:shadow-lg w-full h-full`}>
+                                            
+                                            {
+                                                typeof getNextPathValue(subject) == "string" ? (
+                                                    <div className="flex flex-col gap-1 w-full items-center justify-center h-full">
+                                                        <span className="text-2xl h-fit">{subject}</span>
+                                                    </div>
+                                                ) : (
+                                                    <>
+                                                        <div className="flex flex-col gap-1 w-full">
+                                                            <span className="text-2xl">{subject}</span>
+                                                            <span className="font-thin opacity-50">{Object.keys(getNextPathValue(subject)??{}).length} Subtopics</span>
+                                                        </div>
+                                                        <hr className={`w-[80%] border-[${theme.sideNav}]`} />
+                                                        <div className="text-xs font-thin opacity-50 w-full">
+                                                            {
+                                                                Object.keys(getNextPathValue(subject)??{}).slice(0, 3).map((topic, index) => (
+                                                                    <div className="flex flex-row gap-2" key={index}><RxCaretRight className="translate-y-[1px] min-w-[12px]" size={12}/>{topic}</div>
+                                                                ))
+                                                            }
+                                                        </div>
+                                                    </>
+                                                )
+                                            }
+                                        </div>
+                                    </Link>
                                 ))
                             }
                         </div>
