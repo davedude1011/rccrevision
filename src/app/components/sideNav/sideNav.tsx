@@ -1,3 +1,5 @@
+"use client"
+
 import { BiSearch } from "react-icons/bi";
 import { CiBookmark } from "react-icons/ci";
 import { PiMathOperations } from "react-icons/pi";

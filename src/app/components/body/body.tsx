@@ -1,8 +1,9 @@
 import { bodyStyling, scrollBarStyle, theme } from "../style";
 
 export default function Body() {
+    const isMobile = window.innerWidth <= 640
     return (
-        <div className={`${bodyStyling} ${window.innerWidth <= 640 ? "pt-8" : ""}`}>
+        <div className={`${bodyStyling} ${isMobile ? "pt-8" : ""}`}>
 
         </div>
     )

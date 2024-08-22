@@ -163,9 +163,11 @@ export default function TopicsNavigation() {
     const [topicData, setTopicData] = useState(null as any)
     
     const [videoIndex, setVideoIndex] = useState(0)
+    
+    const isMobile = window.innerWidth <= 640
 
     return (
-        <div className={`${bodyStyling} text-[${theme.text}] flex ${window.innerWidth <= 640 ? "pt-8" : ""}`}>
+        <div className={`${bodyStyling} text-[${theme.text}] flex ${isMobile ? "pt-8" : ""}`}>
             <div className="w-full h-fit p-6 md:p-24 flex flex-col gap-2">
                 <div className="w-full h-fit flex flex-row justify-between">
                     <span className="text-4xl">Topics</span>
