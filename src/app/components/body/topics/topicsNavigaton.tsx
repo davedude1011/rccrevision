@@ -1,8 +1,7 @@
 import { MdOutlineSchool } from "react-icons/md"
-import { FiSliders } from "react-icons/fi";
 import { bodyStyling, theme } from "../../style";
 import { IoBookOutline } from "react-icons/io5";
-import { getFormattedData, getTopics } from "~/server/topicsData";
+import { getFormattedData } from "~/server/topicsData";
 import { useEffect, useState } from "react";
 import { RxCaretRight } from "react-icons/rx";
 import { Link, useLocation } from "react-router-dom";
@@ -94,6 +93,8 @@ export default function TopicsNavigation() {
                     ) : topicsArray.length == 0 ? (
                         <div className="p-2 md:p-10 flex flex-wrap gap-5">
                             {
+                                
+                                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                                 [...Array(11)].map((_, index) => ( 
                                     <div key={index} className={`border border-[${theme.sideNav}] shadow-md rounded-md
                                         p-5 flex flex-col items-center gap-4 cursor-pointer hover:-translate-y-1
