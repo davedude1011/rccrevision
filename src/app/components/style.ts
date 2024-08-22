@@ -7,4 +7,4 @@ export const theme = {
     text: themeType == "dark" ? "#FFFFFF" : "",
 }
 
-export const bodyStyling = `flex-1 h-screen overflow-auto ${scrollBarStyle} bg-[${theme.body}] ${window.innerWidth <= 640 ? "pt-8" : ""}`
+export const bodyStyling = `flex-1 h-screen overflow-auto ${scrollBarStyle} bg-[${theme.body}]`
