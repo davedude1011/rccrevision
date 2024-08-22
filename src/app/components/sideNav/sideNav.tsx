@@ -76,9 +76,11 @@ export default function SideNav({
             <div className={`flex flex-row gap-5 items-center justify-start p-5 border-b border-[${theme.body}]`}>
                 {
                     sideNavOut && (
-                        <div className="text-2xl font-semibold">
-                            RccRevision
-                        </div>
+                        <Link href={"/"}>
+                            <div className="text-2xl font-semibold">
+                                RccRevision
+                            </div>
+                        </Link>
                     )
                 }
                 <button className={`h-full aspect-square p-1 rounded-md hover:bg-[${theme.body}] opacity-80 hover:opacity-100`}

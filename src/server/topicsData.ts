@@ -2,8 +2,9 @@
 
 import { eq, inArray, or } from "drizzle-orm";
 import { db } from "./db";
-import { topics } from "./db/schema";
+import { topics, topicsData } from "./db/schema";
 //import pathArray from "python/formatTopicsData/pathArray.json";
+//import dataArray from "python/formatTopicsData/dataArray.json";
 
 export async function getTopics() {
   return await db.select().from(topics)
@@ -60,5 +61,26 @@ export async function addTopicPath(path: string, pathId: string) {
 /*export async function tempFunctionAddAllTopicPaths() {
   for (const path of pathArray) {
     await addTopicPath(path.path, path.pathId)
+  }
+}*/
+
+export async function getTopicData(topicId: string) {
+  return await db.select().from(topicsData).where(eq(topicsData.topicId, topicId));
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export async function addTopicData(topicId: string, data: Record<string, any>) {
+  await db.insert(topicsData).values({
+    topicId: topicId,
+    data: data,
+    comments: [],
+    views: 0,
+    likes: 0,
+  })
+}
+
+/*export async function tempFunctionAddAllTopicData() {
+  for (const data of dataArray) {
+    await addTopicData(data.pathId, data.value)
   }
 }*/

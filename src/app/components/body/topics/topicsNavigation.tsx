@@ -2,7 +2,7 @@
 
 import { MdOutlineSchool } from "react-icons/md"
 import { IoBookOutline } from "react-icons/io5";
-import { getFormattedData } from "~/server/topicsData";
+import { getFormattedData, getTopicData } from "~/server/topicsData";
 import { Suspense, useEffect, useState } from "react";
 import { RxCaretRight } from "react-icons/rx";
 import { useSearchParams, useRouter } from "next/navigation";
@@ -129,18 +129,25 @@ export default function TopicsNavigation() {
         return getValueAtPath(topicsArray, [...pathArray, subject])
     }
 
+    useEffect(() => {
+        setTopicData(null)
+    }, [pathArray])
+
     const router = useRouter()
     function updatePath(path: string) {
         router.push(
-            path ? `/topics?path=${path}` : "/topics",
+            path ? encodeURI(`/topics?path=${path}`.replaceAll("&", "AMPERSAND")) : "/topics",
         )
     }
 
     const searchParams = useSearchParams()
     useEffect(() => {
-        const locationPath = (searchParams.get("path")??"")
+        const locationPath = decodeURI(searchParams.get("path")??"").replaceAll("AMPERSAND", "&")
         setPathArray(locationPath ? locationPath.split("/").filter(Boolean) : [])
     }, [searchParams])
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
+    const [topicData, setTopicData] = useState(null as any)
 
     return (
         <div className={`${bodyStyling} text-[${theme.text}] flex`}>
@@ -173,17 +180,31 @@ export default function TopicsNavigation() {
                 </div>
                 <Suspense fallback={<PrebuiltTopicsNavigation />}>
                     {
-                        typeof pathValue == "string" ? ( // pathValue is the selected topics ID
-                            <div>
-                                {pathValue}
+                        typeof pathValue == "string" ? ( // display the content:
+                            <div className="flex flex-col gap-4 w-full h-fit p-10">
+                                {
+                                    // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/dot-notation, @typescript-eslint/no-unsafe-member-access
+                                    (topicData ? topicData[0]["data"][0] : []).map(({type, content, src}: {type: string, content: string, src: string}, index: number) => (
+                                        type == "img" ? (
+                                            <img key={index} src={src} alt={src}
+                                                 className="max-w-[66.66%] rounded-md shadow-md" />
+                                        ) : (
+                                            <div key={index} className={`${
+                                                type == "header" ? "text-2xl font-bold mt-4" : type == "text" ? "font-thin w-2/3" : ""
+                                            }`}>
+                                                {content}
+                                            </div>
+                                        )
+                                    ))
+                                }
                             </div>
-                        ) : topicsArray.length == 0 ? (
+                        ) : topicsArray.length == 0 ? ( // display the skeleton
                             <div className="p-2 md:p-10 flex flex-wrap gap-5">
                                 {
                                     <PrebuiltTopicsNavigation />
                                 }
                             </div>
-                        ) : (
+                        ) : ( // display the topics
                             <div className="p-2 md:p-10 flex flex-wrap gap-5">
                                 {
                                     Object.keys(pathValue??{}).map((subject, index) => ( // pathValue is an object with subjects as keys
@@ -191,7 +212,15 @@ export default function TopicsNavigation() {
                                             <div key={index} className={`border border-[${theme.sideNav}] shadow-md rounded-md
                                                         p-5 flex flex-col items-center gap-4 cursor-pointer hover:-translate-y-1
                                                         hover:shadow-lg flex-grow`}
-                                                onClick={() => {
+                                                onClick={async() => {
+                                                    if (typeof getNextPathValue(subject) == "string") {
+                                                        getTopicData(getNextPathValue(subject)??"")
+                                                            .then((tempTopicData) => {
+                                                                setTopicData(tempTopicData)
+                                                                console.log(tempTopicData)
+                                                            })
+                                                            .catch((error) => console.error(error))
+                                                    }
                                                     updatePath(`${pathArray.join("/")}${pathArray.join("/").endsWith("/") ? "" : "/"}${subject}`)
                                                 }}>
                                                 
