@@ -3,7 +3,7 @@
 import { MdOutlineSchool } from "react-icons/md"
 import { IoBookOutline } from "react-icons/io5";
 import { getFormattedData } from "~/server/topicsData";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { RxCaretRight } from "react-icons/rx";
 import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
@@ -65,7 +65,31 @@ const prebuiltData = [
       subtitle: 'Omega Alpha',
       items: ['Point 31', 'Point 32', 'Point 33']
     }
-  ];
+  ]
+
+function PrebuiltTopicsNavigation() {
+    return (
+        prebuiltData.map((data, index) => (
+            <div key={index} className={`border border-[${theme.sideNav}] shadow-md rounded-md
+                p-5 flex flex-col items-center gap-4 cursor-pointer hover:-translate-y-1
+                hover:shadow-lg w-fit h-full flex-grow text-transparent`}>
+        
+                <div className="flex flex-col gap-1 w-full">
+                    <span className={`text-2xl bg-[${theme.sideNav}]`}>{data.title}</span>
+                    <span className={`font-thin opacity-50 bg-[${theme.sideNav}]`}>{data.subtitle}</span>
+                </div>
+                <hr className={`w-[80%] border-[${theme.sideNav}]`} />
+                <div className="text-xs font-thin opacity-50 w-full gap-1 flex flex-col">
+                    {data.items.map((item, idx) => (
+                      <div key={idx} className={`flex flex-row gap-2 bg-[${theme.sideNav}]`}>
+                        <RxCaretRight className="translate-y-[1px] min-w-[12px]" size={12}/>{item}
+                      </div>
+                    ))}
+                </div>
+            </div>
+          ))
+    )
+}
 
 function getValueAtPath(dictionary: never, path: string[]) {
     let currentLevel = dictionary;
@@ -147,76 +171,60 @@ export default function TopicsNavigation() {
                         ))
                     }
                 </div>
-                {
-                    typeof pathValue == "string" ? ( // pathValue is the selected topics ID
-                        <div>
-                            {pathValue}
-                        </div>
-                    ) : topicsArray.length == 0 ? (
-                        <div className="p-2 md:p-10 flex flex-wrap gap-5">
-                            {
-                                prebuiltData.map((data, index) => (
-                                    <div key={index} className={`border border-[${theme.sideNav}] shadow-md rounded-md
-                                        p-5 flex flex-col items-center gap-4 cursor-pointer hover:-translate-y-1
-                                        hover:shadow-lg w-fit h-full flex-grow text-transparent`}>
-                                
-                                        <div className="flex flex-col gap-1 w-full">
-                                            <span className={`text-2xl bg-[${theme.sideNav}]`}>{data.title}</span>
-                                            <span className={`font-thin opacity-50 bg-[${theme.sideNav}]`}>{data.subtitle}</span>
-                                        </div>
-                                        <hr className={`w-[80%] border-[${theme.sideNav}]`} />
-                                        <div className="text-xs font-thin opacity-50 w-full gap-1 flex flex-col">
-                                            {data.items.map((item, idx) => (
-                                              <div key={idx} className={`flex flex-row gap-2 bg-[${theme.sideNav}]`}>
-                                                <RxCaretRight className="translate-y-[1px] min-w-[12px]" size={12}/>{item}
-                                              </div>
-                                            ))}
-                                        </div>
-                                    </div>
-                                  ))
-                            }
-                        </div>
-                    ) : (
-                        <div className="p-2 md:p-10 flex flex-wrap gap-5">
-                            {
-                                Object.keys(pathValue??{}).map((subject, index) => ( // pathValue is an object with subjects as keys
-                                    //<Link className="flex flex-grow" key={index} to={`/topics/${pathArray.join("/")}${pathArray.join("/").endsWith("/") ? "" : "/"}${subject}`}>
-                                        <div key={index} className={`border border-[${theme.sideNav}] shadow-md rounded-md
-                                                    p-5 flex flex-col items-center gap-4 cursor-pointer hover:-translate-y-1
-                                                    hover:shadow-lg flex-grow`}
-                                             onClick={() => {
-                                                 updatePath(`${pathArray.join("/")}${pathArray.join("/").endsWith("/") ? "" : "/"}${subject}`)
-                                             }}>
-                                            
-                                            {
-                                                typeof getNextPathValue(subject) == "string" ? (
-                                                    <div className="flex flex-col gap-1 w-full items-center justify-center h-full">
-                                                        <span className="text-2xl h-fit">{subject}</span>
-                                                    </div>
-                                                ) : (
-                                                    <>
-                                                        <div className="flex flex-col gap-1 w-full">
-                                                            <span className="text-2xl">{subject}</span>
-                                                            <span className="font-thin opacity-50">{Object.keys(getNextPathValue(subject)??{}).length} Subtopics</span>
+                <Suspense fallback={<PrebuiltTopicsNavigation />}>
+                    {
+                        typeof pathValue == "string" ? ( // pathValue is the selected topics ID
+                            <div>
+                                {pathValue}
+                            </div>
+                        ) : topicsArray.length == 0 ? (
+                            <div className="p-2 md:p-10 flex flex-wrap gap-5">
+                                {
+                                    <PrebuiltTopicsNavigation />
+                                }
+                            </div>
+                        ) : (
+                            <div className="p-2 md:p-10 flex flex-wrap gap-5">
+                                {
+                                    Object.keys(pathValue??{}).map((subject, index) => ( // pathValue is an object with subjects as keys
+                                        //<Link className="flex flex-grow" key={index} to={`/topics/${pathArray.join("/")}${pathArray.join("/").endsWith("/") ? "" : "/"}${subject}`}>
+                                            <div key={index} className={`border border-[${theme.sideNav}] shadow-md rounded-md
+                                                        p-5 flex flex-col items-center gap-4 cursor-pointer hover:-translate-y-1
+                                                        hover:shadow-lg flex-grow`}
+                                                onClick={() => {
+                                                    updatePath(`${pathArray.join("/")}${pathArray.join("/").endsWith("/") ? "" : "/"}${subject}`)
+                                                }}>
+                                                
+                                                {
+                                                    typeof getNextPathValue(subject) == "string" ? (
+                                                        <div className="flex flex-col gap-1 w-full items-center justify-center h-full">
+                                                            <span className="text-2xl h-fit">{subject}</span>
                                                         </div>
-                                                        <hr className={`w-[80%] border-[${theme.sideNav}]`} />
-                                                        <div className="text-xs font-thin opacity-50 w-full">
-                                                            {
-                                                                Object.keys(getNextPathValue(subject)??{}).slice(0, 3).map((topic, index) => (
-                                                                    <div className="flex flex-row gap-2" key={index}><RxCaretRight className="translate-y-[1px] min-w-[12px]" size={12}/>{topic}</div>
-                                                                ))
-                                                            }
-                                                        </div>
-                                                    </>
-                                                )
-                                            }
-                                        </div>
-                                    //</Link>
-                                ))
-                            }
-                        </div>
-                    )
-                }
+                                                    ) : (
+                                                        <>
+                                                            <div className="flex flex-col gap-1 w-full">
+                                                                <span className="text-2xl">{subject}</span>
+                                                                <span className="font-thin opacity-50">{Object.keys(getNextPathValue(subject)??{}).length} Subtopics</span>
+                                                            </div>
+                                                            <hr className={`w-[80%] border-[${theme.sideNav}]`} />
+                                                            <div className="text-xs font-thin opacity-50 w-full">
+                                                                {
+                                                                    Object.keys(getNextPathValue(subject)??{}).slice(0, 3).map((topic, index) => (
+                                                                        <div className="flex flex-row gap-2" key={index}><RxCaretRight className="translate-y-[1px] min-w-[12px]" size={12}/>{topic}</div>
+                                                                    ))
+                                                                }
+                                                            </div>
+                                                        </>
+                                                    )
+                                                }
+                                            </div>
+                                        //</Link>
+                                    ))
+                                }
+                            </div>
+                        )
+                    }
+                </Suspense>
             </div>
         </div>
     )
