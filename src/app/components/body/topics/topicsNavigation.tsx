@@ -11,6 +11,7 @@ import { bodyStyling, theme } from "../../style";
 import { settings } from "../../settings";
 
 import { FaRegHeart, FaHeart, FaRegEye, FaRegComment } from "react-icons/fa";
+import { isMobile } from "react-device-detect";
 
 
 const prebuiltData = [
@@ -163,8 +164,6 @@ export default function TopicsNavigation() {
     const [topicData, setTopicData] = useState(null as any)
     
     const [videoIndex, setVideoIndex] = useState(0)
-    
-    const isMobile = window.innerWidth <= 640
 
     return (
         <div className={`${bodyStyling} text-[${theme.text}] flex ${isMobile ? "pt-8" : ""}`}>

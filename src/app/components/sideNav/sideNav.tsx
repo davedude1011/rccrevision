@@ -13,6 +13,7 @@ import { AiOutlineMenuFold, AiOutlineMenuUnfold } from "react-icons/ai";
 import { scrollBarStyle, theme } from "../style";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { isMobile } from "react-device-detect";
 
 const sideNavData = [
     {
@@ -70,7 +71,6 @@ export default function SideNav({
     setSideNavOut: (sideNavOut: boolean) => void;
 }) {
     const pathname = usePathname()
-    const isMobile = window.innerWidth <= 640
     return (
         <>
             {
