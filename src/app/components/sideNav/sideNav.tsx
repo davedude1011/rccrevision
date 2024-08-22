@@ -9,7 +9,8 @@ import { MdOutlineSchool } from "react-icons/md";
 import { AiOutlineMenuFold, AiOutlineMenuUnfold } from "react-icons/ai";
 
 import { scrollBarStyle, theme } from "../style";
-import { Link, useLocation } from "react-router-dom";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const sideNavData = [
     {
@@ -66,7 +67,7 @@ export default function SideNav({
     sideNavOut: boolean;
     setSideNavOut: (sideNavOut: boolean) => void;
 }) {
-    const location = useLocation();
+    const pathname = usePathname()
     return (
         <div className={`${
             sideNavOut ? "max-w-64 min-w-52" : "max-w-24 min-w-16"
@@ -75,11 +76,9 @@ export default function SideNav({
             <div className={`flex flex-row gap-5 items-center justify-start p-5 border-b border-[${theme.body}]`}>
                 {
                     sideNavOut && (
-                        <Link to={"/"}>
-                            <div className="text-2xl font-semibold">
-                                RccRevision
-                            </div>
-                        </Link>
+                        <div className="text-2xl font-semibold">
+                            RccRevision
+                        </div>
                     )
                 }
                 <button className={`h-full aspect-square p-1 rounded-md hover:bg-[${theme.body}] opacity-80 hover:opacity-100`}
@@ -96,10 +95,12 @@ export default function SideNav({
             <div className={`w-full h-fit p-5 flex flex-col ${!sideNavOut && "text-lg gap-[0.375rem]"}`}>
                 {
                     sideNavData.map(({ title, link, icon }, index) => (
-                        <Link key={index} to={link}>
+                        <Link href={{
+                            pathname: link,
+                        }} prefetch={true} key={index}>
                             <button className={`${
-                                location.pathname.includes(link) && `bg-[${theme.body}] opacity-100`
-                            } text-start p-2 rounded-md hover:bg-[${theme.body}] opacity-50 hover:opacity-100
+                                pathname.includes(link) ? `bg-[${theme.body}] opacity-100` : "opacity-50"
+                            } text-start p-2 rounded-md hover:bg-[${theme.body}] hover:opacity-100
                             flex flex-row gap-2 items-center font-thin w-full`}>
                                 {icon}
                                 {sideNavOut && title}

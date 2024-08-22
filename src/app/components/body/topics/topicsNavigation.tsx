@@ -1,10 +1,71 @@
+"use client"
+
 import { MdOutlineSchool } from "react-icons/md"
-import { bodyStyling, theme } from "../../style";
 import { IoBookOutline } from "react-icons/io5";
 import { getFormattedData } from "~/server/topicsData";
 import { useEffect, useState } from "react";
 import { RxCaretRight } from "react-icons/rx";
-import { Link, useLocation } from "react-router-dom";
+import { useSearchParams, useRouter } from "next/navigation";
+import Link from "next/link";
+import { bodyStyling, theme } from "../../style";
+
+const prebuiltData = [
+    {
+      title: 'Alpha',
+      subtitle: 'Beta Gamma',
+      items: ['Item 1', 'Item 2', 'Item 3']
+    },
+    {
+      title: 'Zeta',
+      subtitle: 'Delta Epsilon',
+      items: ['Element 4', 'Element 5', 'Element 6']
+    },
+    {
+      title: 'Gamma',
+      subtitle: 'Theta Iota',
+      items: ['Part 7', 'Part 8', 'Part 9']
+    },
+    {
+      title: 'Kappa',
+      subtitle: 'Lambda Mu',
+      items: ['Detail 10', 'Detail 11', 'Detail 12']
+    },
+    {
+      title: 'Epsilon',
+      subtitle: 'Nu Xi',
+      items: ['Fact 13', 'Fact 14', 'Fact 15']
+    },
+    {
+      title: 'Omicron',
+      subtitle: 'Pi Rho',
+      items: ['Point 16', 'Point 17', 'Point 18']
+    },
+    {
+      title: 'Sigma',
+      subtitle: 'Tau Upsilon',
+      items: ['Info 19', 'Info 20', 'Info 21']
+    },
+    {
+      title: 'Rho',
+      subtitle: 'Psi Omega',
+      items: ['Note 22', 'Note 23', 'Note 24']
+    },
+    {
+      title: 'Theta',
+      subtitle: 'Iota Kappa',
+      items: ['Entry 25', 'Entry 26', 'Entry 27']
+    },
+    {
+      title: 'Upsilon',
+      subtitle: 'Phi Chi',
+      items: ['Data 28', 'Data 29', 'Data 30']
+    },
+    {
+      title: 'Psi',
+      subtitle: 'Omega Alpha',
+      items: ['Point 31', 'Point 32', 'Point 33']
+    }
+  ];
 
 function getValueAtPath(dictionary: never, path: string[]) {
     let currentLevel = dictionary;
@@ -34,7 +95,6 @@ export default function TopicsNavigation() {
         getFormattedData()
            .then((data) => {
                 setTopicsArray(data as never)
-                console.log(data)
            })
            .catch((error) => console.error(error))
     }, [])
@@ -45,13 +105,18 @@ export default function TopicsNavigation() {
         return getValueAtPath(topicsArray, [...pathArray, subject])
     }
 
-    const location = useLocation();
+    const router = useRouter()
+    function updatePath(path: string) {
+        router.push(
+            path ? `/topics?path=${path}` : "/topics",
+        )
+    }
+
+    const searchParams = useSearchParams()
     useEffect(() => {
-        const locationPath = decodeURIComponent(location.pathname).replaceAll("/topics", "")
-        if (locationPath) {
-            setPathArray(locationPath.split("/").filter(Boolean))
-        }
-    }, [location])
+        const locationPath = (searchParams.get("path")??"")
+        setPathArray(locationPath ? locationPath.split("/").filter(Boolean) : [])
+    }, [searchParams])
 
     return (
         <div className={`${bodyStyling} text-[${theme.text}] flex`}>
@@ -60,27 +125,24 @@ export default function TopicsNavigation() {
                     <span className="text-4xl">Topics</span>
                     <div className="flex flex-row gap-4 text-md">
                         {/*<button className={`flex flex-row gap-2 h-full rounded-md items-center px-2 border opacity-80 hover:opacity-100`}><FiSliders /> Toggle Options</button>*/}
-                        <Link to={"/"}>
+                        <Link href={"/"}>
                             <span className="flex flex-row gap-2 h-full items-center cursor-pointer">RccRevision<MdOutlineSchool /></span>
                         </Link>
                     </div>
                 </div>
                 <div className="flex flex-row flex-wrap items-center gap-2 text-xs md:text-md font-thin p-2 rounded-md">
-                    <div className="flex flex-row items-center gap-2 cursor-pointer opacity-50 hover:opacity-100" onClick={() => setPathArray([])}>
+                    <div className="flex flex-row items-center gap-2 cursor-pointer opacity-50 hover:opacity-100" onClick={() => updatePath("")}>
                         <IoBookOutline />
-                        <Link to={"/topics"}>
                             <span>Subjects</span>
-                        </Link>
                     </div>
                     {
                         pathArray.map((subject, index) => (
                             <>
                                 <RxCaretRight key={index} />
-                                <Link to={`/topics/${pathArray.slice(0, pathArray.indexOf(subject) + 1).join("/")}`}>
-                                    <div className="cursor-pointer opacity-50 hover:opacity-100">
-                                        {subject}
-                                    </div>
-                                </Link>
+                                <div className="cursor-pointer opacity-50 hover:opacity-100"
+                                        onClick={() => updatePath(`${pathArray.slice(0, pathArray.indexOf(subject) + 1).join("/")}`)}>
+                                    {subject}
+                                </div>
                             </>
                         ))
                     }
@@ -93,35 +155,38 @@ export default function TopicsNavigation() {
                     ) : topicsArray.length == 0 ? (
                         <div className="p-2 md:p-10 flex flex-wrap gap-5">
                             {
-                                
-                                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-                                [...Array(11)].map((_, index) => ( 
+                                prebuiltData.map((data, index) => (
                                     <div key={index} className={`border border-[${theme.sideNav}] shadow-md rounded-md
                                         p-5 flex flex-col items-center gap-4 cursor-pointer hover:-translate-y-1
                                         hover:shadow-lg w-fit h-full flex-grow text-transparent`}>
-    
+                                
                                         <div className="flex flex-col gap-1 w-full">
-                                            <span className={`text-2xl bg-[${theme.sideNav}]`}>{getRandomString(4, 10)}</span>
-                                            <span className={`font-thin opacity-50 bg-[${theme.sideNav}]`}>{getRandomString(11, 12)}</span>
+                                            <span className={`text-2xl bg-[${theme.sideNav}]`}>{data.title}</span>
+                                            <span className={`font-thin opacity-50 bg-[${theme.sideNav}]`}>{data.subtitle}</span>
                                         </div>
                                         <hr className={`w-[80%] border-[${theme.sideNav}]`} />
                                         <div className="text-xs font-thin opacity-50 w-full gap-1 flex flex-col">
-                                            <div className={`flex flex-row gap-2 bg-[${theme.sideNav}]`}><RxCaretRight className="translate-y-[1px] min-w-[12px]" size={12}/>{getRandomString(5, 30)}</div>
-                                            <div className={`flex flex-row gap-2 bg-[${theme.sideNav}]`}><RxCaretRight className="translate-y-[1px] min-w-[12px]" size={12}/>{getRandomString(5, 30)}</div>
-                                            <div className={`flex flex-row gap-2 bg-[${theme.sideNav}]`}><RxCaretRight className="translate-y-[1px] min-w-[12px]" size={12}/>{getRandomString(5, 30)}</div>
+                                            {data.items.map((item, idx) => (
+                                              <div key={idx} className={`flex flex-row gap-2 bg-[${theme.sideNav}]`}>
+                                                <RxCaretRight className="translate-y-[1px] min-w-[12px]" size={12}/>{item}
+                                              </div>
+                                            ))}
                                         </div>
                                     </div>
-                                ))
+                                  ))
                             }
                         </div>
                     ) : (
                         <div className="p-2 md:p-10 flex flex-wrap gap-5">
                             {
                                 Object.keys(pathValue??{}).map((subject, index) => ( // pathValue is an object with subjects as keys
-                                    <Link className="flex flex-grow" key={index} to={`/topics/${pathArray.join("/")}${pathArray.join("/").endsWith("/") ? "" : "/"}${subject}`}>
-                                        <div className={`border border-[${theme.sideNav}] shadow-md rounded-md
+                                    //<Link className="flex flex-grow" key={index} to={`/topics/${pathArray.join("/")}${pathArray.join("/").endsWith("/") ? "" : "/"}${subject}`}>
+                                        <div key={index} className={`border border-[${theme.sideNav}] shadow-md rounded-md
                                                     p-5 flex flex-col items-center gap-4 cursor-pointer hover:-translate-y-1
-                                                    hover:shadow-lg w-full h-full`}>
+                                                    hover:shadow-lg flex-grow`}
+                                             onClick={() => {
+                                                 updatePath(`${pathArray.join("/")}${pathArray.join("/").endsWith("/") ? "" : "/"}${subject}`)
+                                             }}>
                                             
                                             {
                                                 typeof getNextPathValue(subject) == "string" ? (
@@ -146,7 +211,7 @@ export default function TopicsNavigation() {
                                                 )
                                             }
                                         </div>
-                                    </Link>
+                                    //</Link>
                                 ))
                             }
                         </div>
