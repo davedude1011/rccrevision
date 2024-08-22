@@ -98,8 +98,9 @@ export default function SideNav({
                     sideNavData.map(({ title, link, icon }, index) => (
                         <Link key={index} to={link}>
                             <button className={`${
-                                location.pathname == link && `bg-[${theme.body}] opacity-100`
-                            } text-start p-2 rounded-md hover:bg-[${theme.body}] opacity-50 hover:opacity-100 flex flex-row gap-2 items-center font-thin`}>
+                                location.pathname.includes(link) && `bg-[${theme.body}] opacity-100`
+                            } text-start p-2 rounded-md hover:bg-[${theme.body}] opacity-50 hover:opacity-100
+                            flex flex-row gap-2 items-center font-thin w-full`}>
                                 {icon}
                                 {sideNavOut && title}
                             </button>

@@ -24,6 +24,11 @@ function getValueAtPath(dictionary: never, path: string[]) {
     return currentLevel;
   }
 
+function getRandomString(min: number, max: number) {
+    const length = Math.floor(Math.random() * (max - min + 1)) + min;
+    return Array.from({ length }, () => 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'[Math.floor(Math.random() * 62)]).join('');
+};
+
 export default function TopicsNavigation() {
     const [topicsArray, setTopicsArray] = useState([])
     useEffect(() => {
@@ -85,6 +90,28 @@ export default function TopicsNavigation() {
                     typeof pathValue == "string" ? ( // pathValue is the selected topics ID
                         <div>
                             {pathValue}
+                        </div>
+                    ) : topicsArray.length == 0 ? (
+                        <div className="p-2 md:p-10 flex flex-wrap gap-5">
+                            {
+                                [...Array(11)].map((_, index) => ( 
+                                    <div key={index} className={`border border-[${theme.sideNav}] shadow-md rounded-md
+                                        p-5 flex flex-col items-center gap-4 cursor-pointer hover:-translate-y-1
+                                        hover:shadow-lg w-fit h-full flex-grow text-transparent`}>
+    
+                                        <div className="flex flex-col gap-1 w-full">
+                                            <span className={`text-2xl bg-[${theme.sideNav}]`}>{getRandomString(4, 10)}</span>
+                                            <span className={`font-thin opacity-50 bg-[${theme.sideNav}]`}>{getRandomString(11, 12)}</span>
+                                        </div>
+                                        <hr className={`w-[80%] border-[${theme.sideNav}]`} />
+                                        <div className="text-xs font-thin opacity-50 w-full gap-1 flex flex-col">
+                                            <div className={`flex flex-row gap-2 bg-[${theme.sideNav}]`}><RxCaretRight className="translate-y-[1px] min-w-[12px]" size={12}/>{getRandomString(5, 30)}</div>
+                                            <div className={`flex flex-row gap-2 bg-[${theme.sideNav}]`}><RxCaretRight className="translate-y-[1px] min-w-[12px]" size={12}/>{getRandomString(5, 30)}</div>
+                                            <div className={`flex flex-row gap-2 bg-[${theme.sideNav}]`}><RxCaretRight className="translate-y-[1px] min-w-[12px]" size={12}/>{getRandomString(5, 30)}</div>
+                                        </div>
+                                    </div>
+                                ))
+                            }
                         </div>
                     ) : (
                         <div className="p-2 md:p-10 flex flex-wrap gap-5">
