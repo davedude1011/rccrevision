@@ -2,7 +2,7 @@
 
 import { MdOutlineSchool } from "react-icons/md"
 import { IoBookOutline } from "react-icons/io5";
-import { getFormattedData, getTopicData } from "~/server/topicsData";
+import { getFormattedData, getLikedTopicsData, getTopicData, likeTopic } from "~/server/topicsData";
 import { Suspense, useEffect, useState } from "react";
 import { RxCaretRight } from "react-icons/rx";
 import { useSearchParams, useRouter } from "next/navigation";
@@ -12,6 +12,8 @@ import { settings } from "../../settings";
 
 import { FaRegHeart, FaHeart, FaRegEye, FaRegComment } from "react-icons/fa";
 import { isMobile } from "react-device-detect";
+import { getUserLikes } from "~/server/users";
+import { CiBookmark } from "react-icons/ci";
 
 
 const prebuiltData = [
@@ -158,32 +160,77 @@ export default function TopicsNavigation() {
                 })
                 .catch((error) => console.error(error))
         }
+
+        setTopicLikesOffset(0)
     }, [searchParams, topicsArray])
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
     const [topicData, setTopicData] = useState(null as any)
+    const [userLikes, setUserLikes] = useState([] as string[])
+    const [topicLikes, setTopicLikes] = useState("-" as string|number)
+    function updateUserLikes() {
+        getUserLikes()
+            .then((likes) => setUserLikes(likes??[]))
+            .catch((error) => console.error(error))
+    }
+
+    const [topicLikesOffset, setTopicLikesOffset] = useState(0 as number)
+
+    useEffect(() => updateUserLikes, [])
     
     const [videoIndex, setVideoIndex] = useState(0)
+
+    const [isLikedSection, setIsLikedSection] = useState(false)
+
+    const [likedTopicsData, setLikedTopicsData] = useState(null)
+    function updateLikedTopicsData() {
+        getLikedTopicsData()
+           .then((data) => {
+                setLikedTopicsData(data as never)
+                console.log(data)
+           })
+           .catch((error) => console.error(error))
+    }
+    useEffect(() => {updateLikedTopicsData()}, [])
+
+    useEffect(() => {setTopicLikesOffset(0)}, [isLikedSection])
 
     return (
         <div className={`${bodyStyling} text-[${theme.text}] flex ${isMobile ? "pt-8" : ""}`}>
             <div className="w-full h-fit p-6 md:p-24 flex flex-col gap-2">
                 <div className="w-full h-fit flex flex-row justify-between">
-                    <span className="text-4xl">Topics</span>
-                    <div className="flex flex-row gap-4 text-md">
-                        {/*<button className={`flex flex-row gap-2 h-full rounded-md items-center px-2 border opacity-80 hover:opacity-100`}><FiSliders /> Toggle Options</button>*/}
-                        <Link href={"/"}>
-                            <span className="flex flex-row gap-2 h-full items-center cursor-pointer">RccRevision<MdOutlineSchool /></span>
-                        </Link>
+                <span className="text-4xl">Topics</span>
+                    <div className="flex flex-row gap-4 items-center">
+                        <button className="flex flex-row text-md items-center hover:shadow-md opacity-50 hover:opacity-100 rounded-md p-2 px-4 gap-2 group"
+                                onClick={() => setIsLikedSection(!isLikedSection)}>
+                            {
+                                isLikedSection ? (
+                                    <><CiBookmark />Subjects</>
+                                ) : (
+                                    <><FaRegHeart className="group-hover:text-pink-600 transition-all duration-500" />Liked Topics</>
+                                )
+                            }
+                        </button>
+                        <div className="flex flex-row gap-4 text-md">
+                            {/*<button className={`flex flex-row gap-2 h-full rounded-md items-center px-2 border opacity-80 hover:opacity-100`}><FiSliders /> Toggle Options</button>*/}
+                            <Link href={"/"}>
+                                <span className="flex flex-row text-md items-center hover:shadow-md opacity-50 hover:opacity-100 rounded-md p-2 px-4 gap-2"><MdOutlineSchool />RccRevision</span>
+                            </Link>
+                        </div>
                     </div>
                 </div>
                 <div className="flex flex-row flex-wrap items-center gap-2 text-sm md:text-md font-thin p-2 rounded-md">
                     <div className="flex flex-row items-center gap-2 cursor-pointer opacity-50 hover:opacity-100" onClick={() => updatePath("")}>
-                        <IoBookOutline />
-                            <span>Subjects</span>
+                        {
+                            isLikedSection ? (
+                                <><FaRegHeart />Liked topics</>
+                            ) : (
+                                <><IoBookOutline />Subjects</>
+                            )
+                        }
                     </div>
                     {
-                        pathArray.map((subject, index) => (
+                        !isLikedSection && pathArray.map((subject, index) => (
                             <>
                                 <RxCaretRight key={index} />
                                 <div className="cursor-pointer opacity-50 hover:opacity-100"
@@ -196,7 +243,36 @@ export default function TopicsNavigation() {
                 </div>
                 <Suspense fallback={<PrebuiltTopicsNavigation />}>
                     {
-                        typeof pathValue == "string" ? ( // display the content:
+                        isLikedSection && (
+                            <div className="flex gap-5 flex-wrap">
+                                {
+                                    // @ts-expect-error never who?
+                                    likedTopicsData?.map(({title, path, topicId}: {title: string, path: string}, index: number) => (
+                                        <div key={index} className={`border border-[${theme.sideNav}] shadow-md rounded-md
+                                        p-5 flex flex-col items-center gap-4 cursor-pointer hover:-translate-y-1
+                                        hover:shadow-lg flex-grow ${settings.ui.topicsLeafRoundedFull && "rounded-full"}`}
+                                        onClick={() => {
+                                            setIsLikedSection(false)
+                                            setPathArray(path.split("/"))
+                                            getTopicData(topicId)
+                                                .then((tempTopicData) => {
+                                                    setTopicData(tempTopicData)
+                                                    console.log(tempTopicData)
+                                                })
+                                                .catch((error) => console.error(error))
+                                        }}>
+                                            <div className="font-2xl">{title}</div>
+                                            <hr className={`w-[80%] border-[${theme.sideNav}]`} />
+                                            <div className="font-thin opacity-50">{path}</div>
+                                        </div>
+                                    ))
+                                }
+                            </div>
+                        )
+                    }
+                    {
+                        !isLikedSection &&
+                        (typeof pathValue == "string" ? ( // display the content:
                             <div className="flex flex-col gap-4 w-full h-fit p-2 md:p-10">
                                 <div className="flex flex-row justify-evenly md:justify-normal md:gap-12">
                                     <div className="flex flex-row gap-2 items-center">
@@ -209,10 +285,32 @@ export default function TopicsNavigation() {
                                         {/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */}
                                         {topicData? topicData[0].comments.length : "-"}
                                     </div>
-                                    <div className="flex flex-row gap-2 items-center opacity-25 cursor-not-allowed">
-                                        <FaRegHeart />
+                                    <div className="flex flex-row gap-2 items-center group opacity-90 cursor-pointer"
+                                         onClick={() => {
+                                            // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
+                                            if (userLikes.includes((topicData??[{topicId:""}])[0].topicId)) {
+                                                setTopicLikesOffset(topicLikesOffset-1)
+                                            }
+                                            else {
+                                                setTopicLikesOffset(topicLikesOffset+1)
+                                            }
+                                            // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
+                                            likeTopic(topicData[0].topicId)
+                                                .then((_) => {updateLikedTopicsData()})
+                                                .catch((error) => console.error(error))
+                                            updateUserLikes()
+                                         }}>
+                                            {
+                                                // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
+                                                topicData && userLikes.includes((topicData)[0].topicId) ? (
+                                                    <FaHeart className="text-pink-600" />
+                                                ) : (
+                                                    <FaRegHeart className="group-hover:text-pink-600" />
+                                                )
+                                            }
+                                        
                                         {/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */}
-                                        {topicData ? topicData[0].likes : "-"}
+                                        <span className="group-hover:opacity-100">{topicData ? Math.abs((topicData[0].likes + topicLikesOffset) as number) : "-"}</span>
                                     </div>
                                 </div>
                                 {
@@ -309,7 +407,7 @@ export default function TopicsNavigation() {
                                     ))
                                 }
                             </div>
-                        )
+                        ))
                     }
                 </Suspense>
             </div>

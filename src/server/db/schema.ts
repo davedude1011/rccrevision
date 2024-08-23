@@ -22,6 +22,8 @@ import {
 export const createTableTopics = pgTableCreator(() => `rccrevision_topics`);
 export const createTableTopicsData = pgTableCreator(() => `rccrevision_topics_data`);
 
+export const createTableUsers = pgTableCreator(() => `rccrevision_users`);
+
 export const topics = createTableTopics(
   "topics",
   {
@@ -48,6 +50,21 @@ export const topicsData = createTableTopicsData(
     comments: json("comments"),
     views: integer("views"),
     likes: integer("likes"),
+    createdAt: timestamp("created_at", { withTimezone: true })
+      .default(sql`CURRENT_TIMESTAMP`)
+      .notNull(),
+    updatedAt: timestamp("updated_at", { withTimezone: true }).$onUpdate(
+      () => new Date()
+    ),
+  }
+);
+
+export const users = createTableUsers(
+  "users",
+  {
+    id: serial("id").primaryKey(),
+    userId: varchar("user_id", { length: 256 }).notNull(),
+    likes: json("likes"),
     createdAt: timestamp("created_at", { withTimezone: true })
       .default(sql`CURRENT_TIMESTAMP`)
       .notNull(),

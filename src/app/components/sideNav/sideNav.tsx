@@ -15,6 +15,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { isMobile } from "react-device-detect";
 
+import { SignedIn, SignedOut, SignInButton, useAuth, UserButton } from "@clerk/nextjs"
+import { useEffect, useState } from "react";
+import { addUser, getUserData } from "~/server/users";
+
 const sideNavData = [
     {
         title: "Search",
@@ -71,6 +75,24 @@ export default function SideNav({
     setSideNavOut: (sideNavOut: boolean) => void;
 }) {
     const pathname = usePathname()
+
+    const [userData, setUserData] = useState(null as { username: string } | null)
+    const user = useAuth();
+    useEffect(() => {
+        if (user.isSignedIn) {
+            getUserData(user.userId ?? "")
+                .then((userData: string) => setUserData(JSON.parse(userData) as { username: string }))
+                .catch(error => console.log(error))
+        }
+    }, [])
+
+    useEffect(() => {
+        if (user.isSignedIn) {
+            addUser()
+                .catch(error => console.log(error))
+        }
+    }, [user])
+
     return (
         <>
             {
@@ -106,7 +128,7 @@ export default function SideNav({
                     }
                     </button>
                 </div>
-                <div className={`w-full h-fit p-5 flex flex-col ${!sideNavOut && "text-lg gap-[0.375rem]"}`}>
+                <div className={`w-full flex-1 p-5 flex flex-col ${!sideNavOut && "text-lg gap-[0.375rem]"}`}>
                     {
                         sideNavData.map(({ title, link, icon }, index) => (
                             <Link href={{
@@ -122,6 +144,24 @@ export default function SideNav({
                             </Link>
                         ))
                     }
+                </div>
+                <div className={`flex flex-row p-5 ${sideNavOut ? "justify-start" : "justify-center"} gap-2`}>
+                    <SignedIn>
+                        <UserButton />
+                        <span className="opacity-50">
+                            {
+                                sideNavOut && userData != null ? userData.username : ""
+                            }
+                        </span>
+                    </SignedIn>
+                    <SignedOut>
+                        {
+                            sideNavOut &&
+                                <span className="opacity-50 hover:opacity-100">
+                                    <SignInButton />
+                                </span>
+                        }
+                    </SignedOut>
                 </div>
             </div>
         </>

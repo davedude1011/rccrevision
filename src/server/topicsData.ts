@@ -2,11 +2,18 @@
 
 import { eq, inArray, or, sql } from "drizzle-orm";
 import { db } from "./db";
-import { topics, topicsData } from "./db/schema";
+import { topics, topicsData, users } from "./db/schema";
+import { getUserLikes } from "./users";
+import { auth } from "@clerk/nextjs/server";
 //import pathArray from "python/formatTopicsData/pathArray.json";
 //import dataArray from "python/formatTopicsData/dataArray.json";
 
-export async function getTopics() {
+export async function getTopics(topicIds: string[]|null = null) {
+  if (topicIds) {
+    return await db.select().from(topics).where(
+        inArray(topics.topicId, topicIds)
+    )
+  }
   return await db.select().from(topics)
 }
 
@@ -87,3 +94,23 @@ export async function addTopicData(topicId: string, data: Record<string, any>) {
     await addTopicData(data.pathId, data.value)
   }
 }*/
+
+export async function likeTopic(topicId: string) {
+  const userLikes = await getUserLikes()
+  const user = auth()
+  if (user?.userId) {
+    if (userLikes?.includes(topicId)) {
+      await db.update(topicsData).set({ likes: sql`${topicsData.likes} - 1` }).where(eq(topicsData.topicId, topicId));
+      await db.update(users).set({ likes: userLikes.filter((like) => like != topicId) }).where(eq(users.userId, user.userId));
+    }
+    else {
+      await db.update(topicsData).set({ likes: sql`${topicsData.likes} + 1` }).where(eq(topicsData.topicId, topicId));
+      await db.update(users).set({ likes: [...(userLikes??[]), topicId] }).where(eq(users.userId, user.userId));
+    }
+  }
+}
+
+export async function getLikedTopicsData() {
+  const likedTopicIds = await getUserLikes()
+  return getTopics(likedTopicIds)
+}
