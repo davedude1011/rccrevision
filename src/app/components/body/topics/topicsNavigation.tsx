@@ -14,6 +14,10 @@ import { FaRegHeart, FaHeart, FaRegEye, FaRegComment } from "react-icons/fa";
 import { isMobile } from "react-device-detect";
 import { getUserLikes } from "~/server/users";
 import { CiBookmark } from "react-icons/ci";
+import { SignInButton, useAuth } from "@clerk/clerk-react";
+
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const prebuiltData = [
@@ -121,6 +125,8 @@ function getRandomString(min: number, max: number) {
 };
 
 export default function TopicsNavigation() {
+    const user = useAuth()
+
     const [topicsArray, setTopicsArray] = useState([])
     useEffect(() => {
         getFormattedData()
@@ -203,7 +209,18 @@ export default function TopicsNavigation() {
                 <span className="text-4xl">Topics</span>
                     <div className="flex flex-row gap-4 items-center">
                         <button className="flex flex-row text-md items-center hover:shadow-md opacity-50 hover:opacity-100 rounded-md p-2 px-4 gap-2 group"
-                                onClick={() => setIsLikedSection(!isLikedSection)}>
+                                onClick={() => {
+                                    if (user.isSignedIn) {
+                                        setIsLikedSection(!isLikedSection)
+                                    }
+                                    else {
+                                        toast.error(
+                                            <>
+                                                You need to <span className="text-blue-600 font-semibold"><SignInButton></SignInButton></span> to keep track of your saved topics.
+                                            </>
+                                        )
+                                    }
+                                }}>
                             {
                                 isLikedSection ? (
                                     <><CiBookmark />Subjects</>
@@ -288,18 +305,27 @@ export default function TopicsNavigation() {
                                     </div>
                                     <div className="flex flex-row gap-2 items-center group opacity-90 cursor-pointer"
                                          onClick={() => {
-                                            // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
-                                            if (userLikes.includes((topicData??[{topicId:""}])[0].topicId)) {
-                                                setTopicLikesOffset(topicLikesOffset-1)
+                                            if (user.isSignedIn) {
+                                                // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
+                                                if (userLikes.includes((topicData??[{topicId:""}])[0].topicId)) {
+                                                    setTopicLikesOffset(topicLikesOffset-1)
+                                                }
+                                                else {
+                                                    setTopicLikesOffset(topicLikesOffset+1)
+                                                }
+                                                // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
+                                                likeTopic(topicData[0].topicId)
+                                                    .then((_) => {updateLikedTopicsData()})
+                                                    .catch((error) => console.error(error))
+                                                updateUserLikes()
                                             }
                                             else {
-                                                setTopicLikesOffset(topicLikesOffset+1)
+                                                toast.error(
+                                                    <>
+                                                        You need to <span className="text-blue-600 font-semibold"><SignInButton></SignInButton></span> to like or comment on Topics.
+                                                    </>
+                                                )
                                             }
-                                            // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
-                                            likeTopic(topicData[0].topicId)
-                                                .then((_) => {updateLikedTopicsData()})
-                                                .catch((error) => console.error(error))
-                                            updateUserLikes()
                                          }}>
                                             {
                                                 // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
