@@ -182,13 +182,13 @@ export default function TopicsNavigation() {
 
     const [isLikedSection, setIsLikedSection] = useState(false)
 
-    // @ts-ignore
-    const [likedTopicsData, setLikedTopicsData] = useState(null as unknown as unknown[] as any[] as any)
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
+    const [likedTopicsData, setLikedTopicsData] = useState(null as any)
     function updateLikedTopicsData() {
         getLikedTopicsData()
            .then((data) => {
-                // @ts-ignore
-                setLikedTopicsData(data as unknown as unknown[] as any[] as any)
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
+                setLikedTopicsData(data as any)
                 console.log(data)
            })
            .catch((error) => console.error(error))
@@ -248,6 +248,7 @@ export default function TopicsNavigation() {
                         isLikedSection && (
                             <div className="flex gap-5 flex-wrap">
                                 {
+                                    // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
                                     likedTopicsData?.map(({title, path, topicId}: {title: string, path: string, topicId: string}, index: number) => (
                                         <div key={index} className={`border border-[${theme.sideNav}] shadow-md rounded-md
                                         p-5 flex flex-col items-center gap-4 cursor-pointer hover:-translate-y-1
