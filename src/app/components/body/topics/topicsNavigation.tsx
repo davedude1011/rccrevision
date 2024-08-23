@@ -182,11 +182,13 @@ export default function TopicsNavigation() {
 
     const [isLikedSection, setIsLikedSection] = useState(false)
 
-    const [likedTopicsData, setLikedTopicsData] = useState(null as unknown as any[])
+    // @ts-ignore
+    const [likedTopicsData, setLikedTopicsData] = useState(null as unknown as unknown[] as any[] as any)
     function updateLikedTopicsData() {
         getLikedTopicsData()
            .then((data) => {
-                setLikedTopicsData(data as any[])
+                // @ts-ignore
+                setLikedTopicsData(data as unknown as unknown[] as any[] as any)
                 console.log(data)
            })
            .catch((error) => console.error(error))
