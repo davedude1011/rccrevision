@@ -182,12 +182,11 @@ export default function TopicsNavigation() {
 
     const [isLikedSection, setIsLikedSection] = useState(false)
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
-    const [likedTopicsData, setLikedTopicsData] = useState(null as any)
+    const [likedTopicsData, setLikedTopicsData] = useState(null as unknown as any[])
     function updateLikedTopicsData() {
         getLikedTopicsData()
            .then((data) => {
-                setLikedTopicsData(data as any)
+                setLikedTopicsData(data as any[])
                 console.log(data)
            })
            .catch((error) => console.error(error))
