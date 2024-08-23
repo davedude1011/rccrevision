@@ -182,11 +182,11 @@ export default function TopicsNavigation() {
 
     const [isLikedSection, setIsLikedSection] = useState(false)
 
-    const [likedTopicsData, setLikedTopicsData] = useState(null)
+    const [likedTopicsData, setLikedTopicsData] = useState(null as any)
     function updateLikedTopicsData() {
         getLikedTopicsData()
            .then((data) => {
-                setLikedTopicsData(data as never)
+                setLikedTopicsData(data as any)
                 console.log(data)
            })
            .catch((error) => console.error(error))
@@ -246,8 +246,7 @@ export default function TopicsNavigation() {
                         isLikedSection && (
                             <div className="flex gap-5 flex-wrap">
                                 {
-                                    // @ts-expect-error never who?
-                                    likedTopicsData?.map(({title, path, topicId}: {title: string, path: string}, index: number) => (
+                                    likedTopicsData?.map(({title, path, topicId}: {title: string, path: string, topicId: string}, index: number) => (
                                         <div key={index} className={`border border-[${theme.sideNav}] shadow-md rounded-md
                                         p-5 flex flex-col items-center gap-4 cursor-pointer hover:-translate-y-1
                                         hover:shadow-lg flex-grow ${settings.ui.topicsLeafRoundedFull && "rounded-full"}`}
