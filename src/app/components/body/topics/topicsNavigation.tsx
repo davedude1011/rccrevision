@@ -142,10 +142,6 @@ export default function TopicsNavigation() {
         return getValueAtPath(topicsArray, [...pathArray, subject])
     }
 
-    useEffect(() => {
-        setTopicData(null)
-    }, [pathArray])
-
     const router = useRouter()
     function updatePath(path: string) {
         router.push(
@@ -208,7 +204,7 @@ export default function TopicsNavigation() {
                 <div className="w-full h-fit flex flex-row justify-between">
                 <span className="text-4xl">Topics</span>
                     <div className="flex flex-row gap-4 items-center">
-                        <button className="flex flex-row text-md items-center hover:shadow-md opacity-50 hover:opacity-100 rounded-md p-2 px-4 gap-2 group"
+                        <button className="cursor-pointer flex flex-row text-md items-center hover:shadow-md opacity-50 hover:opacity-100 rounded-md p-2 px-4 gap-2 group"
                                 onClick={() => {
                                     if (user.isSignedIn) {
                                         setIsLikedSection(!isLikedSection)
@@ -397,6 +393,7 @@ export default function TopicsNavigation() {
                                                         ${typeof getNextPathValue(subject) == "string" && settings.ui.topicsLeafRoundedFull && "rounded-full"}`}
                                                 onClick={async() => {
                                                     if (typeof getNextPathValue(subject) == "string") {
+                                                        setTopicData(null)
                                                         getTopicData(getNextPathValue(subject)??"")
                                                             .then((tempTopicData) => {
                                                                 setTopicData(tempTopicData)
