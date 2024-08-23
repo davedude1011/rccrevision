@@ -189,7 +189,6 @@ export default function TopicsNavigation() {
            .then((data) => {
                 // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
                 setLikedTopicsData(data as any)
-                console.log(data)
            })
            .catch((error) => console.error(error))
     }
@@ -248,7 +247,7 @@ export default function TopicsNavigation() {
                         isLikedSection && (
                             <div className="flex gap-5 flex-wrap">
                                 {
-                                    // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
+                                    // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
                                     likedTopicsData?.map(({title, path, topicId}: {title: string, path: string, topicId: string}, index: number) => (
                                         <div key={index} className={`border border-[${theme.sideNav}] shadow-md rounded-md
                                         p-5 flex flex-col items-center gap-4 cursor-pointer hover:-translate-y-1
