@@ -203,7 +203,7 @@ export default function TopicsNavigation() {
             <div className="w-full h-fit p-6 md:p-24 flex flex-col gap-2">
                 <div className="w-full h-fit flex flex-row justify-between">
                 <span className="text-4xl">Topics</span>
-                    <div className="flex flex-row gap-4 items-center">
+                    <div className="flex flex-row gap-4 items-center justify-normal">
                         <button className="cursor-pointer flex flex-row text-md items-center hover:shadow-md opacity-50 hover:opacity-100 rounded-md p-2 px-4 gap-2 group"
                                 onClick={() => {
                                     if (user.isSignedIn) {
@@ -225,7 +225,7 @@ export default function TopicsNavigation() {
                                 )
                             }
                         </button>
-                        <div className="flex flex-row gap-4 text-md">
+                        <div className="md:flex flex-row gap-4 text-md hidden">
                             {/*<button className={`flex flex-row gap-2 h-full rounded-md items-center px-2 border opacity-80 hover:opacity-100`}><FiSliders /> Toggle Options</button>*/}
                             <Link href={"/"}>
                                 <span className="flex flex-row text-md items-center hover:shadow-md opacity-50 hover:opacity-100 rounded-md p-2 px-4 gap-2"><MdOutlineSchool />RccRevision</span>
