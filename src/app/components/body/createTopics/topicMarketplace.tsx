@@ -21,7 +21,7 @@ export default function TopicMarketplace() {
     const [currentScreen, setCurrentScreen] = useState("publicTopics" as "publicTopics" | "subscribedTopics" | "myTopics")
     const [subscribedTopics, setSubscribedTopics] = useState([] as string[]);
     const [customTopics, setCustomTopics] = useState([] as {title: string, authorId: string, path: string, topicId: string, private: boolean}[]);
-    const [userData, setUserData] = useState({} as {[key: string]: {profilePictureUrl: string, username: string, subscribedTopics: string[]}})
+    const [userData, setUserData] = useState({} as Record<string, {profilePictureUrl: string, username: string, subscribedTopics: string[]}>)
     
     useEffect(() => {
         getCustomTopics()
@@ -46,12 +46,12 @@ export default function TopicMarketplace() {
         ) : currentScreen == "myTopics" ? (
             customTopics.filter(topic => topic.authorId == user.userId)
         ) : []).filter((topic) => (
-            searchValue.trim() == "" ||
-            topic.title.toLowerCase().includes(searchValue.toLowerCase()) ||
-            searchValue.toLowerCase().includes(topic.title.toLowerCase()) ||
-            topic.path.toLowerCase().includes(searchValue.toLowerCase()) ||
-            searchValue.toLowerCase().includes(topic.path.toLowerCase()) ||
-            userData[topic.authorId]?.username.includes(searchValue.toLowerCase()) ||
+            searchValue.trim() == "" ??
+            topic.title.toLowerCase().includes(searchValue.toLowerCase()) ??
+            searchValue.toLowerCase().includes(topic.title.toLowerCase()) ??
+            topic.path.toLowerCase().includes(searchValue.toLowerCase()) ??
+            searchValue.toLowerCase().includes(topic.path.toLowerCase()) ??
+            userData[topic.authorId]?.username.includes(searchValue.toLowerCase()) ??
             searchValue.toLowerCase().includes(userData[topic.authorId]?.username??"WHY AM I HERE?")
         ))
     )
@@ -63,7 +63,7 @@ export default function TopicMarketplace() {
                     <div className="flex flex-row gap-2">
                         {/*<button><IoMdNotificationsOutline /></button>*/}
                         {
-                            (!user || !user.isSignedIn) ? (
+                            (!user?.isSignedIn) ? (
                                 <button onClick={() => {
                                     toast.error(
                                         <>
@@ -101,7 +101,7 @@ export default function TopicMarketplace() {
                 {
                     customTopics.length > 0 ? (
                         customTopicData.map(({title, path, authorId, topicId}, index) => (
-                            <div className={`flex flex-grow h-fit p-5 rounded-md border flex-col gap-6 hover:opacity-100 ${subscribedTopics.includes(topicId) ? "opacity-100 shadow-xl" : "opacity-50"} hover:shadow-xl hover:-translate-y-1 transition-all group`}>
+                            <div key={index} className={`flex flex-grow h-fit p-5 rounded-md border flex-col gap-6 hover:opacity-100 ${subscribedTopics.includes(topicId) ? "opacity-100 shadow-xl" : "opacity-50"} hover:shadow-xl hover:-translate-y-1 transition-all group`}>
                                 <div className="flex flex-col gap-4">
                                     <div className="flex flex-row justify-between items-center">
                                         <div className="text-xl font-semibold">{title}</div>

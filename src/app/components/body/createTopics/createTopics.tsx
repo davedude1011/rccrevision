@@ -24,12 +24,13 @@ import Link from "next/link";
 function PrimaryButton({ children, onClick, disabled }: { children: JSX.Element|string|number|Element|(JSX.Element|string|number|Element)[], onClick?: React.MouseEventHandler<HTMLButtonElement>, disabled?: boolean}) {
     return (
         <button className={`flex flex-row gap-2 bg-[${theme.sideNav}] rounded-md p-2 px-4 items-center ${disabled && "opacity-25"}`} disabled={disabled} onClick={onClick}>
+            {/*@typescript-eslint/no-explicit-any*/}
             {children as any}
         </button>
     )
 }
 
-function generateRandomString(length: number = 20): string {
+function generateRandomString(length = 20): string {
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     let result = '';
     for (let i = 0; i < length; i++) {
@@ -76,8 +77,9 @@ export default function CreateTopicsBody() {
         isPrivate: false,
     }
     const [topicData, setTopicData] = useState(emptyTopicData)
+    //@typescript-eslint/no-explicit-any
     function handleTopicDataChange(key: string, newValue: any) {
-        console.log(key, newValue)
+        //@typescript-eslint/no-unsafe-assignment
         setTopicData((prevState) => ({...prevState, [key]: newValue }))
     }
 
@@ -116,14 +118,14 @@ export default function CreateTopicsBody() {
                         <label htmlFor="topicPath">Topic Path</label>
                         <div className="flex flex-col gap-2">
                             {
-                                topicData.path.split("/").map((pathSegment, index) => (
-                                    <div className="flex flex-row gap-2 items-center h-fit">
+                                topicData.path.split("/").map((_, index) => (
+                                    <div className="flex flex-row gap-2 items-center h-fit" key={index}>
                                         <div className="flex flex-grow h-fit">
                                             <Creatable isLoading={baseTopicPaths.length <= 0} className="bg-transparent text-black w-full" options={
                                                 getIndexOfPaths(index).map((indexedPathSegment) => { return {label: indexedPathSegment, value: indexedPathSegment} })
                                             } onChange={(e) => {
                                                 const tempCurrentPath = topicData.path.split("/")
-                                                tempCurrentPath[index] = e?.value as string
+                                                tempCurrentPath[index] = e!.value as string
                                                 handleTopicDataChange("path", tempCurrentPath.join("/"))
                                             }} />
                                         </div>
@@ -198,7 +200,7 @@ export default function CreateTopicsBody() {
                                 {
                                     topicData.content.map(({type, src, content}, index) => (
                                         type == "header" ? (
-                                            <div className="flex flex-col p-2">
+                                            <div className="flex flex-col p-2" key={index}>
                                                 <div className="flex flex-row justify-between items-center">
                                                     <label htmlFor={`header-${index}`}>Header</label>
                                                     <IoIosClose className="cursor-pointer" onClick={() => {
@@ -298,7 +300,7 @@ export default function CreateTopicsBody() {
                             <>
                                 <textarea className="border p-2 rounded-md bg-transparent" rows={JSON.stringify(topicData, null, 2).split("\n").length} value={JSON.stringify(topicData, null, 2)} onChange={(e) => {
                                     try {
-                                        setTopicData(JSON.parse(e.target.value))
+                                        setTopicData(JSON.parse(e.target.value)??"" as string)
                                     }
                                     catch {}
                                 }}></textarea>
@@ -311,8 +313,8 @@ export default function CreateTopicsBody() {
                     <div className="flex flex-col gap-2">
                         <div className="w-full h-fit flex flex-col gap-2">
                             {
-                                topicData.videos.map((videoUrl, index) => (
-                                    <div className="flex flex-row justify-between w-full items-center gap-2">
+                                topicData.videos.map((_, index) => (
+                                    <div className="flex flex-row justify-between w-full items-center gap-2" key={index}>
                                         <input type="text" id={`header-${index}`} value={topicData.videos[index]}
                                         className="p-2 rounded-md border bg-transparent flex flex-grow"
                                         placeholder="Video url"
@@ -346,17 +348,17 @@ export default function CreateTopicsBody() {
                             if (true) {
                                 addTopicPath(`${topicData.path}/${topicData.title}`, randomTopicId, topicData.title)
                                     .then((response) => {console.log(response)})
-                                    .catch((error) => {toast.error(error)})
+                                    .catch((error: string) => {toast.error(error)})
                                 
                                 addTopicData(randomTopicId, formatDataForServer())
-                                    .catch((error) => {toast.error(error)})
+                                    .catch((error: string) => {toast.error(error)})
     
                                 getUserSubscribedTopicIds()
                                     .then((userSubscribedTopicIds) => {
                                         updateUserSubscribedTopicIds(null, userSubscribedTopicIds ? [...userSubscribedTopicIds, randomTopicId] : [randomTopicId])
                                             .catch((error) => {toast.error(error)})
                                     })
-                                    .catch((error) => {console.error(error)})
+                                    .catch((error: string) => {console.error(error)})
                             }
                             
                             toast.success("Topic published successfully!")

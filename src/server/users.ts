@@ -67,7 +67,7 @@ export async function getFormattedUserData() {
     const results = await Promise.all(promises);
   
     // Format the data into the desired structure
-    const formattedData: { [key: string]: { profilePictureUrl: string; username: string, subscribedTopics: string[] } } = {};
+    const formattedData: Record<string, { profilePictureUrl: string; username: string, subscribedTopics: string[] }> = {};
     results.forEach((user) => {
       if (user) {
         formattedData[user.userId] = {
