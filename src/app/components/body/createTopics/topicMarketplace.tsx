@@ -85,7 +85,7 @@ export default function TopicMarketplace() {
                         }
                     </div>
                 </div>
-                <input type="text" value={searchValue} onChange={(e) => setSearchValue(e.target.value)} placeholder="Search..." className="bg-transparent p-2 rounded-md border w-full"/>
+                <input type="text" value={searchValue} onChange={(e) => setSearchValue(e.target.value)} placeholder="Search..." className={`bg-transparent p-2 rounded-md border w-full opacity-50 focus:opacity-100 focus:outline-none`}/>
                 <div className="flex-row p-1 bg-[#ffffff10] w-fit rounded-md gap-2 md:flex hidden">
                     <button className={`text-sm ${currentScreen == "publicTopics" && `bg-[${theme.body}]`} p-1 px-4 rounded-md`} onClick={() => setCurrentScreen("publicTopics")}>Public Topics</button>
                     <button className={`text-sm ${currentScreen == "subscribedTopics" && `bg-[${theme.body}]`} p-1 px-4 rounded-md`} onClick={() => setCurrentScreen("subscribedTopics")}>Subscribed Topics</button>
@@ -101,7 +101,7 @@ export default function TopicMarketplace() {
                 {
                     customTopics.length > 0 ? (
                         customTopicData.map(({title, path, authorId, topicId}, index) => (
-                            <div key={index} className={`flex flex-grow h-fit p-5 rounded-md border flex-col gap-6 hover:opacity-100 ${subscribedTopics.includes(topicId) ? "opacity-100 shadow-xl" : "opacity-50"} hover:shadow-xl hover:-translate-y-1 transition-all group`}>
+                            <div key={index} className={`flex flex-grow h-fit p-5 rounded-md border-[${theme.sideNav}] shadow-md border flex-col gap-6 hover:opacity-100 ${subscribedTopics.includes(topicId) ? "opacity-100 shadow-xl" : "opacity-50"} hover:shadow-xl hover:-translate-y-1 transition-all group`}>
                                 <div className="flex flex-col gap-4">
                                     <div className="flex flex-row justify-between items-center">
                                         <div className="text-xl font-semibold">{title}</div>
