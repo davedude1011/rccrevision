@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 import { isMobile } from "react-device-detect";
 import { bodyStyling, theme } from "../../style";
 
@@ -78,9 +76,9 @@ export default function CreateTopicsBody() {
         isPrivate: false,
     }
     const [topicData, setTopicData] = useState(emptyTopicData)
-    //@ts-ignore
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     function handleTopicDataChange(key: string, newValue: any) {
-        //@ts-ignore
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         setTopicData((prevState) => ({...prevState, [key]: newValue }))
     }
 
@@ -126,7 +124,7 @@ export default function CreateTopicsBody() {
                                                 getIndexOfPaths(index).map((indexedPathSegment) => { return {label: indexedPathSegment, value: indexedPathSegment} })
                                             } onChange={(e) => {
                                                 const tempCurrentPath = topicData.path.split("/")
-                                                // @ts-ignore
+                                                // eslint-disable-next-line @typescript-eslint/non-nullable-type-assertion-style
                                                 tempCurrentPath[index] = e?.value as string
                                                 handleTopicDataChange("path", tempCurrentPath.join("/"))
                                             }} />
