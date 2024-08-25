@@ -33,6 +33,7 @@ export const topics = createTableTopics(
     path: varchar("path", { length: 2048 }),
     authorId: varchar("author_id", { length: 256 }),
     baseTopic: boolean("base_topic"),
+    private: boolean("private"),
     createdAt: timestamp("created_at", { withTimezone: true })
       .default(sql`CURRENT_TIMESTAMP`)
       .notNull(),
@@ -65,6 +66,7 @@ export const users = createTableUsers(
     id: serial("id").primaryKey(),
     userId: varchar("user_id", { length: 256 }).notNull(),
     likes: json("likes"),
+    subscribedTopicIds: json("subscribed_topic_ids"),
     createdAt: timestamp("created_at", { withTimezone: true })
       .default(sql`CURRENT_TIMESTAMP`)
       .notNull(),

@@ -3,7 +3,7 @@
 import { eq, inArray, or, sql } from "drizzle-orm";
 import { db } from "./db";
 import { topics, topicsData, users } from "./db/schema";
-import { getUserLikes } from "./users";
+import { getUserLikes, getUserSubscribedTopicIds } from "./users";
 import { auth } from "@clerk/nextjs/server";
 //import pathArray from "python/formatTopicsData/pathArray.json";
 //import dataArray from "python/formatTopicsData/dataArray.json";
@@ -17,15 +17,19 @@ export async function getTopics(topicIds: string[]|null = null) {
   return await db.select().from(topics)
 }
 
-const subscribedTopicIds = [] as string[]
+export async function getSubscribedTopics(getPaths=false) {
+  const subscribedTopicIds = await getUserSubscribedTopicIds()
 
-export async function getSubscribedTopics() {
-  return await db.select().from(topics).where(
+  const subscribedTopics =  await db.select().from(topics).where(
     or(
       eq(topics.baseTopic, true),
-      inArray(topics.topicId, subscribedTopicIds),
+      inArray(topics.topicId, subscribedTopicIds??[]),
     )
   )
+  if (getPaths) {
+    return subscribedTopics.map((topic) => { return topic.path })
+  }
+  return subscribedTopics
 }
 
 export async function getFormattedData() {
@@ -34,19 +38,21 @@ export async function getFormattedData() {
   const formattedData: Record<string, any> = {};
 
   for (const topic of topicsData) {
-    const pathSections = topic.path?.split("/")
-    if (pathSections && pathSections.length > 0) {
-      let currentLevel = formattedData
-      const lastPathSection = pathSections.pop() ?? "1"
-      for (const pathSection of pathSections ?? []) {
-        if (!currentLevel[pathSection]) {
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-explicit-any
-          currentLevel[pathSection] = {}
+    if (typeof topic != "string") {
+      const pathSections = topic?.path?.split("/")
+      if (pathSections && pathSections.length > 0) {
+        let currentLevel = formattedData
+        const lastPathSection = pathSections.pop() ?? "1"
+        for (const pathSection of pathSections ?? []) {
+          if (!currentLevel[pathSection]) {
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-explicit-any
+            currentLevel[pathSection] = {}
+          }
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          currentLevel = currentLevel[pathSection]
         }
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-        currentLevel = currentLevel[pathSection]
+        currentLevel[lastPathSection] = topic?.topicId
       }
-      currentLevel[lastPathSection] = topic.topicId
     }
   }
 
@@ -55,14 +61,21 @@ export async function getFormattedData() {
 
 const authorId = null
 
-export async function addTopicPath(path: string, pathId: string) {
-  await db.insert(topics).values({
-    topicId: pathId,
-    title: path.split("/").pop() ?? "FILE NAME NOT FOUND. PATH: "+path,
-    path: path,
-    authorId: authorId,
-    baseTopic: true,
-  })
+export async function addTopicPath(path: string, pathId: string, title: string|null = null) {
+  const user = auth()
+  if (user.userId) {
+    await db.insert(topics).values({
+      topicId: pathId,
+      title: title??path.split("/").pop() ?? "FILE NAME NOT FOUND. PATH: "+path,
+      path: path,
+      authorId: user.userId,
+      baseTopic: false,
+    })
+    return "Successfully submitted topic path"
+  }
+  else {
+    return null
+  }
 }
 
 /*export async function tempFunctionAddAllTopicPaths() {
@@ -71,7 +84,7 @@ export async function addTopicPath(path: string, pathId: string) {
   }
 }*/
 
-export async function getTopicData(topicId: string, addView = true) {
+export async function getTopicData(topicId: string, addView=true) {
   if (addView) {
     await db.update(topicsData).set({ views: sql`${topicsData.views} + 1` }).where(eq(topicsData.topicId, topicId));
   }
@@ -113,4 +126,8 @@ export async function likeTopic(topicId: string) {
 export async function getLikedTopicsData() {
   const likedTopicIds = await getUserLikes()
   return getTopics(likedTopicIds)
+}
+
+export async function getCustomTopics() {
+  return await db.select().from(topics).where(eq(topics.baseTopic, false))
 }

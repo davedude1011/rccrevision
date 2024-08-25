@@ -78,7 +78,7 @@ const prebuiltData = [
     }
   ]
 
-function PrebuiltTopicsNavigation() {
+export function PrebuiltTopicsNavigation() {
     return (
         prebuiltData.map((data, index) => (
             <div key={index} className={`border border-[${theme.sideNav}] shadow-md rounded-md
@@ -118,11 +118,6 @@ function getValueAtPath(dictionary: never, path: string[]) {
     // Return the final value found at the path
     return currentLevel;
   }
-
-function getRandomString(min: number, max: number) {
-    const length = Math.floor(Math.random() * (max - min + 1)) + min;
-    return Array.from({ length }, () => 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'[Math.floor(Math.random() * 62)]).join('');
-};
 
 export default function TopicsNavigation() {
     const user = useAuth()

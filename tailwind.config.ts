@@ -14,7 +14,8 @@ export default {
     'pt-8',
     'flex-1',
     'h-screen',
-    'overflow-auto'
+    'overflow-auto',
+    'p-12'
   ],
   theme: {
     extend: {

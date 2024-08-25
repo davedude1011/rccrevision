@@ -7,6 +7,7 @@ import { FiHeadphones, FiSliders } from "react-icons/fi";
 import { VscGitPullRequestCreate } from "react-icons/vsc";
 import { AiOutlineFileText, AiOutlineRobot } from "react-icons/ai";
 import { MdOutlineSchool } from "react-icons/md";
+import { RiShoppingBag4Line } from "react-icons/ri";
 
 import { AiOutlineMenuFold, AiOutlineMenuUnfold } from "react-icons/ai";
 
@@ -46,9 +47,9 @@ const sideNavData = [
         icon: <FiSliders />,
     },
     {
-        title: "Create Topics",
-        link: "/create-topics",
-        icon: <VscGitPullRequestCreate />,
+        title: "Topic Marketplace",
+        link: "/topic-marketplace",
+        icon: <RiShoppingBag4Line />,
     },
     {
         title: "Chatbot",
