@@ -103,7 +103,7 @@ export default function TopicMarketplace() {
                         customTopicData.map(({title, path, authorId, topicId}, index) => (
                             <div key={index} className={`flex flex-grow h-fit p-5 rounded-md border-[${theme.sideNav}] shadow-md border flex-col gap-6 hover:opacity-100 ${subscribedTopics.includes(topicId) ? "opacity-100 shadow-xl" : "opacity-50"} hover:shadow-xl hover:-translate-y-1 transition-all group`}>
                                 <div className="flex flex-col gap-4">
-                                    <div className="flex flex-row justify-between items-center">
+                                    <div className="flex flex-row justify-between items-center gap-2">
                                         <div className="text-xl font-semibold">{title}</div>
                                         {
                                             subscribedTopics.includes(topicId) && (
