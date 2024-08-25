@@ -1,9 +1,8 @@
-import { isMobile } from "react-device-detect";
 import { bodyStyling, theme } from "../../style";
 
 import { RiShoppingBag4Line } from "react-icons/ri";
 import { useEffect, useState } from "react";
-import { addTopicData, addTopicPath, getFormattedData, getSubscribedTopics } from "~/server/topicsData";
+import { addTopicData, addTopicPath, getSubscribedTopics } from "~/server/topicsData";
 import { FiPlus } from "react-icons/fi";
 import { LuEye, LuEyeOff } from "react-icons/lu";
 import { IoIosClose, IoIosVideocam } from "react-icons/io";
@@ -13,7 +12,7 @@ import { ImEmbed2 } from "react-icons/im";
 import { GoInfo } from "react-icons/go";
 
 import Switch from "react-switch";
-import Creatable, { useCreatable } from 'react-select/creatable';
+import Creatable from 'react-select/creatable';
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -300,6 +299,7 @@ export default function CreateTopicsBody() {
                             <>
                                 <textarea className="border p-2 rounded-md bg-transparent" rows={((JSON.stringify(topicData, null, 2)??"").split("\n")??"").length} value={JSON.stringify(topicData, null, 2)??""} onChange={(e) => {
                                     try {
+                                        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                                         setTopicData(JSON.parse(e.target.value)??"" as string)
                                     }
                                     catch {}
