@@ -24,8 +24,7 @@ import Link from "next/link";
 function PrimaryButton({ children, onClick, disabled }: { children: JSX.Element|string|number|Element|(JSX.Element|string|number|Element)[], onClick?: React.MouseEventHandler<HTMLButtonElement>, disabled?: boolean}) {
     return (
         <button className={`flex flex-row gap-2 bg-[${theme.sideNav}] rounded-md p-2 px-4 items-center ${disabled && "opacity-25"}`} disabled={disabled} onClick={onClick}>
-            {/*@typescript-eslint/no-explicit-any*/}
-            {children as any}
+            {children as never}
         </button>
     )
 }
@@ -77,9 +76,9 @@ export default function CreateTopicsBody() {
         isPrivate: false,
     }
     const [topicData, setTopicData] = useState(emptyTopicData)
-    //@typescript-eslint/no-explicit-any
+    //@ts-ignore
     function handleTopicDataChange(key: string, newValue: any) {
-        //@typescript-eslint/no-unsafe-assignment
+        //@ts-ignore
         setTopicData((prevState) => ({...prevState, [key]: newValue }))
     }
 
@@ -125,7 +124,8 @@ export default function CreateTopicsBody() {
                                                 getIndexOfPaths(index).map((indexedPathSegment) => { return {label: indexedPathSegment, value: indexedPathSegment} })
                                             } onChange={(e) => {
                                                 const tempCurrentPath = topicData.path.split("/")
-                                                tempCurrentPath[index] = e!.value as string
+                                                // @ts-ignore
+                                                tempCurrentPath[index] = e?.value as string
                                                 handleTopicDataChange("path", tempCurrentPath.join("/"))
                                             }} />
                                         </div>
@@ -298,7 +298,7 @@ export default function CreateTopicsBody() {
                             </>
                         ) : (
                             <>
-                                <textarea className="border p-2 rounded-md bg-transparent" rows={JSON.stringify(topicData, null, 2).split("\n").length} value={JSON.stringify(topicData, null, 2)} onChange={(e) => {
+                                <textarea className="border p-2 rounded-md bg-transparent" rows={((JSON.stringify(topicData, null, 2)??"").split("\n")??"").length} value={JSON.stringify(topicData, null, 2)??""} onChange={(e) => {
                                     try {
                                         setTopicData(JSON.parse(e.target.value)??"" as string)
                                     }
@@ -356,7 +356,7 @@ export default function CreateTopicsBody() {
                                 getUserSubscribedTopicIds()
                                     .then((userSubscribedTopicIds) => {
                                         updateUserSubscribedTopicIds(null, userSubscribedTopicIds ? [...userSubscribedTopicIds, randomTopicId] : [randomTopicId])
-                                            .catch((error) => {toast.error(error)})
+                                            .catch((error: string) => {toast.error(error)})
                                     })
                                     .catch((error: string) => {console.error(error)})
                             }
