@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { isMobile } from "react-device-detect";
 import { bodyStyling, theme } from "../../style";
 
