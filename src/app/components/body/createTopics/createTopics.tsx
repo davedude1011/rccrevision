@@ -299,7 +299,7 @@ export default function CreateTopicsBody() {
                             <>
                                 <textarea className="border p-2 rounded-md bg-transparent" rows={((JSON.stringify(topicData, null, 2)??"").split("\n")??"").length} value={JSON.stringify(topicData, null, 2)??""} onChange={(e) => {
                                     try {
-                                        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+                                        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment @typescript-eslint/no-unsafe-argument
                                         setTopicData(JSON.parse(e.target.value)??"" as string)
                                     }
                                     catch {}
