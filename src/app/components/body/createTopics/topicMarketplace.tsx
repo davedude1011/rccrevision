@@ -46,12 +46,13 @@ export default function TopicMarketplace() {
         ) : currentScreen == "myTopics" ? (
             customTopics.filter(topic => topic.authorId == user.userId)
         ) : []).filter((topic) => (
-            searchValue.trim() == "" ??
-            topic.title.toLowerCase().includes(searchValue.toLowerCase()) ??
-            searchValue.toLowerCase().includes(topic.title.toLowerCase()) ??
-            topic.path.toLowerCase().includes(searchValue.toLowerCase()) ??
-            searchValue.toLowerCase().includes(topic.path.toLowerCase()) ??
-            userData[topic.authorId]?.username.includes(searchValue.toLowerCase()) ??
+            searchValue.trim() == "" ||
+            topic.title.toLowerCase().includes(searchValue.toLowerCase()) ||
+            searchValue.toLowerCase().includes(topic.title.toLowerCase()) ||
+            topic.path.toLowerCase().includes(searchValue.toLowerCase()) ||
+            searchValue.toLowerCase().includes(topic.path.toLowerCase()) ||
+            // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
+            userData[topic.authorId]?.username.includes(searchValue.toLowerCase()) ||
             searchValue.toLowerCase().includes(userData[topic.authorId]?.username??"WHY AM I HERE?")
         ))
     )
