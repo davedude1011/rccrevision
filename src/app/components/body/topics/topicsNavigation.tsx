@@ -26,9 +26,6 @@ import { clearUserHistory, getResponse, getUserHistory } from "~/server/gemini";
 import { FaHeart } from "react-icons/fa";
 import { mathJaxConfig } from "../../mathJaxConfig";
 
-import { Worker, Viewer } from '@react-pdf-viewer/core';
-import '@react-pdf-viewer/core/lib/styles/index.css';
-
 
 const prebuiltData = [
     {
@@ -558,9 +555,7 @@ export default function TopicsNavigation() {
                                                     </div>
                                                 ) : type == "pdf" ? (
                                                      <div key={index} className="w-full md:w-2/3">
-                                                         <Worker workerUrl={`https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js`}>
-                                                            <Viewer fileUrl={"/pdf/" + content} />
-                                                         </Worker>
+                                                         <iframe src={"/pdf/" + content}></iframe>
                                                      </div>
  
                                                 ) : null
