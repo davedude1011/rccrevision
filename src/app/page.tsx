@@ -3,13 +3,8 @@
 import { useState } from "react";
 import SideNav from "./components/sideNav/sideNav";
 import Body from "./components/body/body";
+import AudioComponent from "./components/audio/audio";
 
 export default function HomePage() {
-  const [sideNavOut, setSideNavOut] = useState(false);
-  return (
-    <div className="flex flex-row">
-      <SideNav {...{sideNavOut, setSideNavOut}}></SideNav>
-      <Body />
-    </div>
-  )
+  return <Body />
 }

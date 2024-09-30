@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { bodyStyling, theme } from "../../style";
+import { theme } from "../../style";
 import { SignInButton, useAuth } from "@clerk/clerk-react";
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
@@ -56,7 +56,7 @@ export default function TopicMarketplace() {
         ))
     )
     return (
-        <div className={`${bodyStyling} py-8 flex flex-col items-center text-white`}>
+        <div className="py-8 flex flex-col items-center text-white w-full h-full">
             <div className="flex flex-col w-full gap-2 px-12">
                 <div className="flex flex-col gap-4 md:gap-0 md:flex-row md:justify-between md:items-end">
                     <div className="text-xl md:text-2xl font-bold">Topic Marketplace</div>

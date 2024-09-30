@@ -1,14 +1,5 @@
 "use client"
 
-import { BiSearch } from "react-icons/bi";
-import { CiBookmark } from "react-icons/ci";
-import { PiMathOperations } from "react-icons/pi";
-import { FiHeadphones, FiSliders } from "react-icons/fi";
-import { VscGitPullRequestCreate } from "react-icons/vsc";
-import { AiOutlineFileText, AiOutlineRobot } from "react-icons/ai";
-import { MdOutlineSchool } from "react-icons/md";
-import { RiShoppingBag4Line } from "react-icons/ri";
-
 import { AiOutlineMenuFold, AiOutlineMenuUnfold } from "react-icons/ai";
 
 import { scrollBarStyle, theme } from "../style";
@@ -19,62 +10,79 @@ import { isMobile } from "react-device-detect";
 import { SignedIn, SignedOut, SignInButton, useAuth, UserButton } from "@clerk/nextjs"
 import { useEffect, useState } from "react";
 import { addUser, getUserData } from "~/server/users";
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import { LuBookmark, LuCalendar, LuGalleryThumbnails, LuGraduationCap, LuHeadphones, LuSearch, LuShoppingBag, LuSliders, LuSparkles } from "react-icons/lu";
 
 const sideNavData = [
     {
         title: "Search",
         link: "/search",
-        icon: <BiSearch />,
+        icon: <LuSearch />,
     },
     {
         title: "Topics",
         link: "/topics",
-        icon: <CiBookmark />,
+        icon: <LuBookmark />,
     },
+    /*
     {
         title: "Sparx Database",
         link: "/sparx-database",
-        icon: <PiMathOperations />,
+        icon: <LuGalleryThumbnails />,
     },
+    */
     {
         title: "Podcasts",
-        link: "/podcasts",
-        icon: <FiHeadphones />,
+        newAudioComponentDataName: "podcasts",
+        icon: <LuHeadphones />,
     },
     {
         title: "Interactables",
         link: "/interactables",
-        icon: <FiSliders />,
+        icon: <LuSliders />,
     },
     {
         title: "Topic Marketplace",
         link: "/topic-marketplace",
-        icon: <RiShoppingBag4Line />,
+        icon: <LuShoppingBag />,
     },
     {
         title: "Chatbot",
         link: "/chatbot",
-        icon: <AiOutlineRobot />,
+        icon: <LuSparkles />,
     },
     {
-        title: "Past Papers",
-        link: "/past-papers",
-        icon: <AiOutlineFileText />,
+        title: "Exam Practice",
+        link: "/exam-practice",
+        icon: <LuGraduationCap />,
     },
+    {
+        title: "Calendar",
+        link: "/calendar",
+        icon: <LuCalendar />,
+    },
+    /*
     {
         title: "Curriculum",
         link: "/curriculum",
         icon: <MdOutlineSchool />,
     }
+        */
 ]
 
 export default function SideNav({
     sideNavOut,
     setSideNavOut,
+    audioComponentDataNames,
+    setAudioComponentDataNames
 }: {
     sideNavOut: boolean;
     setSideNavOut: (sideNavOut: boolean) => void;
+    audioComponentDataNames: string[],
+    setAudioComponentDataNames: (audioComponentDataNames: string[]) => void;
 }) {
+    const forceMobile = false;
     const pathname = usePathname()
 
     const [userData, setUserData] = useState(null as { username: string } | null)
@@ -97,15 +105,15 @@ export default function SideNav({
     return (
         <>
             {
-                isMobile &&
-                    <button className="absolute top-0 left-0 m-4 text-white" onClick={() => {
+                (isMobile || forceMobile) &&
+                    <button className="absolute top-0 left-0 m-4 text-white z-10" onClick={() => {
                         setSideNavOut(!sideNavOut)
                     }}>
                         <AiOutlineMenuUnfold size={24} />
                     </button>
             }
             <div className={`${
-                sideNavOut ? (isMobile ? "w-screen absolute z-50" : "max-w-64 min-w-52 w-fit") : (isMobile ? "w-0" : "max-w-24 min-w-16 w-fit")
+                sideNavOut ? ((isMobile || forceMobile) ? "w-screen absolute z-50" : "max-w-64 min-w-52 w-fit") : ((isMobile || forceMobile) ? "w-0" : "max-w-24 min-w-16 w-fit")
             } h-screen overflow-y-auto ${scrollBarStyle} bg-[${theme.sideNav}] text-[${theme.text}]
             flex flex-col transition-all overflow-x-hidden duration-100`}>
                 <div className={`flex flex-row gap-5 items-center justify-between md:justify-start p-5 border-b border-[${theme.body}]`}>
@@ -131,18 +139,55 @@ export default function SideNav({
                 </div>
                 <div className={`w-full flex-1 p-5 flex flex-col ${!sideNavOut && "text-lg gap-[0.375rem]"}`}>
                     {
-                        sideNavData.map(({ title, link, icon }, index) => (
-                            <Link href={{
-                                pathname: link,
-                            }} prefetch={true} key={index}>
-                                <button className={`${
-                                    pathname.includes(link) ? `bg-[${theme.body}] opacity-100` : "opacity-50"
-                                } text-start p-2 rounded-md hover:bg-[${theme.body}] hover:opacity-100
-                                flex flex-row gap-2 items-center font-thin w-full`}>
-                                    {icon}
-                                    {sideNavOut && title}
-                                </button>
-                            </Link>
+                        sideNavData.map(({ title, link, newAudioComponentDataName, icon }: { title: string, link?: string, newAudioComponentDataName?: string, icon: JSX.Element }, index) => (
+                            <>
+                                {
+                                    link && (
+                                        <Link
+                                        href={{
+                                            pathname: link,
+                                        }} 
+                                        prefetch={true}
+                                        key={index} 
+                                        onClick={() => {
+                                            if (isMobile || forceMobile) {
+                                                setSideNavOut(false)
+                                            }
+                                        }}>
+                                            <button className={`${
+                                                pathname.includes(link) ? `bg-[${theme.body}] opacity-100` : "opacity-50"
+                                            } text-start p-2 rounded-md hover:bg-[${theme.body}] hover:opacity-100
+                                            flex flex-row gap-2 items-center font-thin w-full`}>
+                                                {icon}
+                                                {sideNavOut && title}
+                                            </button>
+                                        </Link>
+                                    )
+                                }
+                                {
+                                    newAudioComponentDataName && (
+                                        <button className={`${
+                                            audioComponentDataNames.includes(newAudioComponentDataName) ? `bg-[${theme.body}] opacity-100` : "opacity-50"
+                                        } text-start p-2 rounded-md hover:bg-[${theme.body}] hover:opacity-100
+                                        flex flex-row gap-2 items-center font-thin w-full`} onClick={() => {
+                                            if ((isMobile || forceMobile)) {
+                                                toast.error("This feature is not currently available on mobile.")
+                                            }
+                                            else {
+                                                if (audioComponentDataNames.includes(newAudioComponentDataName)) {
+                                                    setAudioComponentDataNames(audioComponentDataNames.filter(name => name!== newAudioComponentDataName))
+                                                }
+                                                else {
+                                                    setAudioComponentDataNames([...audioComponentDataNames, newAudioComponentDataName])
+                                                }
+                                            }
+                                        }}>
+                                            {icon}
+                                            {sideNavOut && title}
+                                        </button>
+                                    )
+                                }
+                            </>
                         ))
                     }
                 </div>

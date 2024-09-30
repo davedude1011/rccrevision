@@ -10,12 +10,15 @@ export default {
     'hover:border-[#242424]',
     'border-[#242424]',
     'hover:bg-[#242424]',
+    'hover:bg-[#1F1F1F]',
     'border-[#1F1F1F]',
     'pt-8',
     'flex-1',
     'h-screen',
     'overflow-auto',
-    'p-12'
+    'relative',
+    'from-[#1F1F1F]',
+    'from-[#242424]',
   ],
   theme: {
     extend: {

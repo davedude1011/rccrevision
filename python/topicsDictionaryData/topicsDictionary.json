@@ -1,0 +1,2856 @@
+[
+    {
+        "word": "surd",
+        "forms": ["radical", "surds"],
+        "definition": "An expression containing a root symbol, such as a square root or cube root.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Surd"
+    },
+    {
+        "word": "rationalisation",
+        "forms": ["rationalize"],
+        "definition": "The process of eliminating a radical from the denominator of a fraction.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Surd#Rationalising_the_denominator"
+    },
+    {
+        "word": "radical",
+        "forms": ["square root", "cube root"],
+        "definition": "A root symbol used to denote the root of a number.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Radical_(mathematics)"
+    },
+    {
+        "word": "quadratic",
+        "forms": ["quadratic equation", "quadratic function"],
+        "definition": "An equation of the form ax^2 + bx + c = 0 where a, b, and c are constants.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Quadratic_equation"
+    },
+    {
+        "word": "factor",
+        "forms": ["factoring", "factors"],
+        "definition": "A number or algebraic expression that divides another number or expression evenly.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Factor_(mathematics)"
+    },
+    {
+        "word": "algebra",
+        "forms": ["algebraic"],
+        "definition": "A branch of mathematics dealing with symbols and the rules for manipulating those symbols.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Algebra"
+    },
+    {
+        "word": "coordinate",
+        "forms": ["coordinates"],
+        "definition": "A set of values that show an exact position in a space or plane.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Coordinate_system"
+    },
+    {
+        "word": "function",
+        "forms": ["functions"],
+        "definition": "A relation between a set of inputs and a set of permissible outputs where each input is related to exactly one output.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Function_(mathematics)"
+    },
+    {
+        "word": "ratio",
+        "forms": ["ratios"],
+        "definition": "A relationship between two numbers indicating how many times the first number contains the second.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Ratio"
+    },
+    {
+        "word": "proportion",
+        "forms": ["proportions"],
+        "definition": "An equation that states that two ratios are equal.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Proportion"
+    },
+    {
+        "word": "mean",
+        "forms": ["average"],
+        "definition": "The sum of a set of values divided by the number of values.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Arithmetic_mean"
+    },
+    {
+        "word": "median",
+        "forms": ["medians"],
+        "definition": "The middle value in a list of numbers sorted in ascending or descending order.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Median"
+    },
+    {
+        "word": "mode",
+        "forms": ["modes"],
+        "definition": "The value that appears most frequently in a data set.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Mode_(statistics)"
+    },
+    {
+        "word": "variance",
+        "forms": ["variances"],
+        "definition": "A measure of how much values in a data set differ from the mean.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Variance"
+    },
+    {
+        "word": "standard deviation",
+        "forms": ["deviation"],
+        "definition": "A measure of the amount of variation or dispersion in a set of values.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Standard_deviation"
+    },
+    {
+        "word": "percentage",
+        "forms": ["percentages"],
+        "definition": "A fraction or ratio expressed as a part of 100.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Percentage"
+    },
+    {
+        "word": "sequence",
+        "forms": ["sequences"],
+        "definition": "An ordered list of numbers following a specific pattern.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Sequence"
+    },
+    {
+        "word": "series",
+        "forms": ["series"],
+        "definition": "The sum of the terms of a sequence.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Series_(mathematics)"
+    },
+    {
+        "word": "exponent",
+        "forms": ["exponents", "powers"],
+        "definition": "The power to which a number or expression is raised.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Exponentiation"
+    },
+    {
+        "word": "logarithm",
+        "forms": ["logarithms"],
+        "definition": "The exponent or power to which a base number must be raised to obtain a given number.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Logarithm"
+    },
+    {
+        "word": "trigonometry",
+        "forms": ["trigonometric"],
+        "definition": "The branch of mathematics dealing with the relationships between the angles and sides of triangles.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Trigonometry"
+    },
+    {
+        "word": "sine",
+        "forms": ["cosine", "tangent"],
+        "definition": "In trigonometry, the ratio of the length of the opposite side to the hypotenuse in a right-angled triangle.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Sine"
+    },
+    {
+        "word": "cosine",
+        "forms": ["sine", "tangent"],
+        "definition": "In trigonometry, the ratio of the length of the adjacent side to the hypotenuse in a right-angled triangle.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Cosine"
+    },
+    {
+        "word": "tangent",
+        "forms": ["sine", "cosine"],
+        "definition": "In trigonometry, the ratio of the length of the opposite side to the adjacent side in a right-angled triangle.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Tangent"
+    },
+    {
+        "word": "geometry",
+        "forms": ["geometric"],
+        "definition": "The branch of mathematics involving points, lines, planes, and figures, and their properties, measurement, and mutual relations.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Geometry"
+    },
+    {
+        "word": "angle",
+        "forms": ["angles"],
+        "definition": "The space between two intersecting lines or surfaces measured in degrees.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Angle"
+    },
+    {
+        "word": "parallel",
+        "forms": ["parallels"],
+        "definition": "Lines or planes that are equidistant from each other at all points and never meet.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Parallel_lines"
+    },
+    {
+        "word": "perpendicular",
+        "forms": ["perpendicularity"],
+        "definition": "Lines or surfaces that intersect at a right angle (90 degrees).",
+        "wikipedia": "https://en.wikipedia.org/wiki/Perpendicular"
+    },
+    {
+        "word": "polygon",
+        "forms": ["polygons"],
+        "definition": "A plane figure with at least three straight sides and angles, typically five or more.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Polygon"
+    },
+    {
+        "word": "circle",
+        "forms": ["circles"],
+        "definition": "A round plane figure whose boundary (the circumference) consists of points equidistant from the center.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Circle"
+    },
+    {
+        "word": "radius",
+        "forms": ["radii"],
+        "definition": "The distance from the center of a circle to any point on its circumference.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Radius"
+    },
+    {
+        "word": "diameter",
+        "forms": ["diameters"],
+        "definition": "A straight line passing from side to side through the center of a circle or sphere.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Diameter"
+    },
+    {
+        "word": "circumference",
+        "forms": ["circumferences"],
+        "definition": "The distance around the edge of a circle.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Circumference"
+    },
+    {
+        "word": "area",
+        "forms": ["areas"],
+        "definition": "The extent or measurement of a surface, typically in square units.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Area"
+    },
+    {
+        "word": "volume",
+        "forms": ["volumes"],
+        "definition": "The amount of space that a substance or object occupies.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Volume"
+    },
+    {
+        "word": "matrix",
+        "forms": ["matrices"],
+        "definition": "A rectangular array of numbers or expressions arranged in rows and columns.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Matrix_(mathematics)"
+    },
+    {
+        "word": "determinant",
+        "forms": ["determinants"],
+        "definition": "A value calculated from the elements of a square matrix that provides information about the matrix.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Determinant"
+    },
+    {
+        "word": "vector",
+        "forms": ["vectors"],
+        "definition": "A quantity having direction as well as magnitude.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Vector_(mathematics_and_physics)"
+    },
+    {
+        "word": "scalar",
+        "forms": ["scalars"],
+        "definition": "A quantity that only has magnitude and no direction.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Scalar_(mathematics_and_physics)"
+    },
+    {
+        "word": "theorem",
+        "forms": ["theorems"],
+        "definition": "A statement that has been proven to be true based on axioms and previously established theorems.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Theorem"
+    },
+    {
+        "word": "proof",
+        "forms": ["proofs"],
+        "definition": "A logical argument demonstrating the truth of a theorem or statement.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Proof_(mathematics)"
+    },
+    {
+        "word": "congruence",
+        "forms": ["congruent"],
+        "definition": "The quality of being identical in form and size; having the same shape and size.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Congruence_(geometry)"
+    },
+    {
+        "word": "similarity",
+        "forms": ["similar"],
+        "definition": "The property of having the same shape but not necessarily the same size.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Similarity_(geometry)"
+    },
+    {
+        "word": "differentiation",
+        "forms": ["differentiates"],
+        "definition": "The process of finding the derivative of a function.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Differentiation_(mathematics)"
+    },
+    {
+        "word": "integration",
+        "forms": ["integrates"],
+        "definition": "The process of finding the integral of a function, representing the area under the curve.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Integral"
+    },
+    {
+        "word": "limit",
+        "forms": ["limits"],
+        "definition": "A value that a function or sequence approaches as the input or index approaches some value.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Limit_(mathematics)"
+    },
+    {
+        "word": "probability",
+        "forms": ["probabilities"],
+        "definition": "The measure of the likelihood of an event occurring.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Probability"
+    },
+    {
+        "word": "distribution",
+        "forms": ["distributions"],
+        "definition": "A function that shows the possible values of a variable and how often they occur.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Probability_distribution"
+    },
+    {
+        "word": "normal distribution",
+        "forms": ["Gaussian distribution"],
+        "definition": "A probability distribution that is symmetric about the mean, showing that data near the mean are more frequent in occurrence.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Normal_distribution"
+    },
+    {
+        "word": "binomial",
+        "forms": ["binomials"],
+        "definition": "An algebraic expression with two terms separated by a plus or minus sign.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Binomial"
+    },
+    {
+        "word": "bearing",
+        "forms": ["bearings"],
+        "definition": "A direction or angle relative to a reference direction, typically used in navigation and geometry.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Bearing_(navigation)"
+    },
+    {
+        "word": "equidistant",
+        "forms": [],
+        "definition": "Equal distance from two or more points.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Equidistant"
+    },
+    {
+        "word": "transformation",
+        "forms": ["transformations"],
+        "definition": "An operation that moves or changes a shape in some way to produce a new shape.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Transformation_(geometry)"
+    },
+    {
+        "word": "linear",
+        "forms": ["linearity"],
+        "definition": "Describing a relationship or function that forms a straight line when graphed.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Linear_equation"
+    },
+    {
+        "word": "nonlinear",
+        "forms": ["nonlinearity"],
+        "definition": "Describing a relationship or function that does not form a straight line when graphed.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Nonlinear_system"
+    },
+    {
+        "word": "coefficient",
+        "forms": ["coefficients"],
+        "definition": "A numerical or constant quantity placed before and multiplying the variable in an algebraic expression.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Coefficient"
+    },
+    {
+        "word": "constant",
+        "forms": ["constants"],
+        "definition": "A fixed value that does not change.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Constant_(mathematics)"
+    },
+    {
+        "word": "reciprocal",
+        "forms": ["reciprocals"],
+        "definition": "The multiplicative inverse of a number, such that the product of a number and its reciprocal is 1.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Reciprocal"
+    },
+    
+
+
+
+
+
+
+
+
+    {
+        "word": "complex number",
+        "forms": ["complex numbers"],
+        "definition": "A number that can be expressed in the form a + bi where a and b are real numbers and i is the imaginary unit.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Complex_number"
+    },
+    {
+        "word": "imaginary unit",
+        "forms": ["i"],
+        "definition": "The square root of -1, used to define complex numbers.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Imaginary_unit"
+    },
+    {
+        "word": "quadratic formula",
+        "forms": ["quadratic equations"],
+        "definition": "A formula used to solve quadratic equations: x = (-b ± √(b² - 4ac)) / 2a.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Quadratic_formula"
+    },
+    {
+        "word": "polar coordinates",
+        "forms": ["polar coordinate system"],
+        "definition": "A coordinate system where each point on a plane is determined by a distance from a reference point and an angle from a reference direction.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Polar_coordinate_system"
+    },
+    {
+        "word": "parametric equations",
+        "forms": ["parametric form"],
+        "definition": "Equations where the coordinates of the points are expressed as functions of a parameter.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Parametric_equation"
+    },
+    {
+        "word": "differential equation",
+        "forms": ["differential equations"],
+        "definition": "An equation that involves derivatives of a function or functions.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Differential_equation"
+    },
+    {
+        "word": "integration by parts",
+        "forms": ["integration", "integration methods"],
+        "definition": "A technique used to integrate products of functions by transforming them into simpler integrals.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Integration_by_parts"
+    },
+    {
+        "word": "partial fractions",
+        "forms": ["partial fraction decomposition"],
+        "definition": "A method for breaking down rational functions into simpler fractions that are easier to integrate.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Partial_fraction_decomposition"
+    },
+    {
+        "word": "eigenvalue",
+        "forms": ["eigenvalues"],
+        "definition": "A scalar that indicates how much a corresponding eigenvector is stretched or compressed during a linear transformation.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors"
+    },
+    {
+        "word": "eigenvector",
+        "forms": ["eigenvectors"],
+        "definition": "A non-zero vector that changes by only a scalar factor when a linear transformation is applied.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors"
+    },
+    {
+        "word": "matrix multiplication",
+        "forms": ["matrix product"],
+        "definition": "A binary operation that produces a matrix from two matrices by performing a specific summation of products.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Matrix_multiplication"
+    },
+    {
+        "word": "determinant",
+        "forms": ["determinants"],
+        "definition": "A scalar value that can be computed from the elements of a square matrix and provides information about the matrix.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Determinant"
+    },
+    {
+        "word": "trigonometric identities",
+        "forms": ["trigonometric formulas"],
+        "definition": "Equations involving trigonometric functions that are true for all values of the variables involved.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Trigonometric_identity"
+    },
+    {
+        "word": "binomial theorem",
+        "forms": ["binomial expansion"],
+        "definition": "A formula for expressing the powers of a binomial as a sum of terms involving coefficients, powers of the variables, and factorials.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Binomial_theorem"
+    },
+    {
+        "word": "Lagrange multipliers",
+        "forms": ["Lagrange multiplier method"],
+        "definition": "A method used to find the local maxima and minima of a function subject to equality constraints.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Lagrange_multipliers"
+    },
+    {
+        "word": "Fourier series",
+        "forms": ["Fourier transform"],
+        "definition": "A way to represent a function as the sum of simple sine waves.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Fourier_series"
+    },
+    {
+        "word": "Taylor series",
+        "forms": ["Maclaurin series"],
+        "definition": "A representation of a function as an infinite sum of terms calculated from the values of its derivatives at a single point.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Taylor_series"
+    },
+    {
+        "word": "logarithm",
+        "forms": ["logarithms"],
+        "definition": "The exponent or power to which a base number must be raised to obtain a given number.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Logarithm"
+    },
+    {
+        "word": "recurrence relation",
+        "forms": ["recurrence relations"],
+        "definition": "An equation that recursively defines a sequence of values using previous terms.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Recurrence_relation"
+    },
+    {
+        "word": "complex plane",
+        "forms": ["Argand diagram"],
+        "definition": "A two-dimensional plane where complex numbers are represented as points or vectors.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Complex_plane"
+    },
+    {
+        "word": "hyperbola",
+        "forms": ["hyperbolas"],
+        "definition": "A type of conic section that is the locus of points where the difference of the distances to two fixed points is constant.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Hyperbola"
+    },
+    {
+        "word": "ellipse",
+        "forms": ["ellipses"],
+        "definition": "A type of conic section that is the locus of points where the sum of the distances to two fixed points is constant.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Ellipse"
+    },
+    {
+        "word": "conic sections",
+        "forms": ["conics"],
+        "definition": "The curves obtained by intersecting a cone with a plane, which include ellipses, hyperbolas, and parabolas.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Conic_section"
+    },
+    {
+        "word": "asymptote",
+        "forms": ["asymptotes"],
+        "definition": "A line that a graph approaches but never touches or crosses.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Asymptote"
+    },
+    {
+        "word": "transformation",
+        "forms": ["geometric transformation"],
+        "definition": "An operation that moves or changes a shape in some way to produce a new shape.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Geometric_transformation"
+    },
+    {
+        "word": "linear transformation",
+        "forms": ["linear maps"],
+        "definition": "A mapping between two vector spaces that preserves the operations of vector addition and scalar multiplication.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Linear_map"
+    },
+    {
+        "word": "nonlinear",
+        "forms": ["nonlinear functions"],
+        "definition": "Functions or equations where the relationship between variables is not linear.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Nonlinear_system"
+    },
+    {
+        "word": "coefficient",
+        "forms": ["coefficients"],
+        "definition": "A numerical or constant quantity placed before a variable in an algebraic expression.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Coefficient"
+    },
+    {
+        "word": "constant",
+        "forms": ["constants"],
+        "definition": "A fixed value that does not change.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Constant_(mathematics)"
+    },
+    {
+        "word": "reciprocal",
+        "forms": ["reciprocals"],
+        "definition": "The multiplicative inverse of a number or expression, such that the product of a number and its reciprocal is 1.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Multiplicative_inverse"
+    },
+    {
+        "word": "binomial",
+        "forms": ["binomials"],
+        "definition": "An algebraic expression consisting of two terms separated by a plus or minus sign.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Binomial_theorem"
+    },
+    {
+        "word": "bearing",
+        "forms": ["bearings"],
+        "definition": "The direction or position of one point relative to another, usually expressed in degrees.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Bearing_(navigation)"
+    },
+    {
+        "word": "equidistant",
+        "forms": ["equidistance"],
+        "definition": "At equal distances from two or more points.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Equidistant"
+    },
+
+
+
+
+
+
+
+
+
+    
+    {
+        "word": "cell",
+        "forms": ["cells"],
+        "definition": "The basic structural and functional unit of all living organisms.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Cell_(biology)"
+    },
+    {
+        "word": "nucleus",
+        "forms": ["nuclei"],
+        "definition": "An organelle in eukaryotic cells that contains the genetic material (DNA).",
+        "wikipedia": "https://en.wikipedia.org/wiki/Nucleus_(cell_biology)"
+    },
+    {
+        "word": "cytoplasm",
+        "forms": ["cytoplasms"],
+        "definition": "The jelly-like substance within a cell, excluding the nucleus, where cellular processes occur.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Cytoplasm"
+    },
+    {
+        "word": "mitochondria",
+        "forms": ["mitochondrion"],
+        "definition": "Organelles known as the powerhouses of the cell, responsible for producing energy through respiration.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Mitochondrion"
+    },
+    {
+        "word": "chloroplast",
+        "forms": ["chloroplasts"],
+        "definition": "An organelle in plant cells that contains chlorophyll and is responsible for photosynthesis.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Chloroplast"
+    },
+    {
+        "word": "photosynthesis",
+        "forms": ["photosynthetic"],
+        "definition": "The process by which green plants and some other organisms use sunlight to synthesize foods with the help of chlorophyll.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Photosynthesis"
+    },
+    {
+        "word": "enzyme",
+        "forms": ["enzymes"],
+        "definition": "Proteins that act as biological catalysts, speeding up chemical reactions in cells.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Enzyme"
+    },
+    {
+        "word": "dna",
+        "forms": ["deoxyribonucleic acid"],
+        "definition": "A molecule that carries genetic instructions used in growth, development, functioning, and reproduction.",
+        "wikipedia": "https://en.wikipedia.org/wiki/DNA"
+    },
+    {
+        "word": "gene",
+        "forms": ["genes"],
+        "definition": "A segment of DNA that codes for a specific trait or function.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Gene"
+    },
+    {
+        "word": "chromosome",
+        "forms": ["chromosomes"],
+        "definition": "Thread-like structures made of DNA molecules that contain the genes.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Chromosome"
+    },
+    {
+        "word": "mutation",
+        "forms": ["mutations"],
+        "definition": "A change in the DNA sequence that can lead to changes in the organism's traits.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Mutation"
+    },
+    {
+        "word": "genotype",
+        "forms": ["genotypes"],
+        "definition": "The genetic constitution of an organism, often referring to a specific gene or set of genes.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Genotype"
+    },
+    {
+        "word": "phenotype",
+        "forms": ["phenotypes"],
+        "definition": "The observable physical or biochemical characteristics of an organism, as determined by both genetic makeup and environmental influences.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Phenotype"
+    },
+    {
+        "word": "dominate",
+        "forms": ["dominant"],
+        "definition": "An allele that expresses its trait even when only one copy is present.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Dominance_(genetics)"
+    },
+    {
+        "word": "recessive",
+        "forms": ["recessives"],
+        "definition": "An allele that only expresses its trait when two copies are present.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Recessive_gene"
+    },
+    {
+        "word": "allele",
+        "forms": ["alleles"],
+        "definition": "Different forms of a gene that can exist at a specific locus.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Allele"
+    },
+    {
+        "word": "ecosystem",
+        "forms": ["ecosystems"],
+        "definition": "A biological community of interacting organisms and their physical environment.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Ecosystem"
+    },
+    {
+        "word": "biome",
+        "forms": ["biomes"],
+        "definition": "A large naturally occurring community of flora and fauna occupying a major habitat.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Biome"
+    },
+    {
+        "word": "food chain",
+        "forms": ["food chains"],
+        "definition": "A series of organisms each dependent on the next as a source of food.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Food_chain"
+    },
+    {
+        "word": "trophic level",
+        "forms": ["trophic levels"],
+        "definition": "The levels of nourishment in a food chain.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Trophic_level"
+    },
+    {
+        "word": "homeostasis",
+        "forms": ["homeostatic"],
+        "definition": "The process by which living organisms regulate their internal environment to maintain stable conditions.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Homeostasis"
+    },
+    {
+        "word": "osmoregulation",
+        "forms": ["osmoregulate"],
+        "definition": "The regulation of the osmotic pressure of bodily fluids to maintain homeostasis.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Osmoregulation"
+    },
+    {
+        "word": "diffusion",
+        "forms": ["diffusions"],
+        "definition": "The process by which molecules spread from areas of high concentration to areas of low concentration.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Diffusion"
+    },
+    {
+        "word": "osmosis",
+        "forms": ["osmoses"],
+        "definition": "The diffusion of water through a selectively permeable membrane.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Osmosis"
+    },
+    {
+        "word": "active transport",
+        "forms": ["active transports"],
+        "definition": "The movement of molecules across a cell membrane from a region of lower concentration to a region of higher concentration, using energy.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Active_transport"
+    },
+    {
+        "word": "respiration",
+        "forms": ["respirations"],
+        "definition": "The process of converting glucose and oxygen into energy, carbon dioxide, and water.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Cellular_respiration"
+    },
+    {
+        "word": "photosynthesis",
+        "forms": ["photosynthetic"],
+        "definition": "The process by which plants use sunlight to synthesize foods with chlorophyll.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Photosynthesis"
+    },
+    {
+        "word": "reproduction",
+        "forms": ["reproductive"],
+        "definition": "The biological process by which new individual organisms are produced.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Reproduction"
+    },
+    {
+        "word": "asexual reproduction",
+        "forms": ["asexual"],
+        "definition": "A mode of reproduction where offspring arise from a single organism and inherit the genes of that parent only.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Asexual_reproduction"
+    },
+    {
+        "word": "sexual reproduction",
+        "forms": ["sexual"],
+        "definition": "A mode of reproduction involving the combination of genetic material from two parents.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Sexual_reproduction"
+    },
+    {
+        "word": "development",
+        "forms": ["developments"],
+        "definition": "The process by which organisms grow and mature over time.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Developmental_biology"
+    },
+    {
+        "word": "adaptation",
+        "forms": ["adaptations"],
+        "definition": "The process by which a species becomes better suited to its environment.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Adaptation"
+    },
+    {
+        "word": "genetic variation",
+        "forms": ["genetic variations"],
+        "definition": "The diversity in gene frequencies within a population.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Genetic_variation"
+    },
+    {
+        "word": "natural selection",
+        "forms": ["natural selections"],
+        "definition": "The process by which organisms better adapted to their environment tend to survive and produce more offspring.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Natural_selection"
+    },
+    {
+        "word": "mutation",
+        "forms": ["mutations"],
+        "definition": "A change in the DNA sequence of an organism.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Mutation"
+    },
+    {
+        "word": "biotechnology",
+        "forms": ["biotechnologies"],
+        "definition": "The use of living organisms or their products to modify human health and the environment.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Biotechnology"
+    },
+    {
+        "word": "genetic engineering",
+        "forms": ["genetic engineers"],
+        "definition": "The direct manipulation of an organism's genes using biotechnology.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Genetic_engineering"
+    },
+    {
+        "word": "cloning",
+        "forms": ["clones"],
+        "definition": "The process of creating a genetically identical copy of an organism.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Cloning"
+    },
+    {
+        "word": "biomass",
+        "forms": ["biomasses"],
+        "definition": "The total mass of living matter within a given unit of environmental area.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Biomass"
+    },
+    {
+        "word": "decomposition",
+        "forms": ["decompositions"],
+        "definition": "The process by which organic substances are broken down into simpler organic matter.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Decomposition"
+    },
+    {
+        "word": "nutrient cycle",
+        "forms": ["nutrient cycles"],
+        "definition": "The circulation of nutrients between living organisms and the environment.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Nutrient_cycle"
+    },
+    {
+        "word": "symbiosis",
+        "forms": ["symbiotic"],
+        "definition": "A close and often long-term interaction between two different biological species.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Symbiosis"
+    },
+    {
+        "word": "parasitism",
+        "forms": ["parasitic"],
+        "definition": "A type of symbiosis where one organism benefits at the expense of another.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Parasitism"
+    },
+    {
+        "word": "mutualism",
+        "forms": ["mutualistic"],
+        "definition": "A type of symbiosis where both organisms benefit from the interaction.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Mutualism_(biology)"
+    },
+    {
+        "word": "commensalism",
+        "forms": ["commensal"],
+        "definition": "A type of symbiosis where one organism benefits while the other is neither helped nor harmed.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Commensalism"
+    },
+    {
+        "word": "homeostasis",
+        "forms": ["homeostatic"],
+        "definition": "The regulation of an organism's internal environment to maintain stable conditions.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Homeostasis"
+    },
+    {
+        "word": "anatomy",
+        "forms": ["anatomical"],
+        "definition": "The branch of biology concerned with the structure of organisms and their parts.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Anatomy"
+    },
+    {
+        "word": "physiology",
+        "forms": ["physiological"],
+        "definition": "The branch of biology that deals with the normal functions of living organisms and their parts.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Physiology"
+    },
+    {
+        "word": "organism",
+        "forms": ["organisms"],
+        "definition": "An individual living thing, such as a plant, animal, or bacterium.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Organism"
+    },
+    {
+        "word": "organ",
+        "forms": ["organs"],
+        "definition": "A group of tissues in a living organism that have a specific function.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Organ_(anatomy)"
+    },
+    {
+        "word": "tissue",
+        "forms": ["tissues"],
+        "definition": "A group of cells with similar structures and functions.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Tissue_(biology)"
+    },
+    {
+        "word": "organism",
+        "forms": ["organisms"],
+        "definition": "An individual living thing, such as a plant, animal, or bacterium.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Organism"
+    },
+    {
+        "word": "receptor",
+        "forms": ["receptors"],
+        "definition": "A protein molecule that receives and responds to signals or stimuli from the environment.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Receptor_(biochemistry)"
+    },
+    {
+        "word": "hormone",
+        "forms": ["hormones"],
+        "definition": "Chemical substances produced by glands that regulate various functions in the body.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Hormone"
+    },
+    {
+        "word": "immune system",
+        "forms": ["immune systems"],
+        "definition": "A system of cells, tissues, and organs that work together to defend the body against harmful pathogens.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Immune_system"
+    },
+    {
+        "word": "antibody",
+        "forms": ["antibodies"],
+        "definition": "A protein produced by the immune system that recognizes and neutralizes pathogens.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Antibody"
+    },
+    {
+        "word": "antigen",
+        "forms": ["antigens"],
+        "definition": "A substance that induces an immune response, especially the production of antibodies.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Antigen"
+    },
+
+
+
+
+
+
+
+
+
+    
+    {
+        "word": "atom",
+        "forms": ["atoms"],
+        "definition": "The smallest unit of an element that retains the properties of that element, consisting of a nucleus and surrounding electrons.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Atom"
+    },
+    {
+        "word": "element",
+        "forms": ["elements"],
+        "definition": "A substance that consists of only one type of atom and cannot be broken down into simpler substances.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Element_(chemistry)"
+    },
+    {
+        "word": "compound",
+        "forms": ["compounds"],
+        "definition": "A substance formed when two or more elements are chemically bonded together.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Compound_(chemistry)"
+    },
+    {
+        "word": "mixture",
+        "forms": ["mixtures"],
+        "definition": "A combination of two or more substances where each retains its chemical properties and can be separated by physical means.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Mixture"
+    },
+    {
+        "word": "molecule",
+        "forms": ["molecules"],
+        "definition": "A group of atoms bonded together, representing the smallest fundamental unit of a chemical compound.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Molecule"
+    },
+    {
+        "word": "ionic bond",
+        "forms": ["ionic bonds"],
+        "definition": "A type of chemical bond formed between two ions with opposite charges.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Ionic_bond"
+    },
+    {
+        "word": "covalent bond",
+        "forms": ["covalent bonds"],
+        "definition": "A type of chemical bond where two atoms share one or more pairs of electrons.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Covalent_bond"
+    },
+    {
+        "word": "metallic bond",
+        "forms": ["metallic bonds"],
+        "definition": "A type of chemical bond found in metals, where electrons are shared in a 'sea' of delocalized electrons.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Metallic_bond"
+    },
+    {
+        "word": "reaction",
+        "forms": ["reactions"],
+        "definition": "A process in which substances (reactants) are transformed into different substances (products).",
+        "wikipedia": "https://en.wikipedia.org/wiki/Chemical_reaction"
+    },
+    {
+        "word": "equation",
+        "forms": ["equations"],
+        "definition": "A representation of a chemical reaction using symbols and formulas.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Chemical_equation"
+    },
+    {
+        "word": "stoichiometry",
+        "forms": ["stoichiometric"],
+        "definition": "The calculation of reactants and products in chemical reactions based on the conservation of mass.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Stoichiometry"
+    },
+    {
+        "word": "acid",
+        "forms": ["acids"],
+        "definition": "A substance that donates protons (H+ ions) and has a pH less than 7.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Acid"
+    },
+    {
+        "word": "base",
+        "forms": ["bases"],
+        "definition": "A substance that accepts protons (H+ ions) and has a pH greater than 7.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Base_(chemistry)"
+    },
+    {
+        "word": "salt",
+        "forms": ["salts"],
+        "definition": "A compound formed from the reaction of an acid and a base, typically consisting of a cation from the base and an anion from the acid.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Salt_(chemistry)"
+    },
+    {
+        "word": "pH",
+        "forms": ["pH scale"],
+        "definition": "A scale used to measure the acidity or basicity of a solution, ranging from 0 to 14.",
+        "wikipedia": "https://en.wikipedia.org/wiki/PH"
+    },
+    {
+        "word": "concentration",
+        "forms": ["concentrations"],
+        "definition": "The amount of a substance in a given volume of solution.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Concentration_(chemistry)"
+    },
+    {
+        "word": "molarity",
+        "forms": ["molarities"],
+        "definition": "A measure of concentration, specifically the number of moles of solute per liter of solution.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Molar_concentration"
+    },
+    {
+        "word": "dilution",
+        "forms": ["dilutions"],
+        "definition": "The process of reducing the concentration of a solute in a solution, usually by adding more solvent.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Dilution"
+    },
+    {
+        "word": "oxidation",
+        "forms": ["oxidations"],
+        "definition": "A chemical process in which a substance loses electrons.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Oxidation"
+    },
+    {
+        "word": "reduction",
+        "forms": ["reductions"],
+        "definition": "A chemical process in which a substance gains electrons.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Reduction_(chemistry)"
+    },
+    {
+        "word": "redox",
+        "forms": ["redox reactions"],
+        "definition": "A type of reaction involving the transfer of electrons between two species, combining oxidation and reduction processes.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Redox"
+    },
+    {
+        "word": "catalyst",
+        "forms": ["catalysts"],
+        "definition": "A substance that increases the rate of a chemical reaction without being consumed in the process.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Catalyst"
+    },
+    {
+        "word": "activation energy",
+        "forms": ["activation energies"],
+        "definition": "The minimum amount of energy required to start a chemical reaction.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Activation_energy"
+    },
+    {
+        "word": "law of conservation of mass",
+        "forms": ["conservation of mass"],
+        "definition": "The principle stating that mass cannot be created or destroyed in a chemical reaction.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Law_of_conservation_of_mass"
+    },
+    {
+        "word": "enthalpy",
+        "forms": ["enthalpies"],
+        "definition": "The total heat content of a system, used to measure the heat absorbed or released during a chemical reaction.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Enthalpy"
+    },
+    {
+        "word": "entropy",
+        "forms": ["entropies"],
+        "definition": "A measure of the disorder or randomness in a system.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Entropy"
+    },
+    {
+        "word": "activation energy",
+        "forms": ["activation energies"],
+        "definition": "The minimum energy required for a chemical reaction to occur.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Activation_energy"
+    },
+    {
+        "word": "equilibrium",
+        "forms": ["equilibria"],
+        "definition": "The state in which the forward and reverse reactions occur at equal rates, so the concentrations of reactants and products remain constant.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Chemical_equilibrium"
+    },
+    {
+        "word": "solubility",
+        "forms": ["solubilities"],
+        "definition": "The ability of a substance to dissolve in a solvent, forming a solution.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Solubility"
+    },
+    {
+        "word": "sublimation",
+        "forms": ["sublimations"],
+        "definition": "The process by which a solid changes directly into a gas without passing through the liquid phase.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Sublimation_(phase_transition)"
+    },
+    {
+        "word": "deposition",
+        "forms": ["depositions"],
+        "definition": "The process by which a gas changes directly into a solid without passing through the liquid phase.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Deposition_(phase_transition)"
+    },
+    {
+        "word": "electrolysis",
+        "forms": ["electrolyses"],
+        "definition": "A process that uses electrical energy to drive a non-spontaneous chemical reaction.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Electrolysis"
+    },
+    {
+        "word": "quantum",
+        "forms": ["quantum mechanics", "quanta"],
+        "definition": "The branch of physics dealing with the behavior of particles at atomic and subatomic levels.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Quantum_mechanics"
+    },
+    {
+        "word": "atomic number",
+        "forms": ["atomic numbers"],
+        "definition": "The number of protons in the nucleus of an atom, which determines the element's identity.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Atomic_number"
+    },
+    {
+        "word": "mass number",
+        "forms": ["mass numbers"],
+        "definition": "The total number of protons and neutrons in an atom's nucleus.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Mass_number"
+    },
+    {
+        "word": "isotope",
+        "forms": ["isotopes"],
+        "definition": "Variants of a particular chemical element that have the same number of protons but a different number of neutrons.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Isotope"
+    },
+    {
+        "word": "periodic table",
+        "forms": ["periodic tables"],
+        "definition": "A tabular arrangement of the chemical elements organized by increasing atomic number and recurring chemical properties.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Periodic_table"
+    },
+    {
+        "word": "period",
+        "forms": ["periods"],
+        "definition": "A horizontal row in the periodic table of elements.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Period_(periodic_table)"
+    },
+    {
+        "word": "group",
+        "forms": ["groups"],
+        "definition": "A vertical column in the periodic table, which contains elements with similar chemical properties.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Group_(periodic_table)"
+    },
+    {
+        "word": "valence electrons",
+        "forms": ["valence shell"],
+        "definition": "Electrons in the outermost shell of an atom that are involved in chemical bonding.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Valence_electron"
+    },
+    {
+        "word": "noble gases",
+        "forms": ["noble gas"],
+        "definition": "Elements in Group 18 of the periodic table, known for their lack of reactivity due to having a full valence shell.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Noble_gas"
+    },
+    {
+        "word": "transition metals",
+        "forms": ["transition metal"],
+        "definition": "Elements found in the d-block of the periodic table, known for their ability to form various oxidation states.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Transition_metal"
+    },
+    {
+        "word": "catalyst",
+        "forms": ["catalysts"],
+        "definition": "A substance that increases the rate of a chemical reaction without being consumed in the process.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Catalyst"
+    },
+    {
+        "word": "synthesis",
+        "forms": ["syntheses"],
+        "definition": "The process of combining simpler substances to form a more complex product.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Synthesis"
+    },
+    {
+        "word": "decomposition",
+        "forms": ["decompositions"],
+        "definition": "The breakdown of a compound into simpler substances.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Decomposition"
+    },
+    {
+        "word": "single replacement",
+        "forms": ["single displacement"],
+        "definition": "A type of chemical reaction where one element replaces another in a compound.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Single_replacement_reaction"
+    },
+    {
+        "word": "double replacement",
+        "forms": ["double displacement"],
+        "definition": "A chemical reaction where the ions of two compounds exchange places in an aqueous solution to form two new compounds.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Double_displacement_reaction"
+    },
+    {
+        "word": "combustion",
+        "forms": ["combustions"],
+        "definition": "A chemical reaction where a substance combines with oxygen, releasing energy in the form of heat and light.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Combustion"
+    },
+    {
+        "word": "oxidation state",
+        "forms": ["oxidation states"],
+        "definition": "A measure of the degree of oxidation of an atom in a substance.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Oxidation_state"
+    },
+    {
+        "word": "empirical formula",
+        "forms": ["empirical formulas"],
+        "definition": "A formula that shows the simplest whole-number ratio of elements in a compound.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Empirical_formula"
+    },
+    {
+        "word": "molecular formula",
+        "forms": ["molecular formulas"],
+        "definition": "A formula that shows the actual number of atoms of each element in a molecule.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Molecular_formula"
+    },
+    {
+        "word": "percent composition",
+        "forms": ["percent compositions"],
+        "definition": "The percentage by mass of each element in a compound.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Percent_composition"
+    },
+    {
+        "word": "nomenclature",
+        "forms": ["nomenclatures"],
+        "definition": "The system of naming chemical compounds and elements.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Chemical_nomenclature"
+    },
+    {
+        "word": "stoichiometric coefficient",
+        "forms": ["stoichiometric coefficients"],
+        "definition": "Numbers used in a chemical equation to balance the quantities of reactants and products.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Stoichiometry#Stoichiometric_coefficients"
+    },
+    {
+        "word": "ideal gas",
+        "forms": ["ideal gases"],
+        "definition": "A hypothetical gas that perfectly follows the gas laws, with molecules that do not interact with each other.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Ideal_gas"
+    },
+    {
+        "word": "real gas",
+        "forms": ["real gases"],
+        "definition": "Gases that do not behave exactly as ideal gases due to interactions between molecules and finite molecular volume.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Real_gas"
+    },
+    {
+        "word": "gas laws",
+        "forms": ["gas law"],
+        "definition": "The laws that describe the behavior of gases, including Boyle's law, Charles's law, and Avogadro's law.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Gas_laws"
+    },
+    {
+        "word": "Boyle's law",
+        "forms": ["Boyle's laws"],
+        "definition": "The principle that the pressure of a given mass of gas is inversely proportional to its volume at constant temperature.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Boyle's_law"
+    },
+    {
+        "word": "Charles's law",
+        "forms": ["Charles's laws"],
+        "definition": "The principle that the volume of a gas is directly proportional to its temperature at constant pressure.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Charles's_law"
+    },
+    {
+        "word": "Avogadro's law",
+        "forms": ["Avogadro's laws"],
+        "definition": "The principle that equal volumes of gases, at the same temperature and pressure, contain an equal number of molecules.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Avogadro's_law"
+    },
+
+
+
+
+
+
+
+
+
+    
+    {
+        "word": "velocity",
+        "forms": ["speed"],
+        "definition": "The rate at which an object changes its position, including direction.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Velocity"
+    },
+    {
+        "word": "acceleration",
+        "forms": ["accelerate"],
+        "definition": "The rate of change of velocity of an object.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Acceleration"
+    },
+    {
+        "word": "force",
+        "forms": ["forces"],
+        "definition": "An interaction that changes the motion of an object.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Force"
+    },
+    {
+        "word": "energy",
+        "forms": ["kinetic energy", "potential energy"],
+        "definition": "The capacity to do work or the ability to cause change.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Energy"
+    },
+    {
+        "word": "momentum",
+        "forms": ["momentums"],
+        "definition": "The quantity of motion an object has, calculated as mass times velocity.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Momentum"
+    },
+    {
+        "word": "work",
+        "forms": ["work done"],
+        "definition": "The process of energy transfer to an object when a force moves it.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Work_(physics)"
+    },
+    {
+        "word": "power",
+        "forms": ["powers"],
+        "definition": "The rate at which work is done or energy is transferred.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Power_(physics)"
+    },
+    {
+        "word": "force",
+        "forms": ["forces"],
+        "definition": "An interaction that changes the motion of an object.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Force"
+    },
+    {
+        "word": "gravitational field",
+        "forms": ["gravitational field strength"],
+        "definition": "A region of space surrounding a mass within which another mass experiences a force of gravitational attraction.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Gravitational_field"
+    },
+    {
+        "word": "electromagnetic spectrum",
+        "forms": ["spectrum"],
+        "definition": "The range of all types of electromagnetic radiation.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Electromagnetic_spectrum"
+    },
+    {
+        "word": "refraction",
+        "forms": ["refract"],
+        "definition": "The bending of light as it passes from one medium to another.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Refraction"
+    },
+    {
+        "word": "diffraction",
+        "forms": ["diffract"],
+        "definition": "The bending of waves around obstacles and openings.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Diffraction"
+    },
+    {
+        "word": "interference",
+        "forms": ["interfere"],
+        "definition": "The phenomenon where two waves superpose to form a resultant wave of greater or lesser amplitude.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Wave_interference"
+    },
+    {
+        "word": "circuit",
+        "forms": ["circuits"],
+        "definition": "A closed loop through which electric current flows.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Electric_circuit"
+    },
+    {
+        "word": "current",
+        "forms": ["electrical current"],
+        "definition": "The flow of electric charge around a circuit.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Electric_current"
+    },
+    {
+        "word": "voltage",
+        "forms": ["electrical potential difference"],
+        "definition": "The difference in electric potential between two points in a circuit.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Electrical_potential_difference"
+    },
+    {
+        "word": "resistance",
+        "forms": ["electrical resistance"],
+        "definition": "A measure of how much an object resists the flow of current.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Electrical_resistance"
+    },
+    {
+        "word": "Ohm's law",
+        "forms": ["Ohm's laws"],
+        "definition": "The principle that the current through a conductor between two points is directly proportional to the voltage across the two points.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Ohm's_law"
+    },
+    {
+        "word": "power",
+        "forms": ["powers"],
+        "definition": "The rate at which energy is transferred or converted.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Power_(physics)"
+    },
+    {
+        "word": "thermal energy",
+        "forms": ["heat energy"],
+        "definition": "The internal energy of an object due to the kinetic energy of its atoms and molecules.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Thermal_energy"
+    },
+    {
+        "word": "conduction",
+        "forms": ["heat conduction"],
+        "definition": "The transfer of heat through a material without the movement of the material itself.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Heat_conduction"
+    },
+    {
+        "word": "convection",
+        "forms": ["heat convection"],
+        "definition": "The transfer of heat by the movement of fluid (liquid or gas).",
+        "wikipedia": "https://en.wikipedia.org/wiki/Convection"
+    },
+    {
+        "word": "radiation",
+        "forms": ["heat radiation"],
+        "definition": "The transfer of energy through electromagnetic waves.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Radiation"
+    },
+    {
+        "word": "nuclear energy",
+        "forms": ["nuclear power"],
+        "definition": "Energy released during nuclear fission or fusion.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Nuclear_energy"
+    },
+    {
+        "word": "radioactivity",
+        "forms": ["radioactive decay"],
+        "definition": "The process by which unstable atomic nuclei lose energy by emitting radiation.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Radioactivity"
+    },
+    {
+        "word": "nucleus",
+        "forms": ["atomic nucleus"],
+        "definition": "The positively charged central core of an atom containing protons and neutrons.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Nucleus_(atom)"
+    },
+    {
+        "word": "mass",
+        "forms": ["massive"],
+        "definition": "A measure of the amount of matter in an object.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Mass"
+    },
+    {
+        "word": "weight",
+        "forms": ["weights"],
+        "definition": "The force exerted on a mass due to gravity.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Weight"
+    },
+    {
+        "word": "momentum",
+        "forms": ["momentums"],
+        "definition": "The quantity of motion an object has, calculated as mass times velocity.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Momentum"
+    },
+    {
+        "word": "frequency",
+        "forms": ["frequencies"],
+        "definition": "The number of waves that pass a point per unit time.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Frequency"
+    },
+    {
+        "word": "wavelength",
+        "forms": ["wavelengths"],
+        "definition": "The distance between successive peaks of a wave.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Wavelength"
+    },
+    {
+        "word": "wave",
+        "forms": ["waves"],
+        "definition": "A disturbance that transfers energy through a medium or space.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Wave"
+    },
+    {
+        "word": "transverse wave",
+        "forms": ["transverse waves"],
+        "definition": "A wave in which the motion of the medium is perpendicular to the direction of the wave.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Transverse_wave"
+    },
+    {
+        "word": "longitudinal wave",
+        "forms": ["longitudinal waves"],
+        "definition": "A wave in which the motion of the medium is parallel to the direction of the wave.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Longitudinal_wave"
+    },
+    {
+        "word": "refraction",
+        "forms": ["refract"],
+        "definition": "The bending of light as it passes from one medium to another.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Refraction"
+    },
+    {
+        "word": "diffraction",
+        "forms": ["diffract"],
+        "definition": "The bending of waves around obstacles and the spreading of waves when they pass through small openings.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Diffraction"
+    },
+    {
+        "word": "interference",
+        "forms": ["interfering"],
+        "definition": "The combination of two or more waves that results in a new wave pattern.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Interference_(wave_propogation)"
+    },
+    {
+        "word": "electromagnetic wave",
+        "forms": ["EM wave"],
+        "definition": "A wave of electric and magnetic fields that travels through space.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Electromagnetic_radiation"
+    },
+    {
+        "word": "particle",
+        "forms": ["particles"],
+        "definition": "A small localized object to which can be ascribed physical properties such as volume or mass.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Particle"
+    },
+    {
+        "word": "quantum",
+        "forms": ["quanta"],
+        "definition": "The smallest amount of a physical quantity that can exist independently.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Quantum"
+    },
+    {
+        "word": "photon",
+        "forms": ["photons"],
+        "definition": "A quantum of electromagnetic radiation, typically regarded as a particle of light.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Photon"
+    },
+    {
+        "word": "electric field",
+        "forms": ["electric fields"],
+        "definition": "A field around a charged particle where other charges experience a force.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Electric_field"
+    },
+    {
+        "word": "magnetic field",
+        "forms": ["magnetic fields"],
+        "definition": "A field around a magnet where magnetic forces are observed.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Magnetic_field"
+    },
+    {
+        "word": "electromagnetism",
+        "forms": ["electromagnetic forces"],
+        "definition": "The branch of physics concerned with the interaction of electric and magnetic fields.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Electromagnetism"
+    },
+    {
+        "word": "static electricity",
+        "forms": ["static charge"],
+        "definition": "Electric charge at rest, often caused by friction.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Static_electricity"
+    },
+    {
+        "word": "thermodynamics",
+        "forms": ["thermodynamic"],
+        "definition": "The branch of physics dealing with heat and temperature and their relation to energy and work.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Thermodynamics"
+    },
+    {
+        "word": "entropy",
+        "forms": ["entropic"],
+        "definition": "A measure of the disorder or randomness in a system.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Entropy"
+    },
+    {
+        "word": "density",
+        "forms": ["densities"],
+        "definition": "The mass per unit volume of a substance.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Density"
+    },
+    {
+        "word": "pressure",
+        "forms": ["pressures"],
+        "definition": "The force applied perpendicular to the surface of an object per unit area.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Pressure"
+    },
+    {
+        "word": "buoyancy",
+        "forms": ["buoyant force"],
+        "definition": "The force exerted by a fluid that opposes an object's weight, causing it to float or rise.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Buoyancy"
+    },
+    {
+        "word": "moment of force",
+        "forms": ["torque"],
+        "definition": "A measure of the force causing an object to rotate around an axis.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Torque"
+    },
+    {
+        "word": "simple harmonic motion",
+        "forms": ["SHM"],
+        "definition": "Motion that repeats itself in a regular cycle, such as a pendulum or a spring.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Simple_harmonic_motion"
+    },
+    {
+        "word": "wave-particle duality",
+        "forms": ["dual nature"],
+        "definition": "The concept that every particle or quantum entity exhibits both wave-like and particle-like properties.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Wave%E2%80%93particle_duality"
+    },
+
+
+
+
+
+
+
+
+
+    
+    {
+        "word": "algorithm",
+        "forms": ["algorithms"],
+        "definition": "A step-by-step procedure or formula for solving a problem or performing a task.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Algorithm"
+    },
+    {
+        "word": "variable",
+        "forms": ["variables"],
+        "definition": "A storage location identified by a memory address and an associated symbolic name (an identifier), which contains some known or unknown quantity of information referred to as a value.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Variable_(computer_science)"
+    },
+    {
+        "word": "data type",
+        "forms": ["data types"],
+        "definition": "A classification that specifies which type of value a variable can hold and what operations can be performed on it.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Data_type"
+    },
+    {
+        "word": "function",
+        "forms": ["functions"],
+        "definition": "A block of code designed to perform a particular task; it can take inputs, process them, and return a result.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Function_(computer_science)"
+    },
+    {
+        "word": "loop",
+        "forms": ["loops"],
+        "definition": "A sequence of instructions that is continually repeated until a certain condition is reached.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Control_flow"
+    },
+    {
+        "word": "conditional statement",
+        "forms": ["if statement", "switch statement"],
+        "definition": "A programming construct that executes different code depending on whether a condition evaluates to true or false.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Conditional_(computer_programming)"
+    },
+    {
+        "word": "array",
+        "forms": ["arrays"],
+        "definition": "A data structure consisting of a collection of elements, each identified by at least one array index or key.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Array_data_structure"
+    },
+    {
+        "word": "object",
+        "forms": ["objects"],
+        "definition": "An instance of a class in object-oriented programming that encapsulates data and methods.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Object-oriented_programming"
+    },
+    {
+        "word": "class",
+        "forms": ["classes"],
+        "definition": "A blueprint for creating objects in object-oriented programming, defining a set of properties and methods.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Class_(computer_programming)"
+    },
+    {
+        "word": "inheritance",
+        "forms": ["inheritances"],
+        "definition": "A mechanism in object-oriented programming where a new class derives from an existing class, inheriting its properties and methods.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)"
+    },
+    {
+        "word": "polymorphism",
+        "forms": ["polymorphisms"],
+        "definition": "The ability of different classes to be treated as instances of the same class through a common interface.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Polymorphism_(computer_science)"
+    },
+    {
+        "word": "encapsulation",
+        "forms": ["encapsulations"],
+        "definition": "The bundling of data with the methods that operate on that data, restricting direct access to some of an object's components.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)"
+    },
+    {
+        "word": "recursion",
+        "forms": ["recursive"],
+        "definition": "A process where a function calls itself directly or indirectly to solve a problem.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Recursion"
+    },
+    {
+        "word": "iteration",
+        "forms": ["iterative"],
+        "definition": "The repetition of a process or set of instructions in a loop until a certain condition is met.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Iteration"
+    },
+    {
+        "word": "debugging",
+        "forms": ["debug", "debugs"],
+        "definition": "The process of finding and fixing bugs or errors in a computer program.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Debugging"
+    },
+    {
+        "word": "syntax",
+        "forms": ["syntax errors"],
+        "definition": "The set of rules that defines the combinations of symbols that are considered to be correctly structured programs or expressions in a programming language.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Syntax_(programming_languages)"
+    },
+    {
+        "word": "compiler",
+        "forms": ["compilers"],
+        "definition": "A program that translates code written in a high-level programming language into machine code or intermediate code.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Compiler"
+    },
+    {
+        "word": "interpreter",
+        "forms": ["interpreters"],
+        "definition": "A program that executes instructions written in a programming language by translating them into machine code line-by-line.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Interpreter_(computer_programming)"
+    },
+    {
+        "word": "database",
+        "forms": ["databases"],
+        "definition": "An organized collection of structured information or data stored electronically in a computer system.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Database"
+    },
+    {
+        "word": "SQL",
+        "forms": ["Structured Query Language"],
+        "definition": "A domain-specific language used in programming and managing relational databases.",
+        "wikipedia": "https://en.wikipedia.org/wiki/SQL"
+    },
+    {
+        "word": "network",
+        "forms": ["networks"],
+        "definition": "A collection of computers and devices connected together for sharing resources and information.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Computer_network"
+    },
+    {
+        "word": "protocol",
+        "forms": ["protocols"],
+        "definition": "A set of rules or standards that define how data is transmitted and received over a network.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Protocol_(computer_science)"
+    },
+    {
+        "word": "IP address",
+        "forms": ["IP addresses"],
+        "definition": "A unique string of numbers separated by periods that identifies each computer using the Internet Protocol to communicate over a network.",
+        "wikipedia": "https://en.wikipedia.org/wiki/IP_address"
+    },
+    {
+        "word": "HTTP",
+        "forms": ["HyperText Transfer Protocol"],
+        "definition": "A protocol used for transmitting hypertext via the World Wide Web.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol"
+    },
+    {
+        "word": "URL",
+        "forms": ["Uniform Resource Locator"],
+        "definition": "The address of a web page on the Internet.",
+        "wikipedia": "https://en.wikipedia.org/wiki/URL"
+    },
+    {
+        "word": "cloud computing",
+        "forms": ["cloud"],
+        "definition": "The delivery of computing services over the internet, including storage, processing, and data management.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Cloud_computing"
+    },
+    {
+        "word": "encryption",
+        "forms": ["encrypt", "encrypted"],
+        "definition": "The process of converting information or data into a code to prevent unauthorized access.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Encryption"
+    },
+    {
+        "word": "decryption",
+        "forms": ["decrypt", "decrypted"],
+        "definition": "The process of converting encrypted data back into its original form.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Decryption"
+    },
+    {
+        "word": "hardware",
+        "forms": ["hardware components"],
+        "definition": "The physical parts of a computer system, including the central processing unit (CPU), memory, and peripherals.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Hardware"
+    },
+    {
+        "word": "software",
+        "forms": ["software applications"],
+        "definition": "The programs and other operating information used by a computer.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Software"
+    },
+    {
+        "word": "operating system",
+        "forms": ["OS"],
+        "definition": "System software that manages computer hardware and software resources and provides common services for computer programs.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Operating_system"
+    },
+    {
+        "word": "user interface",
+        "forms": ["UI"],
+        "definition": "The space where interactions between humans and machines occur, allowing users to control and receive feedback from the machine.",
+        "wikipedia": "https://en.wikipedia.org/wiki/User_interface"
+    },
+    {
+        "word": "input device",
+        "forms": ["input devices"],
+        "definition": "Hardware used to provide data and control signals to a computer.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Input_device"
+    },
+    {
+        "word": "output device",
+        "forms": ["output devices"],
+        "definition": "Hardware used to communicate the results of data processing from a computer.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Output_device"
+    },
+    {
+        "word": "binary",
+        "forms": ["binary code"],
+        "definition": "A base-2 numeral system used to represent text or computer processor instructions using only two symbols, typically 0 and 1.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Binary_number"
+    },
+    {
+        "word": "bit",
+        "forms": ["bits"],
+        "definition": "The smallest unit of data in a computer, represented as either 0 or 1.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Bit"
+    },
+    {
+        "word": "byte",
+        "forms": ["bytes"],
+        "definition": "A group of binary digits or bits (usually 8) operated on as a unit.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Byte"
+    },
+    {
+        "word": "protocol",
+        "forms": ["protocols"],
+        "definition": "A set of rules governing the exchange or transmission of data between devices.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Protocol_(computer_science)"
+    },
+    {
+        "word": "algorithmic complexity",
+        "forms": ["complexity"],
+        "definition": "A measure of the amount of resources required for an algorithm to run, such as time or memory.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Computational_complexity_theory"
+    },
+    {
+        "word": "hardware",
+        "forms": ["hardware"],
+        "definition": "The physical components of a computer system.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Hardware"
+    },
+    {
+        "word": "software",
+        "forms": ["software"],
+        "definition": "The programs and operating information used by a computer.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Software"
+    },
+
+
+
+
+
+
+
+
+
+    
+    {
+        "word": "plate tectonics",
+        "forms": ["tectonic plates", "plate boundaries"],
+        "definition": "The theory explaining the movement of the Earth's lithosphere which is divided into plates.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Plate_tectonics"
+    },
+    {
+        "word": "earthquake",
+        "forms": ["earthquakes"],
+        "definition": "The shaking of the Earth's surface caused by the sudden release of energy from the Earth's crust.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Earthquake"
+    },
+    {
+        "word": "volcano",
+        "forms": ["volcanoes"],
+        "definition": "A rupture in the Earth's crust where magma, ash, and gases can escape to the surface.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Volcano"
+    },
+    {
+        "word": "erosion",
+        "forms": ["erosions"],
+        "definition": "The process by which natural forces like wind or water wear away rocks and soil.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Erosion"
+    },
+    {
+        "word": "weathering",
+        "forms": ["weatherings"],
+        "definition": "The breakdown of rocks into smaller pieces through physical or chemical processes.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Weathering"
+    },
+    {
+        "word": "sedimentation",
+        "forms": ["sediments"],
+        "definition": "The process of settling or being deposited as sediment.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Sedimentation"
+    },
+    {
+        "word": "landform",
+        "forms": ["landforms"],
+        "definition": "A natural feature of the Earth's surface, such as mountains, valleys, and plateaus.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Landform"
+    },
+    {
+        "word": "glacier",
+        "forms": ["glaciers"],
+        "definition": "A large, persistent body of ice that moves slowly over land.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Glacier"
+    },
+    {
+        "word": "hydrological cycle",
+        "forms": ["water cycle"],
+        "definition": "The continuous movement of water on, above, and below the surface of the Earth.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Water_cycle"
+    },
+    {
+        "word": "precipitation",
+        "forms": ["precipitations"],
+        "definition": "Any form of water, liquid or solid, falling from the atmosphere, such as rain, snow, or hail.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Precipitation"
+    },
+    {
+        "word": "runoff",
+        "forms": ["surface runoff"],
+        "definition": "Water from rain, snowmelt, or other sources that flows over the ground and returns to streams and rivers.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Runoff"
+    },
+    {
+        "word": "climate",
+        "forms": ["climates"],
+        "definition": "The long-term average of weather patterns in a particular area.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Climate"
+    },
+    {
+        "word": "weather",
+        "forms": ["weathers"],
+        "definition": "The state of the atmosphere at a specific time and place, including temperature, humidity, and precipitation.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Weather"
+    },
+    {
+        "word": "biome",
+        "forms": ["biomes"],
+        "definition": "A large ecological community of plants and animals adapting to a particular climate.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Biome"
+    },
+    {
+        "word": "ecosystem",
+        "forms": ["ecosystems"],
+        "definition": "A biological community of interacting organisms and their physical environment.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Ecosystem"
+    },
+    {
+        "word": "sustainable development",
+        "forms": ["sustainability"],
+        "definition": "Development that meets the needs of the present without compromising the ability of future generations to meet their own needs.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Sustainable_development"
+    },
+    {
+        "word": "urbanisation",
+        "forms": ["urbanization"],
+        "definition": "The process by which cities grow or by which societies become more urban.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Urbanization"
+    },
+    {
+        "word": "rural",
+        "forms": ["rural areas"],
+        "definition": "Relating to or characteristic of the countryside rather than the town.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Rural"
+    },
+    {
+        "word": "population density",
+        "forms": ["population densities"],
+        "definition": "The number of people living per unit of area, typically per square kilometer or mile.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Population_density"
+    },
+    {
+        "word": "migration",
+        "forms": ["migrations"],
+        "definition": "The movement of people from one place to another, often for economic, social, or environmental reasons.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Migration"
+    },
+    {
+        "word": "deforestation",
+        "forms": ["deforestations"],
+        "definition": "The large-scale removal of forests, often to make way for agriculture or urban development.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Deforestation"
+    },
+    {
+        "word": "desertification",
+        "forms": ["desertifications"],
+        "definition": "The process by which fertile land becomes desert as a result of drought, deforestation, or inappropriate agriculture.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Desertification"
+    },
+    {
+        "word": "renewable energy",
+        "forms": ["renewable energies"],
+        "definition": "Energy derived from resources that are naturally replenished, such as solar, wind, or hydro power.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Renewable_energy"
+    },
+    {
+        "word": "non-renewable resources",
+        "forms": ["non-renewable resource"],
+        "definition": "Resources that cannot be replenished once they are used up, such as fossil fuels and minerals.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Non-renewable_resource"
+    },
+    {
+        "word": "geopolitics",
+        "forms": ["geopolitical"],
+        "definition": "The study of the effects of geography on international politics and relations.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Geopolitics"
+    },
+    {
+        "word": "cartography",
+        "forms": ["cartographies"],
+        "definition": "The science or practice of drawing maps.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Cartography"
+    },
+    {
+        "word": "bearing",
+        "forms": ["bearings"],
+        "definition": "The direction or position of one point relative to another, often measured in degrees.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Bearing_(navigation)"
+    },
+    {
+        "word": "scale",
+        "forms": ["scales"],
+        "definition": "The ratio of a distance on a map to the corresponding distance on the ground.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Scale_(map)"
+    },
+    {
+        "word": "climate change",
+        "forms": ["global warming"],
+        "definition": "Long-term changes in temperature and weather patterns, often attributed to human activities.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Climate_change"
+    },
+    {
+        "word": "natural hazard",
+        "forms": ["natural hazards"],
+        "definition": "A natural event that has the potential to cause harm to people, property, or the environment.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Natural_hazard"
+    },
+    {
+        "word": "risk assessment",
+        "forms": ["risk assessments"],
+        "definition": "The process of evaluating the potential risks that may be involved in a projected activity or undertaking.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Risk_assessment"
+    },
+    {
+        "word": "urban heat island",
+        "forms": ["heat island effect"],
+        "definition": "A local warming of urban areas compared to their rural surroundings due to human activities and built environments.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Urban_heat_island"
+    },
+    {
+        "word": "socioeconomic",
+        "forms": ["socioeconomics"],
+        "definition": "Relating to the interaction between social and economic factors.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Socioeconomics"
+    },
+    {
+        "word": "oxbow lake",
+        "forms": ["oxbow lakes"],
+        "definition": "A crescent-shaped lake formed when a river meander is cut off from the main flow.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Oxbow_lake"
+    },
+    {
+        "word": "stack",
+        "forms": ["stacks"],
+        "definition": "A tall, steep rock formation isolated from the mainland, formed by erosion.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Stack_(geology)"
+    },
+    {
+        "word": "stump",
+        "forms": ["stumps"],
+        "definition": "A remnant of a sea stack that has eroded down to a lower level.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Sea_stack#Stumps"
+    },
+    {
+        "word": "cave",
+        "forms": ["caves"],
+        "definition": "A natural underground chamber, often formed by the dissolution of soluble rocks.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Cave"
+    },
+    {
+        "word": "arch",
+        "forms": ["arches"],
+        "definition": "A rock formation where an opening has been eroded through the rock, creating a bridge-like structure.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Arch_(geology)"
+    },
+    {
+        "word": "stalatite",
+        "forms": ["stalactites"],
+        "definition": "An icicle-shaped mineral deposit that hangs from the ceiling of a cave, formed by dripping water.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Stalactite"
+    },
+    {
+        "word": "stalagmite",
+        "forms": ["stalagmites"],
+        "definition": "A mound-shaped mineral deposit that rises from the floor of a cave, formed by dripping water.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Stalagmite"
+    },
+    {
+        "word": "fjord",
+        "forms": ["fjords"],
+        "definition": "A long, narrow deep inlet of the sea between high cliffs or steep slopes, formed by glacial activity.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Fjord"
+    },
+    {
+        "word": "delta",
+        "forms": ["deltas"],
+        "definition": "A landform where a river meets a body of water and deposits sediment, creating a fan-shaped area.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Delta_(landform)"
+    },
+    {
+        "word": "estuary",
+        "forms": ["estuaries"],
+        "definition": "A coastal area where freshwater from rivers meets and mixes with saltwater from the sea.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Estuary"
+    },
+    {
+        "word": "meander",
+        "forms": ["meanders"],
+        "definition": "A winding curve or bend in a river or stream.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Meander"
+    },
+    {
+        "word": "sand dune",
+        "forms": ["sand dunes"],
+        "definition": "A hill of loose sand built by wind or water flow.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Sand_dune"
+    },
+    {
+        "word": "corrasion",
+        "forms": ["corrasion"],
+        "definition": "Erosion caused by the friction of sediment-laden water, ice, or wind rubbing against rock surfaces.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Erosion#Corrasion"
+    },
+    {
+        "word": "abrasion",
+        "forms": ["abrasions"],
+        "definition": "The process of wearing down or rubbing away of rock surfaces by friction or erosion.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Abrasion"
+    },
+    {
+        "word": "attrition",
+        "forms": ["attritions"],
+        "definition": "The process where rocks and sediment are worn down by colliding with other particles.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Abrasion#Attrition"
+    },
+    {
+        "word": "hydraulic action",
+        "forms": ["hydraulic actions"],
+        "definition": "Erosion caused by the force of moving water compressing air in cracks in rocks.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Hydraulic_action"
+    },
+    {
+        "word": "solution",
+        "forms": ["dissolution"],
+        "definition": "Erosion caused by the chemical action of water dissolving soluble rocks.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Solution_(geology)"
+    },
+    {
+        "word": "drainage basin",
+        "forms": ["drainage basins"],
+        "definition": "The land area where all water flows to a common outlet such as a river or lake.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Drainage_basin"
+    },
+    {
+        "word": "watershed",
+        "forms": ["watersheds"],
+        "definition": "The boundary dividing two adjacent drainage basins.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Watershed"
+    },
+    {
+        "word": "aquifer",
+        "forms": ["aquifers"],
+        "definition": "A geological formation that can store and transmit water, typically an underground layer of water-bearing rock or sediment.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Aquifer"
+    },
+
+
+
+
+
+
+
+
+    
+    {
+        "word": "feudalism",
+        "forms": ["feudal system"],
+        "definition": "A social and economic system in medieval Europe where land was exchanged for military service and protection.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Feudalism"
+    },
+    {
+        "word": "revolution",
+        "forms": ["revolutions"],
+        "definition": "A fundamental change in political power or organizational structures, often accompanied by upheaval.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Revolution"
+    },
+    {
+        "word": "imperialism",
+        "forms": ["imperialistic"],
+        "definition": "A policy of extending a country's power and influence through colonization, use of military force, or other means.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Imperialism"
+    },
+    {
+        "word": "colonialism",
+        "forms": ["colonial"],
+        "definition": "The practice of acquiring and maintaining colonies or territories, often through conquest and exploitation.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Colonialism"
+    },
+    {
+        "word": "absolutism",
+        "forms": ["absolute monarchy"],
+        "definition": "A political system where a single ruler holds absolute power, often justified by divine right.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Absolutism"
+    },
+    {
+        "word": "enlightenment",
+        "forms": ["Age of Enlightenment"],
+        "definition": "An intellectual and cultural movement in the 17th and 18th centuries emphasizing reason, individualism, and skepticism of traditional doctrines.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Age_of_Enlightenment"
+    },
+    {
+        "word": "renaissance",
+        "forms": ["Renaissance"],
+        "definition": "A period of cultural revival and renewed interest in classical art, literature, and learning, spanning roughly the 14th to the 17th centuries.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Renaissance"
+    },
+    {
+        "word": "industrialization",
+        "forms": ["industrialisation"],
+        "definition": "The process of transforming economies from agrarian to industrial through technological advances and increased production.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Industrial_revolution"
+    },
+    {
+        "word": "nationalism",
+        "forms": ["nationalistic"],
+        "definition": "A political ideology that emphasizes the interests and culture of a particular nation, often in opposition to foreign influence.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Nationalism"
+    },
+    {
+        "word": "socialism",
+        "forms": ["socialist"],
+        "definition": "A political and economic system where the means of production and distribution are owned or regulated by the community as a whole.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Socialism"
+    },
+    {
+        "word": "communism",
+        "forms": ["communist"],
+        "definition": "A political and economic ideology advocating for a classless society and the abolition of private property, with collective ownership of resources.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Communism"
+    },
+    {
+        "word": "capitalism",
+        "forms": ["capitalistic"],
+        "definition": "An economic system characterized by private ownership of the means of production and operation for profit.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Capitalism"
+    },
+    {
+        "word": "democracy",
+        "forms": ["democracies"],
+        "definition": "A system of government where power is vested in the people, who rule either directly or through elected representatives.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Democracy"
+    },
+    {
+        "word": "totalitarianism",
+        "forms": ["totalitarian"],
+        "definition": "A political system where the state holds total authority and seeks to control all aspects of public and private life.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Totalitarianism"
+    },
+    {
+        "word": "human rights",
+        "forms": ["human right"],
+        "definition": "Basic rights and freedoms that belong to every person, regardless of nationality, ethnicity, or religion.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Human_rights"
+    },
+    {
+        "word": "colonial empire",
+        "forms": ["colonial empires"],
+        "definition": "An extensive group of territories controlled by a single nation, often through colonization and subjugation.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Colonial_empire"
+    },
+    {
+        "word": "treaty",
+        "forms": ["treaties"],
+        "definition": "A formal agreement between countries or governments that is legally binding.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Treaty"
+    },
+    {
+        "word": "reform",
+        "forms": ["reforms"],
+        "definition": "Changes made to improve a system, institution, or practice, often to address social, political, or economic issues.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Reform"
+    },
+    {
+        "word": "revolutionary",
+        "forms": ["revolutionaries"],
+        "definition": "Relating to or advocating for significant and often abrupt change in political or social systems.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Revolutionary"
+    },
+    {
+        "word": "enfranchisement",
+        "forms": ["enfranchised"],
+        "definition": "The granting of the right to vote to individuals or groups who were previously excluded.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Enfranchisement"
+    },
+    {
+        "word": "monarchy",
+        "forms": ["monarchies"],
+        "definition": "A political system where a single ruler, such as a king or queen, holds supreme authority.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Monarchy"
+    },
+    {
+        "word": "dictatorship",
+        "forms": ["dictatorships"],
+        "definition": "A form of government where power is concentrated in the hands of a single leader or a small group, often without democratic consent.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Dictatorship"
+    },
+    {
+        "word": "civil war",
+        "forms": ["civil wars"],
+        "definition": "A conflict between groups within the same country, often involving competing factions for control of the government.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Civil_war"
+    },
+    {
+        "word": "holocaust",
+        "forms": ["holocausts"],
+        "definition": "The genocide during World War II in which six million Jews and millions of others were systematically murdered by the Nazis.",
+        "wikipedia": "https://en.wikipedia.org/wiki/The_Holocaust"
+    },
+    {
+        "word": "apartheid",
+        "forms": ["apartheids"],
+        "definition": "A policy or system of segregation or discrimination on grounds of race, notably in South Africa from 1948 to 1994.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Apartheid"
+    },
+    {
+        "word": "colonialism",
+        "forms": ["colonialistic"],
+        "definition": "The practice of acquiring and maintaining colonies, often by force or coercion, for economic and political gain.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Colonialism"
+    },
+    {
+        "word": "slavery",
+        "forms": ["slaves", "enslavement"],
+        "definition": "The condition in which individuals are owned by others and forced to work without freedom.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Slavery"
+    },
+    {
+        "word": "nationalism",
+        "forms": ["nationalistic"],
+        "definition": "A political ideology that emphasizes the interests, culture, and identity of a particular nation, often in opposition to foreign influence.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Nationalism"
+    },
+    {
+        "word": "communism",
+        "forms": ["communist"],
+        "definition": "A political and economic ideology advocating for a classless society and the abolition of private property, with collective ownership of resources.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Communism"
+    },
+    {
+        "word": "republic",
+        "forms": ["republics"],
+        "definition": "A form of government in which the country is considered a 'public matter' and the head of state is elected, not a monarch.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Republic"
+    },
+    {
+        "word": "treaty of versailles",
+        "forms": ["Treaty of Versailles"],
+        "definition": "The peace treaty that ended World War I, imposing heavy reparations and territorial losses on Germany.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Treaty_of_Versailles"
+    },
+    {
+        "word": "Great Depression",
+        "forms": ["Depression"],
+        "definition": "A severe worldwide economic downturn that took place during the 1930s, affecting many countries.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Great_Depression"
+    },
+    {
+        "word": "Cold War",
+        "forms": ["Cold Wars"],
+        "definition": "The state of political and military tension between the United States and the Soviet Union and their respective allies after World War II.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Cold_War"
+    },
+    {
+        "word": "civil rights",
+        "forms": ["civil right"],
+        "definition": "The rights of citizens to political and social freedom and equality.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Civil_rights"
+    },
+    {
+        "word": "diplomacy",
+        "forms": ["diplomacies"],
+        "definition": "The practice of managing international relations and negotiating agreements between countries.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Diplomacy"
+    },
+    {
+        "word": "expansionism",
+        "forms": ["expansionist"],
+        "definition": "A policy of extending a nation's territory or influence through colonization, conquest, or economic and political means.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Expansionism"
+    },
+    {
+        "word": "reparation",
+        "forms": ["reparations"],
+        "definition": "Compensation demanded by a victor from a defeated nation, often in the form of money or goods.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Reparations"
+    },
+    {
+        "word": "enlightenment",
+        "forms": ["Age of Enlightenment"],
+        "definition": "An intellectual movement emphasizing reason, science, and individualism, prevalent in the 17th and 18th centuries.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Age_of_Enlightenment"
+    },
+
+
+
+
+
+
+
+
+
+    
+    {
+        "word": "ergonomics",
+        "forms": ["ergonomic"],
+        "definition": "The study of designing equipment and devices that fit the human body, its movements, and its cognitive abilities.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Ergonomics"
+    },
+    {
+        "word": "prototype",
+        "forms": ["prototypes"],
+        "definition": "An early sample or model of a product used to test and validate design concepts.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Prototype"
+    },
+    {
+        "word": "CAD",
+        "forms": ["Computer-Aided Design"],
+        "definition": "The use of computer software to create, modify, analyze, or optimize designs.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Computer-aided_design"
+    },
+    {
+        "word": "CAM",
+        "forms": ["Computer-Aided Manufacturing"],
+        "definition": "The use of computer software and machinery to automate manufacturing processes.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Computer-aided_manufacturing"
+    },
+    {
+        "word": "materials science",
+        "forms": ["materials sciences"],
+        "definition": "The study of the properties of materials and their applications in engineering and manufacturing.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Materials_science"
+    },
+    {
+        "word": "sustainability",
+        "forms": ["sustainable design"],
+        "definition": "Designing products and processes with minimal environmental impact and promoting resource efficiency.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Sustainability"
+    },
+    {
+        "word": "aesthetics",
+        "forms": ["aesthetic"],
+        "definition": "The study of beauty and design principles that influence visual appeal and user experience.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Aesthetics"
+    },
+    {
+        "word": "ergonomic",
+        "forms": ["ergonomics"],
+        "definition": "Design principles that enhance user comfort and efficiency by considering human anatomy and behavior.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Ergonomics"
+    },
+    {
+        "word": "functionality",
+        "forms": ["functional"],
+        "definition": "The ability of a product or system to perform its intended functions effectively and efficiently.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Functionality"
+    },
+    {
+        "word": "user interface",
+        "forms": ["interfaces"],
+        "definition": "The space where interactions between humans and machines occur, including visual and tactile elements.",
+        "wikipedia": "https://en.wikipedia.org/wiki/User_interface"
+    },
+    {
+        "word": "product lifecycle",
+        "forms": ["product lifecycles"],
+        "definition": "The stages a product goes through from inception and development to disposal or recycling.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Product_life_cycle"
+    },
+    {
+        "word": "design brief",
+        "forms": ["design briefs"],
+        "definition": "A document outlining the objectives, requirements, and constraints of a design project.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Design_brief"
+    },
+    {
+        "word": "modelling",
+        "forms": ["models", "modelling techniques"],
+        "definition": "The process of creating a representation of a product or system to test and refine design ideas.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Model_(creative_arts)"
+    },
+    {
+        "word": "prototype testing",
+        "forms": ["prototypes testing"],
+        "definition": "The process of evaluating a prototype to assess its functionality, performance, and user experience.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Prototype_testing"
+    },
+    {
+        "word": "manufacturing",
+        "forms": ["manufacture", "manufactures"],
+        "definition": "The process of converting raw materials into finished products through various techniques and processes.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Manufacturing"
+    },
+    {
+        "word": "joining techniques",
+        "forms": ["joining methods", "joining processes"],
+        "definition": "Methods used to connect or assemble materials, such as welding, soldering, or adhesive bonding.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Joining_(manufacturing)"
+    },
+    {
+        "word": "assembly",
+        "forms": ["assemblies"],
+        "definition": "The process of putting together various components or parts to create a finished product.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Assembly_(disambiguation)"
+    },
+    {
+        "word": "fabrication",
+        "forms": ["fabrications"],
+        "definition": "The process of constructing products from raw materials through cutting, shaping, and assembling.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Fabrication_(metalworking)"
+    },
+    {
+        "word": "ergonomics",
+        "forms": ["ergonomic"],
+        "definition": "The study of designing products and environments to optimize human well-being and overall system performance.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Ergonomics"
+    },
+    {
+        "word": "3D printing",
+        "forms": ["additive manufacturing"],
+        "definition": "A process of creating three-dimensional objects by layering material based on a digital model.",
+        "wikipedia": "https://en.wikipedia.org/wiki/3D_printing"
+    },
+    {
+        "word": "material properties",
+        "forms": ["material characteristics"],
+        "definition": "Attributes of materials that define their behavior and suitability for different applications, such as strength, flexibility, and thermal conductivity.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Material_properties"
+    },
+    {
+        "word": "biomimicry",
+        "forms": ["biomimetic"],
+        "definition": "Designing products and systems inspired by nature's models and processes.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Biomimicry"
+    },
+    {
+        "word": "cost analysis",
+        "forms": ["cost assessments"],
+        "definition": "The process of determining the cost of producing a product or service, including materials, labor, and overhead.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Cost_analysis"
+    },
+    {
+        "word": "design for manufacture",
+        "forms": ["DFM"],
+        "definition": "Design practices aimed at making products easier and more cost-effective to manufacture.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Design_for_Manufacture"
+    },
+    {
+        "word": "design for assembly",
+        "forms": ["DFA"],
+        "definition": "Design practices focused on making products easier to assemble by reducing complexity and the number of parts.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Design_for_Assembly"
+    },
+    {
+        "word": "design for disassembly",
+        "forms": ["DFD"],
+        "definition": "Design strategies that facilitate the easy disassembly of products for repair, recycling, or disposal.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Design_for_Disassembly"
+    },
+    {
+        "word": "sustainable materials",
+        "forms": ["eco-friendly materials"],
+        "definition": "Materials that have a minimal environmental impact throughout their lifecycle, from extraction to disposal.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Sustainable_materials"
+    },
+    {
+        "word": "user experience",
+        "forms": ["UX"],
+        "definition": "The overall experience a user has with a product or system, including ease of use, efficiency, and satisfaction.",
+        "wikipedia": "https://en.wikipedia.org/wiki/User_experience"
+    },
+    {
+        "word": "prototype iteration",
+        "forms": ["iteration"],
+        "definition": "The process of repeatedly refining a prototype based on testing and feedback to improve its design and functionality.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Iterative_design"
+    },
+    {
+        "word": "mechanical advantage",
+        "forms": ["leverage"],
+        "definition": "The benefit gained by using a mechanical device or system to increase force or efficiency in a task.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Mechanical_advantage"
+    },
+    {
+        "word": "thermal properties",
+        "forms": ["thermal characteristics"],
+        "definition": "Properties of materials that describe their behavior in response to temperature changes, such as thermal conductivity and expansion.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Thermal_properties"
+    },
+    {
+        "word": "product testing",
+        "forms": ["testing"],
+        "definition": "The process of evaluating a product to ensure it meets design specifications and performance standards.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Product_testing"
+    },
+    {
+        "word": "quality control",
+        "forms": ["QC"],
+        "definition": "A system of maintaining standards in manufactured products by testing samples of the output against specifications.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Quality_control"
+    },
+
+
+
+
+
+
+
+
+
+    
+    {
+        "word": "metaphor",
+        "forms": ["metaphors"],
+        "definition": "A figure of speech where a word or phrase is applied to an object or action to which it is not literally applicable, suggesting a resemblance.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Metaphor"
+    },
+    {
+        "word": "simile",
+        "forms": ["similes"],
+        "definition": "A figure of speech that compares two different things using 'like' or 'as' to highlight similarities.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Simile"
+    },
+    {
+        "word": "alliteration",
+        "forms": ["alliterations"],
+        "definition": "The repetition of the same initial consonant sound in a sequence of words.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Alliteration"
+    },
+    {
+        "word": "personification",
+        "forms": ["personifications"],
+        "definition": "A figure of speech in which a non-human subject is given human characteristics.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Personification"
+    },
+    {
+        "word": "hyperbole",
+        "forms": ["hyperboles"],
+        "definition": "An exaggerated statement or claim not meant to be taken literally, used for emphasis or effect.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Hyperbole"
+    },
+    {
+        "word": "irony",
+        "forms": ["ironies"],
+        "definition": "A literary device where the intended meaning is opposite to the literal meaning, often used to create humor or emphasize a point.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Irony"
+    },
+    {
+        "word": "foreshadowing",
+        "forms": ["foreshadowings"],
+        "definition": "A literary device used to give hints or clues about events that will occur later in the narrative.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Foreshadowing"
+    },
+    {
+        "word": "symbolism",
+        "forms": ["symbolisms"],
+        "definition": "The use of symbols to represent ideas or qualities beyond their literal sense.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Symbolism"
+    },
+    {
+        "word": "imagery",
+        "forms": ["imageries"],
+        "definition": "Descriptive language that appeals to the senses and creates a vivid mental picture.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Imagery_(poetry)"
+    },
+    {
+        "word": "tone",
+        "forms": ["tones"],
+        "definition": "The general character or attitude of a piece of writing, reflecting the writer's feelings or perspective.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Tone_(literary)"
+    },
+    {
+        "word": "mood",
+        "forms": ["moods"],
+        "definition": "The emotional atmosphere created by a piece of writing, affecting the reader's feelings.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Mood_(literature)"
+    },
+    {
+        "word": "rhyme",
+        "forms": ["rhymes"],
+        "definition": "The repetition of similar sounds at the end of lines in poetry or songs.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Rhyme"
+    },
+    {
+        "word": "rhythm",
+        "forms": ["rhythms"],
+        "definition": "The pattern of stressed and unstressed syllables in a line of poetry or prose, creating a flow or beat.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Rhythm_(poetry)"
+    },
+    {
+        "word": "sonnet",
+        "forms": ["sonnets"],
+        "definition": "A 14-line poem with a specific rhyme scheme and meter, traditionally written in iambic pentameter.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Sonnet"
+    },
+    {
+        "word": "dramatic irony",
+        "forms": ["dramatic ironies"],
+        "definition": "A situation in a narrative where the audience knows more about the events or outcomes than the characters do.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Dramatic_irony"
+    },
+    {
+        "word": "allusion",
+        "forms": ["allusions"],
+        "definition": "An indirect or passing reference to a person, place, event, or literary work outside the text.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Allusion"
+    },
+    {
+        "word": "juxtaposition",
+        "forms": ["juxtaposes"],
+        "definition": "The placement of two or more elements side by side to highlight their differences or similarities.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Juxtaposition"
+    },
+    {
+        "word": "narrative",
+        "forms": ["narratives"],
+        "definition": "A spoken or written account of connected events; a story.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Narrative"
+    },
+    {
+        "word": "protagonist",
+        "forms": ["protagonists"],
+        "definition": "The main character in a story, drama, or other narrative work.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Protagonist"
+    },
+    {
+        "word": "antagonist",
+        "forms": ["antagonists"],
+        "definition": "A character or force in opposition to the protagonist, creating conflict in the narrative.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Antagonist"
+    },
+    {
+        "word": "plot",
+        "forms": ["plots"],
+        "definition": "The sequence of events that make up a story, including the conflict, climax, and resolution.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Plot_(narrative)"
+    },
+    {
+        "word": "setting",
+        "forms": ["settings"],
+        "definition": "The time and place where the story takes place.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Setting_(narrative)"
+    },
+    {
+        "word": "theme",
+        "forms": ["themes"],
+        "definition": "The central idea or underlying message of a literary work.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Theme_(literature)"
+    },
+    {
+        "word": "conflict",
+        "forms": ["conflicts"],
+        "definition": "The struggle between opposing forces in a narrative, which drives the plot.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Conflict_(narrative)"
+    },
+    {
+        "word": "dialogue",
+        "forms": ["dialogues"],
+        "definition": "The conversation between characters in a literary work.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Dialogue"
+    },
+    {
+        "word": "soliloquy",
+        "forms": ["soliloquies"],
+        "definition": "A speech delivered by a character alone on stage, revealing their inner thoughts.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Soliloquy"
+    },
+    {
+        "word": "monologue",
+        "forms": ["monologues"],
+        "definition": "A long speech by one character in a play or narrative, often revealing their thoughts and feelings.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Monologue"
+    },
+    {
+        "word": "antithesis",
+        "forms": ["antitheses"],
+        "definition": "A figure of speech where contrasting ideas are presented in a parallel structure.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Antithesis"
+    },
+    {
+        "word": "oxymoron",
+        "forms": ["oxymorons"],
+        "definition": "A figure of speech in which contradictory terms appear in conjunction.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Oxymoron"
+    },
+    {
+        "word": "pun",
+        "forms": ["puns"],
+        "definition": "A play on words that exploits multiple meanings or similar-sounding words for comedic or rhetorical effect.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Pun"
+    },
+    {
+        "word": "punctuation",
+        "forms": ["punctuations"],
+        "definition": "The marks used in writing to separate sentences and clarify meaning, such as periods, commas, and exclamation points.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Punctuation"
+    },
+    {
+        "word": "syntax",
+        "forms": ["syntaxes"],
+        "definition": "The arrangement of words and phrases to create well-formed sentences in a language.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Syntax"
+    },
+    {
+        "word": "diction",
+        "forms": ["dictions"],
+        "definition": "The choice and use of words and phrases in writing, influencing the tone and clarity of the text.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Diction"
+    },
+    {
+        "word": "register",
+        "forms": ["registers"],
+        "definition": "The level of formality or style used in a piece of writing, varying according to the audience and purpose.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Registers_of_language"
+    },
+    {
+        "word": "rhetoric",
+        "forms": ["rhetorics"],
+        "definition": "The art of persuasive speaking or writing, using various techniques to influence or convince an audience.",
+        "wikipedia": "https://en.wikipedia.org/wiki/Rhetoric"
+    }
+]

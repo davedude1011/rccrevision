@@ -1,5 +1,10 @@
 export const settings = {
     ui: {
-        topicsLeafRoundedFull: false
+        topicsLeafRoundedFull: false,
+        audioComponentAutoFade: "inactive" as "inactive" | "always" | "never",
+        wrapAudioMenuItems: true
+    },
+    functionality: {
+        audioComponentAutoPlay: true
     }
 }

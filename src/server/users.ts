@@ -18,7 +18,6 @@ export async function addUser(userId: string|null = null, force = false) {
             likes: [],
         })
     }
-    console.log("USERDATA ", userData)
 }
 
 export async function getUserLikes(userId: string|null = null) {
@@ -80,3 +79,12 @@ export async function getFormattedUserData() {
   
     return formattedData;
   }
+
+export async function getUserProfilePictureUrl(): Promise<string|undefined> {
+  const user = auth()
+  if (user?.userId) {
+    const userData = await clerkClient.users.getUser(user.userId)
+    return userData.imageUrl
+  }
+  return undefined
+}

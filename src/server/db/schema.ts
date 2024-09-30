@@ -24,6 +24,8 @@ export const createTableTopicsData = pgTableCreator(() => `rccrevision_topics_da
 
 export const createTableUsers = pgTableCreator(() => `rccrevision_users`);
 
+export const createTableGeminiData = pgTableCreator(() => `rccrevision_gemini_data`);
+
 export const topics = createTableTopics(
   "topics",
   {
@@ -75,3 +77,18 @@ export const users = createTableUsers(
     ),
   }
 );
+
+export const geminiData = createTableGeminiData(
+  "gemini_data",
+  {
+    id: serial("id").primaryKey(),
+    userId: varchar("user_id", { length: 256 }).notNull(),
+    geminiChatHistory: json("gemini_chat_history"),
+    createdAt: timestamp("created_at", { withTimezone: true })
+      .default(sql`CURRENT_TIMESTAMP`)
+      .notNull(),
+    updatedAt: timestamp("updated_at", { withTimezone: true }).$onUpdate(
+      () => new Date()
+    ),
+  }
+)

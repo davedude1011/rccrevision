@@ -59,8 +59,6 @@ export async function getFormattedData() {
   return formattedData
 }
 
-const authorId = null
-
 export async function addTopicPath(path: string, pathId: string, title: string|null = null) {
   const user = auth()
   if (user.userId) {
@@ -130,4 +128,57 @@ export async function getLikedTopicsData() {
 
 export async function getCustomTopics() {
   return await db.select().from(topics).where(eq(topics.baseTopic, false))
+}
+
+export async function getRandomTopicsData() {
+  function getRandomElements(arr: {
+    id: number;
+    topicId: string;
+    title: string | null;
+    path: string | null;
+    authorId: string | null;
+    baseTopic: boolean | null;
+    private: boolean | null;
+    createdAt: Date;
+    updatedAt: Date | null;
+}[] | (string | null)[], n: number) {
+    const result = [];
+    let len = arr.length;
+    const taken = [...arr]; // Copy the array
+    
+    for (let i = 0; i < n; i++) {
+        const randomIndex = Math.floor(Math.random() * len);
+        result.push(taken[randomIndex]);
+        taken.splice(randomIndex, 1); // Remove element to avoid duplicates
+        len--; // Reduce the pool size
+    }
+    
+    return result;
+  }
+
+  const amountOfTopics = 10
+
+  const randomTopicsData = [] as { title: string, subject: string, content: string }[]
+
+  const subscribedTopics = await getSubscribedTopics()
+  if (subscribedTopics) {
+    const randomSubscribedTopics = getRandomElements(subscribedTopics, amountOfTopics)
+    // eslint-disable-next-line @typescript-eslint/prefer-for-of
+    for (let i = 0; i < randomSubscribedTopics.length; i++) {
+      const topic = randomSubscribedTopics[i] as {title: string, topicId: string, path: string}
+      if (topic.title && topic.topicId) {
+        const topicData = await getTopicData(topic.topicId) as { data: [{type: string, content: string}[]] }[]
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+        const topicFirstText = (topicData.find((topic) => topic.data[0][1]?.type == "text")?.data[0][0]?.content)??undefined
+        
+        const subject = (topic.path.split("/")[0])??undefined
+        
+        if (topicFirstText && subject) {
+          randomTopicsData.push({title: topic.title, subject: subject, content: topicFirstText})
+          console.log({title: topic.title, subject: subject, content: topicFirstText})
+        }
+      }
+    }
+  }
+  return randomTopicsData
 }

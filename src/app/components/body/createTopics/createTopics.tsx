@@ -1,4 +1,4 @@
-import { bodyStyling, theme } from "../../style";
+import { theme } from "../../style";
 
 import { RiShoppingBag4Line } from "react-icons/ri";
 import { useEffect, useState } from "react";
@@ -95,7 +95,7 @@ export default function CreateTopicsBody() {
     }
 
     return (
-        <div className={`${bodyStyling} py-8 flex flex-col items-center text-white`}>
+        <>
             <div className="w-1/2 h-fit flex flex-col gap-4">
                 <div className="flex flex-row justify-between">
                     <span className="text-3xl font-semibold">Create Custom Topic</span>
@@ -374,6 +374,6 @@ export default function CreateTopicsBody() {
                     }}>Publish Topic</button>
                 </div>
             </div>
-        </div>
+        </>
     )
 }

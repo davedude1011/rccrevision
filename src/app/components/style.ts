@@ -6,5 +6,3 @@ export const theme = {
     body: themeType == "dark" ? "#242424" : "",
     text: themeType == "dark" ? "#FFFFFF" : "",
 }
-
-export const bodyStyling = `flex-1 h-screen overflow-auto ${scrollBarStyle} bg-[${theme.body}]`
