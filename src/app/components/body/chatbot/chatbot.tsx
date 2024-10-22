@@ -89,7 +89,7 @@ export default function ChatbotPage() {
                         }
                     </div>
                     <div className="w-full flex flex-row md:px-32 gap-2">
-                        <button data-tooltip-id="clear-button-tooltip" data-tooltip-place="top" className="aspect-square max-w-24 rounded-md border opacity-50 hover:opacity-100 transition-all flex items-center justify-center group" onClick={() => {
+                        <button data-tooltip-id="clear-button-tooltip" data-tooltip-place="top" className="px-2 aspect-square max-w-24 rounded-md border opacity-50 hover:opacity-100 transition-all flex items-center justify-center group" onClick={() => {
                             clearUserHistory("chatbot-screen")
                                 .catch((error) => {console.log(error)})
                             setMessages([])
@@ -105,7 +105,7 @@ export default function ChatbotPage() {
                                 setInputValue("")
                             }
                         }} placeholder="Ask away..." rows={1} />
-                        <button className="aspect-square max-w-24 rounded-md border opacity-50 hover:opacity-100 transition-all flex items-center justify-center group" onClick={() => {
+                        <button className="px-2 aspect-square max-w-24 rounded-md border opacity-50 hover:opacity-100 transition-all flex items-center justify-center group" onClick={() => {
                             sendMessage()
                             setInputValue("")
                         }}>

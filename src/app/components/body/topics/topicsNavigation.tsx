@@ -519,7 +519,7 @@ export default function TopicsNavigation() {
                                                 sendMessage(topicData[0].topicId as string|undefined)
                                             }
                                         }} placeholder="Ask away..." rows={1} disabled={!user.isSignedIn} />
-                                        <button data-tooltip-id="clear-button-tooltip" data-tooltip-place="top" className="aspect-square max-w-24 rounded-md border opacity-50 hover:opacity-100 transition-all flex items-center justify-center group" onClick={() => {
+                                        <button data-tooltip-id="clear-button-tooltip" data-tooltip-place="top" className="px-2 aspect-square max-w-24 rounded-md border opacity-50 hover:opacity-100 transition-all flex items-center justify-center group" onClick={() => {
                                             setMessages([])
                                             // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
                                             clearUserHistory(topicData[0].topicId as string|undefined)
@@ -527,7 +527,7 @@ export default function TopicsNavigation() {
                                         }} disabled={!user.isSignedIn}>
                                             <LuTrash className="rotate-0 group-hover:rotate-12 transition-all"/>
                                         </button>
-                                        <button className="aspect-square max-w-24 rounded-md border opacity-50 hover:opacity-100 transition-all flex items-center justify-center group" onClick={() => {
+                                        <button className="px-2 aspect-square max-w-24 rounded-md border opacity-50 hover:opacity-100 transition-all flex items-center justify-center group" onClick={() => {
                                             setGeminiInputValue("")
                                             // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
                                             sendMessage(topicData[0].topicId as string|undefined)
